@@ -15,4 +15,4 @@ theatre.DisplayTheaterDetails();
 Customer customer = new Customer("Vipul Bajaj", "Pune");
 customer.DisplayCustomerDetails();
 
-Booking book = new Booking();
+// Booking book = new Booking();
