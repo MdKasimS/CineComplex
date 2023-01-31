@@ -1,0 +1,15 @@
+E:\2021-23\VisualStudio2022\CineComplex\CineComplex\bin\Debug\net6.0\CineComplex.exe
+E:\2021-23\VisualStudio2022\CineComplex\CineComplex\bin\Debug\net6.0\CineComplex.deps.json
+E:\2021-23\VisualStudio2022\CineComplex\CineComplex\bin\Debug\net6.0\CineComplex.runtimeconfig.json
+E:\2021-23\VisualStudio2022\CineComplex\CineComplex\bin\Debug\net6.0\CineComplex.dll
+E:\2021-23\VisualStudio2022\CineComplex\CineComplex\bin\Debug\net6.0\CineComplex.pdb
+E:\2021-23\VisualStudio2022\CineComplex\CineComplex\obj\Debug\net6.0\CineComplex.csproj.AssemblyReference.cache
+E:\2021-23\VisualStudio2022\CineComplex\CineComplex\obj\Debug\net6.0\CineComplex.GeneratedMSBuildEditorConfig.editorconfig
+E:\2021-23\VisualStudio2022\CineComplex\CineComplex\obj\Debug\net6.0\CineComplex.AssemblyInfoInputs.cache
+E:\2021-23\VisualStudio2022\CineComplex\CineComplex\obj\Debug\net6.0\CineComplex.AssemblyInfo.cs
+E:\2021-23\VisualStudio2022\CineComplex\CineComplex\obj\Debug\net6.0\CineComplex.csproj.CoreCompileInputs.cache
+E:\2021-23\VisualStudio2022\CineComplex\CineComplex\obj\Debug\net6.0\CineComplex.dll
+E:\2021-23\VisualStudio2022\CineComplex\CineComplex\obj\Debug\net6.0\refint\CineComplex.dll
+E:\2021-23\VisualStudio2022\CineComplex\CineComplex\obj\Debug\net6.0\CineComplex.pdb
+E:\2021-23\VisualStudio2022\CineComplex\CineComplex\obj\Debug\net6.0\CineComplex.genruntimeconfig.cache
+E:\2021-23\VisualStudio2022\CineComplex\CineComplex\obj\Debug\net6.0\ref\CineComplex.dll
