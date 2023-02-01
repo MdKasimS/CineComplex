@@ -2,7 +2,7 @@ namespace OrderBooking
 {
     public class Show
     {
-        private int _showId;
+        private int _showId;//Must be done internally from database
         private int _movieId;
         private int _theatreId;
         private decimal _platinumSeatRate;
@@ -19,5 +19,15 @@ namespace OrderBooking
         public decimal SilverSeatRate { get => _silverSeatRate; set => _silverSeatRate = value; }
         public DateTime EndDate { get => _endDate; set => _endDate = value; }
         public DateTime StartDate { get => _startDate; set => _startDate = value; }
+
+        public Show(int mid, int tid, DateTime sdt, DateTime edt, decimal platinumRate, decimal goldRate, decimal silverRate){
+            MovieId = mid;
+            TheatreId = tid;
+            StartDate = sdt;
+            EndDate = edt;
+            PlatinumSeatRate = platinumRate;
+            GoldSeatRate = goldRate;
+            SilverSeatRate = silverRate;
+        }
     }
 }

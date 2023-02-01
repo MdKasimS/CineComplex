@@ -6,7 +6,7 @@ namespace OrderBooking
         private string? _seatType;
         private string? _customerName;
         private string? _bookingStatus;
-        private int _bookingId;
+        private int _bookingId;//Must come from database staring from 1000
         private int _showId;
         private int _numberOfSeats;
         private List<int>? _seatNumbers;
