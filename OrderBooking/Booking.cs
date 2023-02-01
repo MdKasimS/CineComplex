@@ -14,7 +14,7 @@ namespace OrderBooking
         private decimal _amount;
 
         public string? Email { get => _email; set => _email = value; }
-        public int ShowId { get => ShowId; set => ShowId = value; }
+        public int ShowId { get => _showId; set => _showId = value; }
         public string? SeatType { get => _seatType; set => _seatType = value; }
         public DateTime DateTime { get => _dateTime; set => _dateTime = value; }
         public decimal Amount { get => _amount; set => _amount = value; }

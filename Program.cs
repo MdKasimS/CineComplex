@@ -19,5 +19,5 @@ Booking book = new Booking(3234, "Vipul Bajaj", 4, "Platinum", "vb66@gmail.com",
 
 DateTime sdt = new DateTime(2023, 02, 01, 10, 30, 00);
 DateTime edt = new DateTime(2023, 02, 01, 13, 40, 00);
-Show show = new Show(456, 112, sdt, edt, 110.25m, 90.00m, 80.50m);
-show.DisplayShowDetails();
+// Show show = new Show(456, 112, sdt, edt, 110.25m, 90.00m, 80.50m);
+// show.DisplayShowDetails();
