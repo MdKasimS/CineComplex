@@ -11,7 +11,7 @@ namespace OrderBooking
         private DateTime _endDate;
         private DateTime _startDate;
 
-        public int ShowId { get => _showId; set => _showId = value; }
+        // public int ShowId { get => _showId; set => _showId = value; }
         public int MovieId { get => _movieId; set => _movieId = value; }
         public int TheatreId { get => _theatreId; set => _theatreId = value; }
         public decimal PlatinumSeatRate { get => _platinumSeatRate; set => _platinumSeatRate = value; }
@@ -28,10 +28,11 @@ namespace OrderBooking
             PlatinumSeatRate = platinumRate;
             GoldSeatRate = goldRate;
             SilverSeatRate = silverRate;
+            // ShowId = 1000;
         }
 
         public void DisplayShowDetails(){
-            Console.WriteLine($"Show ID : {ShowId}");
+            // Console.WriteLine($"Show ID : {ShowId}");
             Console.WriteLine($"Movie ID : {MovieId}");
             Console.WriteLine($"Theatre ID : {TheatreId}");
             Console.WriteLine($"Platinum Seat Rate : {PlatinumSeatRate}");
