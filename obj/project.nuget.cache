@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xExt17fQhcosKahA3aycZMXg/26X7z4DljZdxwKl17z8lX3mTcfS96Q8sm2s30ucfX2ohmOZ11l6NfGhDKghcA==",
+  "dgSpecHash": "fnEcK3D2iIFcYCR3bosMDsmIff72rWkFgeOQU+2qAPczTaAIMFaXFWvX671WVBVtcITiwbUYNiQXDfluWtB8uQ==",
   "success": true,
-  "projectFilePath": "/workspaces/CineComplex/CineComplex.csproj",
+  "projectFilePath": "E:\\2021-23\\VisualStudio2022\\CineComplex\\CineComplex\\CineComplex.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
