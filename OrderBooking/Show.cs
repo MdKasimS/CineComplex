@@ -29,5 +29,14 @@ namespace OrderBooking
             GoldSeatRate = goldRate;
             SilverSeatRate = silverRate;
         }
+
+        public void DisplayShowDetails(){
+            Console.WriteLine($"Show ID : {ShowId}");
+            Console.WriteLine($"Movie ID : {MovieId}");
+            Console.WriteLine($"Theatre ID : {TheatreId}");
+            Console.WriteLine($"Platinum Seat Rate : {PlatinumSeatRate}");
+            Console.WriteLine($"Gold Seat Rate : {GoldSeatRate}");
+            Console.WriteLine($"Silver Seat Rate : {SilverSeatRate}");
+        }       
     }
 }
