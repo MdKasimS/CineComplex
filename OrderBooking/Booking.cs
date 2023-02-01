@@ -23,5 +23,14 @@ namespace OrderBooking
         public string? CustomerName { get => _customerName; set => _customerName = value; }
         public string? BookingStatus { get => _bookingStatus; set => _bookingStatus = value; }
         public List<int>? SeatNumbers { get => _seatNumbers; set => _seatNumbers = value; }
+
+        public Booking(int sid, string cn, int nos, string seatType, string email, decimal amountToPay){
+            ShowId = sid;
+            CustomerName = cn;
+            NumberOfSeats = nos;
+            SeatType = seatType;
+            Email = email;
+            Amount = amountToPay;
+        }
     }
 }
