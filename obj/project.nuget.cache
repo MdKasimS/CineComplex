@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rPCri6X742gYzP+fUYcFLB3sRl6Q1uJjpgBhiWgari3oWrSRz0u5SViiQr5Ixywa+6aL8CK2gWehoz3aX0lciw==",
+  "dgSpecHash": "xExt17fQhcosKahA3aycZMXg/26X7z4DljZdxwKl17z8lX3mTcfS96Q8sm2s30ucfX2ohmOZ11l6NfGhDKghcA==",
   "success": true,
-  "projectFilePath": "/home/smk1299/RND/2021-23/CineComplex/CineComplex.csproj",
+  "projectFilePath": "/workspaces/CineComplex/CineComplex.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

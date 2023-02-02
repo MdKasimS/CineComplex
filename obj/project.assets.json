@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/home/smk1299/.nuget/packages/": {}
+    "/home/codespace/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/smk1299/RND/2021-23/CineComplex/CineComplex.csproj",
+      "projectUniqueName": "/workspaces/CineComplex/CineComplex.csproj",
       "projectName": "CineComplex",
-      "projectPath": "/home/smk1299/RND/2021-23/CineComplex/CineComplex.csproj",
-      "packagesPath": "/home/smk1299/.nuget/packages/",
-      "outputPath": "/home/smk1299/RND/2021-23/CineComplex/obj/",
+      "projectPath": "/workspaces/CineComplex/CineComplex.csproj",
+      "packagesPath": "/home/codespace/.nuget/packages/",
+      "outputPath": "/workspaces/CineComplex/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/smk1299/.nuget/NuGet/NuGet.Config"
+        "/home/codespace/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/192/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/dotnet/7.0.102/sdk/7.0.102/RuntimeIdentifierGraph.json"
       }
     }
   }
