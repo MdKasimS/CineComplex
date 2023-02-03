@@ -14,30 +14,30 @@ internal class Program
         Console.WriteLine("\t2. Admin");
         Console.Write("Press 1 or 2 : ");
 
-        string ?userTypeInput = Console.ReadLine();
-        Console.WriteLine(userTypeInput);
-        Console.Clear();
-
-        if(userTypeInput != null){
-            
-        do{
-            choice = int.Parse(userTypeInput);
-            switch(choice){
-                case 1: 
-                    Console.Write("Enter LoginID : ");
-                    break;
-                case 2:
-                    Console.Write("Enter LoginID : ");
-                    break;
-                default:
-                    Console.WriteLine("Please enter the valid choice .....");
-                    break;
+        string? userTypeInput = "";
+        int choice = 0;
+        do
+        {
+            userTypeInput = Console.ReadLine();
+            if (userTypeInput != null)
+            {
+                choice = int.Parse(userTypeInput);
             }
-        }while(choice>0 || choice<3);
+        } while (choice > 0 || choice < 3);
+        switch (choice)
+        {
+            case 1:
+                Console.Clear();
+                Console.Write("Enter LoginID : ");
+                break;
+            case 2:
+                Console.Clear();
+                Console.Write("Enter LoginID : ");
+                break;
+            default:
+                Console.WriteLine("Please enter the valid choice .....");
+                break;
         }
-
-
-
-
     }
+
 }
