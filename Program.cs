@@ -23,21 +23,23 @@ internal class Program
             {
                 choice = int.Parse(userTypeInput);
             }
-        } while (choice > 0 || choice < 3);
         switch (choice)
         {
             case 1:
                 Console.Clear();
                 Console.Write("Enter LoginID : ");
+                System.Environment.Exit(0);
                 break;
             case 2:
                 Console.Clear();
                 Console.Write("Enter LoginID : ");
+                System.Environment.Exit(0);
                 break;
             default:
                 Console.WriteLine("Please enter the valid choice .....");
                 break;
         }
+        } while (choice > 0 || choice < 3);
     }
 
 }
