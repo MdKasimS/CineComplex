@@ -1,1 +1,1 @@
-﻿TheatreID,TheatreName,NumberOfSeats
+﻿BookingID,ShowID,Email,CustomerName,BookingStatus,SeatType,NumberOfSeats,SeatNumbers,BookingDate,Amount
