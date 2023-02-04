@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "dPuB+a0zDLGviwpmRXdVbnGVpwmy6mQX4vBGZF1/SIyPlzu/GbFVjZoFdPNTOgbgTJFkyQ3ItG3qvtrMgs0RVA==",
+  "dgSpecHash": "HfgxEYrSwHMTpotUn6Jg30YPIEnVzYpmzwezPfKC0a48DaieRnY1L9WE6SaDnaX/zxyKtjCJjPxDWzJPCuEMFg==",
   "success": true,
   "projectFilePath": "E:\\2021-23\\VisualStudio2022\\CineComplex\\CineComplex.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Mo Kasim\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

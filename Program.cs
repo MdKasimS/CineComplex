@@ -1,29 +1,29 @@
-﻿using CineComplex;
-using OrderBooking;
-
+﻿using DataFiles;
+using CsvHelper;
 internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.Clear();
-        Console.WriteLine("\t----- Salam Hindusthan !!! -----");
-        Console.WriteLine("================================================");
-
-        Console.WriteLine("\nChoose User Type : ");
-        Console.WriteLine("\t1. Customer");
-        Console.WriteLine("\t2. Admin");
-        Console.WriteLine("\t3. Exit");
-        Console.Write("Press 1 or 2 : ");
-
         string? userTypeInput = "";
         int choice = 0;
         string? pwd = new String("");
         string? loginId = new String("");
+        MovieDataStore dataSource = new MovieDataStore();   //All data fetching will be done here
 
         do
         {
+            Console.Clear();
+            Console.WriteLine("\t----- Salam Hindusthan !!! -----");
+            Console.WriteLine("================================================");
+
+            Console.WriteLine("\nChoose User Type : ");
+            Console.WriteLine("\t1. Customer");
+            Console.WriteLine("\t2. Admin");
+            Console.WriteLine("\t3. Exit");
+            Console.Write("Select Your Choice 1/2/3 : ");
+
             userTypeInput = Console.ReadLine();
-            if (userTypeInput != null)
+            if (userTypeInput != null)//exception must be handled here
             {
                 choice = int.Parse(userTypeInput);
             }
@@ -35,7 +35,7 @@ internal class Program
                     loginId = Console.ReadLine();
                     Console.Write("Enter Password : ");
                     pwd = Console.ReadLine();
-                    
+
                     Console.ReadKey();
                     Console.Clear();
                     System.Environment.Exit(0);
@@ -48,9 +48,11 @@ internal class Program
                     break;
 
                 case 3:
+                    Console.Write("\nPress any key.....");
+                    Console.ReadKey();
                     System.Environment.Exit(0);
                     break;
-                    
+
                 default:
                     Console.WriteLine("Please enter the valid choice .....");
                     break;

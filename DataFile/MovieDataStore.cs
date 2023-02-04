@@ -28,6 +28,7 @@ namespace DataFiles
             Shows = new List<Show>();
             Bookings = new List<Booking>();
 
+            
             FetchBookings();
             FetchCustomers();
             FetchLogins();
