@@ -5,9 +5,9 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        Console.Clear();
         Console.WriteLine("\t----- Salam Hindusthan !!! -----");
         Console.WriteLine("================================================");
-        // Console.Write("Theatres : 4                         Shows : 16\n");
 
         Console.WriteLine("\nChoose User Type : ");
         Console.WriteLine("\t1. Customer");
@@ -16,6 +16,11 @@ internal class Program
 
         string? userTypeInput = "";
         int choice = 0;
+        string ?pwd = new String("");
+        string ?loginId = new String("");
+
+        
+
         do
         {
             userTypeInput = Console.ReadLine();
@@ -28,6 +33,9 @@ internal class Program
             case 1:
                 Console.Clear();
                 Console.Write("Enter LoginID : ");
+                loginId = Console.ReadLine();
+                Console.Write("Enter Password : ");
+                pwd = Console.ReadLine();
                 System.Environment.Exit(0);
                 break;
             case 2:
