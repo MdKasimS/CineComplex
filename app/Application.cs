@@ -71,7 +71,7 @@ namespace CineComplex
         {
             Console.WriteLine("---------- Admin Login ----------");
             Console.Clear();
-            Console.Write("Enter LoginID : MOVIEADMIN");
+            Console.WriteLine("Enter LoginID : MOVIEADMIN");
             Console.Write("Enter Password : ");
             Pwd = Console.ReadLine();
         }
