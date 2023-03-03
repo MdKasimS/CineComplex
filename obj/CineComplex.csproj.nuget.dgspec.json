@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[30.0.1, )"
             },
+            "MOngoDB.Driver": {
+              "target": "Package",
+              "version": "[2.19.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.3, )"
