@@ -1,14 +1,11 @@
-using CineComplex;
-using OrderBooking;
-
-namespace DataFiles
+namespace CineComplex.models
 {
     public class MovieDataStore
     {
         private List<Movie>? _movies;
         private List<Theatre>? _theatres;
         private List<Customer>? _customers;
-        private List<LoginDetails>? _logins;
+        private List<Credential>? _logins;
         private List<Show>? _shows;
         private List<Booking>? _bookings;
 
@@ -17,18 +14,18 @@ namespace DataFiles
         public List<Show>? Shows { get => _shows; set => _shows = value; }
         public List<Booking>? Bookings { get => _bookings; set => _bookings = value; }
         public List<Theatre>? Theatres { get => _theatres; set => _theatres = value; }
-        public List<LoginDetails>? Logins { get => _logins; set => _logins = value; }
+        public List<Credential>? Logins { get => _logins; set => _logins = value; }
 
         public MovieDataStore()
         {
             Movies = new List<Movie>();
             Theatres = new List<Theatre>();
             Customers = new List<Customer>();
-            Logins = new List<LoginDetails>();
+            Logins = new List<Credential>();
             Shows = new List<Show>();
             Bookings = new List<Booking>();
 
-            
+
             FetchBookings();
             FetchCustomers();
             FetchLogins();
@@ -92,11 +89,11 @@ namespace DataFiles
         }
         public void DeleteMovie(Movie obj)
         {
-            
+
         }
         public void DeleteTheatre(Theatre obj)
         {
-           
+
         }
         public void DeleteCustomers(Customer obj)
         {
@@ -112,11 +109,11 @@ namespace DataFiles
         }
         public void UpdateMovie(Movie obj)
         {
-           
+
         }
         public void UpdateTheatre(Theatre obj)
         {
-            
+
         }
         public void UpdateCustomers(Customer obj)
         {
@@ -132,11 +129,11 @@ namespace DataFiles
         }
         public void SearchMovie(Movie obj)
         {
-            
+
         }
         public void SearchTheatre(Theatre obj)
         {
-            
+
         }
         public void SearchCustomers(Customer obj)
         {

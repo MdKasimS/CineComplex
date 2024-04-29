@@ -1,10 +1,10 @@
-namespace CineComplex
+namespace CineComplex.models
 {
     public class Customer
     {
-        private int ? _customerId;
-        private string ? _customerName;
-        private string ? _city;
+        private int? _customerId;
+        private string? _customerName;
+        private string? _city;
         public Customer(string cn, string city)
         {
             CustomerName = cn;
@@ -15,7 +15,8 @@ namespace CineComplex
         public int? CustomerId { get => _customerId; set => _customerId = value; }
         public string? City { get => _city; set => _city = value; }
 
-        public void DisplayCustomerDetails(){
+        public void DisplayCustomerDetails()
+        {
             Console.WriteLine($"Customer ID : {CustomerId}");
             Console.WriteLine($"Customer Name : {CustomerName}"
             );

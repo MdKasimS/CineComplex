@@ -1,15 +1,15 @@
-namespace CineComplex
+namespace CineComplex.models
 {
     public class Movie
     {
-        public string ?MovieID;
-        private string ? MovieName;
-        private string ? DirectorName;
-        private string ? ProducerName;
-        private string ? Story;
-        private string ? Genre;
-        private string ? Language;
-        private double ? Duration;
+        public string? MovieID;
+        private string? MovieName;
+        private string? DirectorName;
+        private string? ProducerName;
+        private string? Story;
+        private string? Genre;
+        private string? Language;
+        private double? Duration;
 
         public Movie()
         {
@@ -39,7 +39,7 @@ namespace CineComplex
             MovieID = m;
         }
 
-        public string ?getMovieId()
+        public string? getMovieId()
         {
             return MovieID;
         }
@@ -48,7 +48,7 @@ namespace CineComplex
         {
             MovieName = m;
         }
-        public string ? getMovieName()
+        public string? getMovieName()
         {
             return MovieName;
         }
@@ -58,7 +58,7 @@ namespace CineComplex
             DirectorName = d;
         }
 
-        public string ?getDirectorName()
+        public string? getDirectorName()
         {
             return DirectorName;
         }
@@ -68,7 +68,7 @@ namespace CineComplex
             ProducerName = p;
         }
 
-        public string ?getProducerName()
+        public string? getProducerName()
         {
             return ProducerName;
         }
@@ -78,12 +78,12 @@ namespace CineComplex
             Genre = g;
         }
 
-        public string ? getGenre()
+        public string? getGenre()
         {
             return Genre;
         }
 
-        public string ? getStory()
+        public string? getStory()
         {
             return Story;
         }
@@ -93,7 +93,7 @@ namespace CineComplex
             Story = s;
         }
 
-        public string ? getLanguage()
+        public string? getLanguage()
         {
             return Language;
         }

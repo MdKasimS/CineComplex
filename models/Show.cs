@@ -1,4 +1,4 @@
-namespace OrderBooking
+namespace CineComplex.models
 {
     public class Show
     {
@@ -20,7 +20,8 @@ namespace OrderBooking
         public DateTime EndDate { get => _endDate; set => _endDate = value; }
         public DateTime StartDate { get => _startDate; set => _startDate = value; }
 
-        public Show(int mid, int tid, DateTime sdt, DateTime edt, decimal platinumRate, decimal goldRate, decimal silverRate){
+        public Show(int mid, int tid, DateTime sdt, DateTime edt, decimal platinumRate, decimal goldRate, decimal silverRate)
+        {
             MovieId = mid;
             TheatreId = tid;
             StartDate = sdt;
@@ -31,13 +32,14 @@ namespace OrderBooking
             ShowId = 10101;
         }
 
-        public void DisplayShowDetails(){
+        public void DisplayShowDetails()
+        {
             Console.WriteLine($"Show ID : {ShowId}");
             Console.WriteLine($"Movie ID : {MovieId}");
             Console.WriteLine($"Theatre ID : {TheatreId}");
             Console.WriteLine($"Platinum Seat Rate : {PlatinumSeatRate}");
             Console.WriteLine($"Gold Seat Rate : {GoldSeatRate}");
             Console.WriteLine($"Silver Seat Rate : {SilverSeatRate}");
-        }       
+        }
     }
 }
