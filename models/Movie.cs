@@ -2,118 +2,29 @@ namespace CineComplex.models
 {
     public class Movie
     {
-        public string? MovieID;
-        private string? MovieName;
-        private string? DirectorName;
-        private string? ProducerName;
-        private string? Story;
-        private string? Genre;
-        private string? Language;
-        private double? Duration;
+        private string movieID;
+        private string movieName;
+        private string directorName;
+        private string producerName;
+        private double duration;
+        private string story;
+        private string genre;
+        private string language;
 
-        public Movie()
+
+        public string MovieID { get => movieID; set => movieID = value; }
+        public string MovieName { get => movieName; set => movieName = value; }
+        public string DirectorName { get => directorName; set => directorName = value; }
+        public string ProducerName { get => producerName; set => producerName = value; }
+        public double Duration { get => duration; set => duration = value; }
+        public string Story { get => story; set => story = value; }
+        public string Genre { get => genre; set => genre = value; }
+        public string Language { get => language; set => language = value; }
+
+        public Movie(string movieName, string directorName, string producerName, string genre, string , double duration)
         {
-            Console.WriteLine("This is Movie Class");
+            
         }
-        public Movie(string movieName,
-                     string producerName,
-                     string directorName,
-                     string lang,
-                     double duration,
-                     string genre,
-                     string story)
-        {
-
-            setDirectorName(directorName);
-            setDuration(duration);
-            setGenre(genre);
-            setLanguage(lang);
-            setMovieName(movieName);
-            setProducerName(producerName);
-            setStory(story);
-            setMovieId(movieName.Substring(0, 2) + "-" + directorName.Substring(0, 2) + "-" + genre.Substring(0, 2) + "-" + lang.Substring(0, 2));
-        }
-
-        public void setMovieId(string m)
-        {
-            MovieID = m;
-        }
-
-        public string? getMovieId()
-        {
-            return MovieID;
-        }
-
-        public void setMovieName(string m)
-        {
-            MovieName = m;
-        }
-        public string? getMovieName()
-        {
-            return MovieName;
-        }
-
-        public void setDirectorName(string d)
-        {
-            DirectorName = d;
-        }
-
-        public string? getDirectorName()
-        {
-            return DirectorName;
-        }
-
-        public void setProducerName(string p)
-        {
-            ProducerName = p;
-        }
-
-        public string? getProducerName()
-        {
-            return ProducerName;
-        }
-
-        public void setGenre(string g)
-        {
-            Genre = g;
-        }
-
-        public string? getGenre()
-        {
-            return Genre;
-        }
-
-        public string? getStory()
-        {
-            return Story;
-        }
-
-        public void setStory(string s)
-        {
-            Story = s;
-        }
-
-        public string? getLanguage()
-        {
-            return Language;
-        }
-
-        public void setLanguage(string l)
-        {
-            Language = l;
-        }
-
-        public double? getDuration()
-        {
-            return Duration;
-        }
-
-        public void setDuration(double d)
-        {
-            Duration = d;
-        }
-
-
         public void DisplayMovieDetails()
         {
             Console.WriteLine($"Movie Id : {MovieID}");
