@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CineComplex")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73abdf5c0c76d21f606878c31c2a0338e2f8ab60")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db9318fb9c7912ff3a8d51a4da7a6a24af76ab3f")]
 [assembly: System.Reflection.AssemblyProductAttribute("CineComplex")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CineComplex")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
