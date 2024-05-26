@@ -1,6 +1,6 @@
-﻿using CineComplex;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using MongoDB.Bson;
+using CineComplex.Views;
 
 
 internal class Program
@@ -14,7 +14,7 @@ internal class Program
         
         
         
-        Application app = new Application();
+        HomeView app = new HomeView();
         app.run();
         
         var docs = collection.Find(new BsonDocument()).Limit(5).ToList();
