@@ -15,7 +15,7 @@ internal class Program
         
         
         HomeView app = new HomeView();
-        app.run();
+        app.View();
         
         var docs = collection.Find(new BsonDocument()).Limit(5).ToList();
         Console.WriteLine(client.ListDatabases().ToList());

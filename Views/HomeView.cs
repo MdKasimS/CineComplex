@@ -35,7 +35,7 @@ namespace CineComplex.Views
                 {
                     case 1:
                         Console.Clear();
-                        CustomerLoginPrompt();
+                        HomeVm.Instance.CustomerLoginPrompt();
                         Console.Clear();
                         break;
 

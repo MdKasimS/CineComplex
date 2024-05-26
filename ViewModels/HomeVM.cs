@@ -8,6 +8,19 @@ namespace CineComplex.ViewModels
 {
     public class HomeVM
     {
+        private HomeVM _instance;
+
+        public HomeVM Instance
+        {
+            get 
+            { 
+                if(_instance==null)
+                {
+                    _instance = new HomeVM();
+                }
+                return _instance; 
+            }
+        }
         public void CustomerLoginPrompt()
         {
             Console.WriteLine("---------- Customer Login ----------");
