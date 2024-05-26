@@ -24,11 +24,11 @@ namespace CineComplex.models
         public List<int>? SeatNumbers { get => _seatNumbers; set => _seatNumbers = value; }
         public DateTime BookingDate { get => _bookingDate; set => _bookingDate = value; }
 
-        public Booking(int sid, string cn, int nos, string seatType, string email, decimal amountToPay)
+        public Booking(int showId, string customerNumber, int numberOfSeats, string seatType, string email, decimal amountToPay)
         {
-            ShowId = sid;
-            CustomerName = cn;
-            NumberOfSeats = nos;
+            ShowId = showId;
+            CustomerName = customerNumber;
+            NumberOfSeats = numberOfSeats;
             SeatType = seatType;
             Email = email;
             Amount = amountToPay;

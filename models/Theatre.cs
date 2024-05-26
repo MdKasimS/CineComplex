@@ -2,56 +2,19 @@ namespace CineComplex.models
 {
     public class Theatre
     {
+        private int id;
+        private string theatreName;
+        private int numberOfSeats;
 
-        private int? TheatreID;
-        private string? TheatreName;
-        private int? NumberOfSeats;
-        public Theatre()
-        {
-            Console.WriteLine("I am Theatre class");
-        }
-
-        public Theatre(string tn, int nos)
-        {
-            TheatreName = tn;
-            NumberOfSeats = nos;
-        }
-
-        public void setTheatreName(string tn)
-        {
-            TheatreName = tn;
-        }
-
-        public string? getTheaterName()
-        {
-            return TheatreName;
-        }
-
-        public void setNumberOfSeats(int nos)
-        {
-            NumberOfSeats = nos;
-        }
-
-        public int? getNumberOfSeats()
-        {
-            return NumberOfSeats;
-        }
-
-        public void setTheatreId(int ti)
-        {
-            TheatreID = ti;
-        }
-
-        public int? getTheatreId()
-        {
-            return TheatreID;
-        }
+        public int Id { get => id; set => id = value; }
+        public string TheatreName { get => theatreName; set => theatreName = value; }
+        public int NumberOfSeats { get => numberOfSeats; set => numberOfSeats = value; }
 
         public void DisplayTheaterDetails()
         {
-            Console.WriteLine($"Theatre ID : {getTheatreId()}");
-            Console.WriteLine($"Theatre Name : {getTheaterName()}");
-            Console.WriteLine($"Seating Capacity : {getNumberOfSeats()}");
+            Console.WriteLine($"Theatre ID : {Id}");
+            Console.WriteLine($"Theatre Name : {TheatreName}");
+            Console.WriteLine($"Seating Capacity : {NumberOfSeats}");
         }
     }
 }

@@ -44,7 +44,9 @@ namespace CineComplex
                         break;
 
                     case 2:
-                        Console.Clear();
+                        Console.Clear();.
+
+
                         AdminLoginPrompt();
                         Console.Clear();
                         break;

@@ -4,18 +4,29 @@ namespace CineComplex.models
     {
         private string? _loginID;
         private string? _password;
-        public Credential()
+        private string? _type;
+        private static Credential? _instance;
+
+        private Credential()
         {
-            Console.WriteLine("I am LoginDetails");
         }
 
-        public Credential(string lid, string pwd, string loginType)
-        {
-            LoginID = lid;
-            Password = pwd;
-        }
+        
 
         public string? LoginID { get => _loginID; set => _loginID = value; }
         public string? Password { get => _password; set => _password = value; }
+        public string? Type { get => _type; set => _type = value; }
+        public static Credential Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new Credential();
+                }
+                return _instance;
+
+            }
+        }
     }
 }

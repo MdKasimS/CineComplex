@@ -2,7 +2,8 @@ namespace CineComplex.models
 {
     public class Movie
     {
-        private string movieID;
+        private int _id;
+        private string? movieID;
         private string movieName;
         private string directorName;
         private string producerName;
@@ -11,8 +12,8 @@ namespace CineComplex.models
         private string genre;
         private string language;
 
-
-        public string MovieID { get => movieID; set => movieID = value; }
+        public int Id { get => _id; set => _id = value; }
+        public string? MovieID { get => movieID; set => movieID = value; }
         public string MovieName { get => movieName; set => movieName = value; }
         public string DirectorName { get => directorName; set => directorName = value; }
         public string ProducerName { get => producerName; set => producerName = value; }
@@ -21,7 +22,7 @@ namespace CineComplex.models
         public string Genre { get => genre; set => genre = value; }
         public string Language { get => language; set => language = value; }
 
-        public Movie(string movieName, string directorName, string producerName, string genre, string , double duration)
+        public Movie(string movieName, string directorName, string producerName, string genre, string language, double duration, string story)
         {
             
         }
