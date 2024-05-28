@@ -12,7 +12,7 @@ namespace CineComplex.models
         }
 
         
-
+ 
         public string? LoginID { get => _loginID; set => _loginID = value; }
         public string? Password { get => _password; set => _password = value; }
         public string? Type { get => _type; set => _type = value; }
