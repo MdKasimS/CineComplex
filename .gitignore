@@ -14,3 +14,7 @@
 /.vs/CineComplex/v17/.suo
 /.vs/CineComplex/v17/.futdcache.v2
 /CineComplexDatabase
+/bin/Debug/net8.0
+/obj/Debug/net8.0/ref
+/obj/Debug/net8.0/refint
+/obj/Debug/net8.0/CineComplex.dll
