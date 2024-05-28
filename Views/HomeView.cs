@@ -1,4 +1,5 @@
 using CineComplex.models;
+using CineComplex.ViewModels;
 using MongoDB.Driver;
 
 
@@ -9,10 +10,10 @@ namespace CineComplex.Views
         private int _choice = 0;
         public int Choice { get => _choice; set => _choice = value; }
 
-        
+
         public void View()
         {
-            
+
 
             do//main loop
             {
@@ -20,28 +21,25 @@ namespace CineComplex.Views
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine("\nChoose User Type : ");
-                Console.WriteLine("\t1. Customer");
-                Console.WriteLine("\t2. Admin");
+                Console.WriteLine("\nLogin Screen : ");
+                Console.WriteLine("\t1. Enter Login Id: ");
+                Console.WriteLine("\t2. Enter Password: ");
                 Console.WriteLine("\t3. Exit");
                 Console.Write("Select Your Choice 1/2/3 : ");
 
-                UserTypeInput = Console.ReadLine();
-                if (UserTypeInput != null)
-                {
-                    Choice = int.Parse(UserTypeInput);//exception must be handled here
-                }
+
+                int.TryParse(Console.ReadLine(), out _choice);
                 switch (Choice)
                 {
                     case 1:
                         Console.Clear();
-                        HomeVm.Instance.CustomerLoginPrompt();
+                        HomeVM.Instance.LoginPrompt();
                         Console.Clear();
                         break;
 
                     case 2:
                         Console.Clear();
-                        AdminLoginPrompt();
+                        HomeVM.Instance.PasswordPrompt();
                         Console.Clear();
                         break;
 
@@ -57,6 +55,6 @@ namespace CineComplex.Views
                 }
             } while (Choice > 0 || Choice < 4);
         }
-        
+
     }
 }

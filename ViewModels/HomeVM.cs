@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CineComplex.models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,9 @@ namespace CineComplex.ViewModels
 {
     public class HomeVM
     {
-        private HomeVM _instance;
+        private static HomeVM _instance;
 
-        public HomeVM Instance
+        public static HomeVM Instance
         {
             get 
             { 
@@ -21,21 +22,17 @@ namespace CineComplex.ViewModels
                 return _instance; 
             }
         }
-        public void CustomerLoginPrompt()
+        public void LoginPrompt()
         {
-            Console.WriteLine("---------- Customer Login ----------");
             Console.Write("Enter LoginID : ");
-            LoginId = Console.ReadLine();
-            Console.Write("Enter Password : ");
-            Pwd = Console.ReadLine();
-        }
-        public void AdminLoginPrompt()
-        {
-            Console.WriteLine("---------- Admin Login ----------");
+            Credential.Instance.LoginId = Console.ReadLine();
             Console.Clear();
-            Console.WriteLine("Enter LoginID : MOVIEADMIN");
+        }
+        public void PasswordPrompt()
+        {
             Console.Write("Enter Password : ");
-            Pwd = Console.ReadLine();
+            Credential.Instance.Password = Console.ReadLine();
+            Console.Clear();
         }
     }
 }
