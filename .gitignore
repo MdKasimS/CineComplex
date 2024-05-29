@@ -36,3 +36,6 @@
 /obj/CineComplex.csproj.nuget.dgspec.json
 /obj/CineComplex.csproj.nuget.g.props
 /obj/project.assets.json
+/obj/Debug/net8.0/CineComplex.sourcelink.json
+/obj/Debug/net8.0/CineComplex.csproj.FileListAbsolute.txt
+/.vs/slnx.sqlite
