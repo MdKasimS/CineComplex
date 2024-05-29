@@ -25,3 +25,7 @@
 /obj/Debug/net8.0/CineComplex.pdb
 /obj/project.nuget.cache
 /obj/Debug/net8.0/CineComplex.csproj.CoreCompileInputs.cache
+/obj/Release/net8.0/CineComplex.csproj.AssemblyReference.cache
+/obj/Release/net8.0/CineComplex.AssemblyInfoInputs.cache
+/obj/Release/net8.0/CineComplex.assets.cache
+/obj/Release/net8.0/CineComplex.GeneratedMSBuildEditorConfig.editorconfig
