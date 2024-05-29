@@ -21,24 +21,35 @@ namespace CineComplex.Views
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine("\nLogin Screen : ");
-                Console.WriteLine("\t1. Enter Login Id: ");
-                Console.WriteLine("\t2. Enter Password: ");
-                Console.WriteLine("\t3. Exit");
-                Console.Write("Select Your Choice 1/2/3 : ");
+                Console.WriteLine("\nLogin Window : ");
+                Console.WriteLine("-------------------------------------------------");
+
+                Console.WriteLine($"Entered Login Id : {Credential.Instance.LoginId}");
+                Console.WriteLine($"Entered Password : {Credential.Instance.Password}");
+
+                Console.WriteLine();
+
+                Console.WriteLine("\nMenu : ");
+                Console.WriteLine("---------------");
+
+                Console.WriteLine("1. Enter Login Id: ");
+                Console.WriteLine("2. Enter Password: ");
+                Console.WriteLine("3. Exit");
+                
+                Console.Write("Enter Your Choice : ");
 
 
                 int.TryParse(Console.ReadLine(), out _choice);
                 switch (Choice)
                 {
                     case 1:
-                        Console.Clear();
+
                         HomeVM.Instance.LoginPrompt();
                         Console.Clear();
                         break;
 
                     case 2:
-                        Console.Clear();
+
                         HomeVM.Instance.PasswordPrompt();
                         Console.Clear();
                         break;
