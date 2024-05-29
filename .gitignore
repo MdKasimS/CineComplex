@@ -29,3 +29,10 @@
 /obj/Release/net8.0/CineComplex.AssemblyInfoInputs.cache
 /obj/Release/net8.0/CineComplex.assets.cache
 /obj/Release/net8.0/CineComplex.GeneratedMSBuildEditorConfig.editorconfig
+/obj/Debug/net8.0/CineComplex.AssemblyInfo.cs
+/obj/Release/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+/obj/Release/net8.0/CineComplex.AssemblyInfo.cs
+/obj/Release/net8.0/CineComplex.GlobalUsings.g.cs
+/obj/CineComplex.csproj.nuget.dgspec.json
+/obj/CineComplex.csproj.nuget.g.props
+/obj/project.assets.json
