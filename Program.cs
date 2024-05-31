@@ -22,24 +22,16 @@ internal class Program
 
     private static void Main(string[] args)
     {
-        var client = new MongoClient("mongodb://localhost:27017");//hard coded API
-        var database = client.GetDatabase("CineComplex");
-        var collection = database.GetCollection<BsonDocument>("Customer");
-        //var docs = collection.Find(new BsonDocument()).Limit(5).ToList();
-        //Console.WriteLine(client.ListDatabases().ToList());
-
-        Console.BufferHeight = Console.WindowHeight; // Set the buffer height equal to the window height
-        Console.BufferWidth = Console.WindowWidth;   // Set the buffer width equal to the window width
 
         Console.WindowHeight = 25;
         Console.WindowWidth = 80;
 
+        Console.BufferHeight = Console.WindowHeight; // Set the buffer height equal to the window height
+        Console.BufferWidth = Console.WindowWidth;   // Set the buffer width equal to the window width
+
         DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_MINIMIZE, MF_BYCOMMAND);
         DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_MAXIMIZE, MF_BYCOMMAND);
         DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_SIZE, MF_BYCOMMAND);
-
-        //Console.WriteLine("Yes, its fixed!");
-        //Console.ReadLine();
 
 
         HomeView app = new HomeView();
