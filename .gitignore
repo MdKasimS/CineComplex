@@ -39,3 +39,5 @@
 /obj/Debug/net8.0/CineComplex.sourcelink.json
 /obj/Debug/net8.0/CineComplex.csproj.FileListAbsolute.txt
 /.vs/slnx.sqlite
+obj/Debug/net8.0/CineComplex.GeneratedMSBuildEditorConfig.editorconfig
+obj/Debug/net8.0/CineComplex.genruntimeconfig.cache
