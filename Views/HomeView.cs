@@ -32,9 +32,11 @@ namespace CineComplex.Views
                 Console.WriteLine("\nMenu : ");
                 Console.WriteLine("---------------");
 
-                Console.WriteLine("1. Enter Login Id: ");
-                Console.WriteLine("2. Enter Password: ");
-                Console.WriteLine("3. Exit");
+                Console.WriteLine("1. Enter Login Id ");
+                Console.WriteLine("2. Enter Password ");
+                Console.WriteLine("3. Login ");
+                Console.WriteLine("4. Forgot Password ");
+                Console.WriteLine("5. Exit");
                 
                 Console.Write("Enter Your Choice : ");
 
@@ -43,18 +45,20 @@ namespace CineComplex.Views
                 switch (Choice)
                 {
                     case 1:
-
                         HomeVM.Instance.LoginPrompt();
                         Console.Clear();
                         break;
 
                     case 2:
-
                         HomeVM.Instance.PasswordPrompt();
                         Console.Clear();
                         break;
 
                     case 3:
+                        Services.AuthenticationService.AuthenticateUserForGivenCredential();
+                        break;
+
+                    case 5:
                         Console.Write("\nPress any key.....");
                         Console.ReadKey();
                         Environment.Exit(0);
