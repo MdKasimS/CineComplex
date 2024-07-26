@@ -1,5 +1,12 @@
 namespace CineComplex.models
 {
+
+    public enum UserType
+    {
+        Customer,
+        Admin
+    }
+
     public class Customer
     {
         private int id;
