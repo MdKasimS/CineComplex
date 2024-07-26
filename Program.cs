@@ -36,7 +36,8 @@ internal class Program
         DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_SIZE, MF_BYCOMMAND);
 
 
-        HomeView app = new HomeView();
+        //HomeView app = new HomeView();
+        ManageTicketView app = new ManageTicketView();
         app.View();
 
     }
