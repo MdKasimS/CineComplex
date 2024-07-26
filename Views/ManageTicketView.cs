@@ -1,16 +1,40 @@
-using CineComplex.Interfaces;
-using CineComplex.models;
+﻿using CineComplex.Interfaces;
 using CineComplex.ViewModels;
-using MongoDB.Driver;
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace CineComplex.Views
 {
-    public class HomeView : IView
+    public class ManageTicketView : IView
     {
         private int _choice = 0;
         public int Choice { get => _choice; set => _choice = value; }
 
+        private static ManageTicketView _instance;
+        public static ManageTicketView Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new ManageTicketView();
+                }
+                return _instance;
+            }
+        }
+
+        private List<string> MenuList = new List<string>()
+        {
+            "1. Book Ticket",
+            "2. Show Shows",
+            "3. Cancel Tickets",
+            "4. Previous Bookings",
+            "5. Account",
+            "6. Exit ",
+        };
 
         public void View()
         {
@@ -22,23 +46,20 @@ namespace CineComplex.Views
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine("\nLogin");
+                Console.WriteLine(" Manage Tickets");
                 Console.WriteLine("-------------------------------------------------");
 
-                Console.WriteLine($"Entered Login Id : {Credential.Instance.LoginId}");
-                Console.WriteLine($"Entered Password : {Credential.Instance.Password}");
 
                 Console.WriteLine();
 
                 Console.WriteLine("\nMenu : ");
                 Console.WriteLine("---------------");
 
-                Console.WriteLine("1. Enter Login Id ");
-                Console.WriteLine("2. Enter Password ");
-                Console.WriteLine("3. Login ");
-                Console.WriteLine("4. Forgot Password ");
-                Console.WriteLine("5. Exit");
-                
+                foreach (string instr in MenuList)
+                {
+                    Console.WriteLine(instr);
+                }
+
                 Console.Write("Enter Your Choice : ");
 
 
@@ -46,7 +67,7 @@ namespace CineComplex.Views
                 switch (Choice)
                 {
                     case 1:
-                        HomeViewModel.Instance.LoginPrompt();
+                        ManageTicketViewModel.Instance.BookTickets();
                         Console.Clear();
                         break;
 
@@ -56,19 +77,16 @@ namespace CineComplex.Views
                         break;
 
                     case 3:
-                        if(Services.AuthenticationService.AuthenticateUserForGivenCredential())
-                        {
-                            ManageTicketView.Instance.View();
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Authentication Failed... Press Any Key To Continue.");
-                            Console.ReadLine();
-                        }
+                        Services.AuthenticationService.AuthenticateUserForGivenCredential();
+                        break;
+
+                    case 4:
                         break;
 
                     case 5:
+                        break;
+
+                    case 6:
                         Console.Write("\nPress any key.....");
                         Console.ReadKey();
                         Environment.Exit(0);
@@ -83,3 +101,4 @@ namespace CineComplex.Views
 
     }
 }
+
