@@ -4,24 +4,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CineComplex.Interfaces;
+
 
 namespace CineComplex.ViewModels
 {
-    public class HomeVM
+    public class HomeViewModel : IViewModel
     {
-        private static HomeVM _instance;
+        private static HomeViewModel _instance;
 
-        public static HomeVM Instance
+        public static HomeViewModel Instance
         {
             get 
             { 
                 if(_instance==null)
                 {
-                    _instance = new HomeVM();
+                    _instance = new HomeViewModel();
                 }
                 return _instance; 
             }
         }
+
+        private HomeViewModel() { }
+
         public void LoginPrompt()
         {
             Console.Write("Enter LoginID : ");
