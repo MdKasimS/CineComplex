@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace CineComplex.Interfaces
 {
-    public interface IViewModel
+    public class IViewModel<T>
     {
+        private T _instance;
+
+        public T Instance
+        {
+            get
+            {
+                if(_instance == null)
+                {
+                    _instance = new T();
+                }
+                return _instance;
+            }
+        }
     }
 }
