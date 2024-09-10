@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CineComplex.Interfaces;
-using CineComplex.models;
+using CineComplex.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CineComplex.Services

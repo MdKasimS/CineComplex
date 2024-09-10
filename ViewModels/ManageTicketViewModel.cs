@@ -1,5 +1,4 @@
-﻿using CineComplex.Interfaces;
-using CineComplex.Views;
+﻿using CineComplex.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,23 +7,23 @@ using System.Threading.Tasks;
 
 namespace CineComplex.ViewModels
 {
-    public class ManageTicketViewModel : IViewModel
+    public class ManageTicketViewModel : ABaseSingleton<ManageTicketViewModel>
     {
-        private static ManageTicketViewModel _instance;
+        //private static ManageTicketViewModel _instance;
 
-        public static ManageTicketViewModel Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new ManageTicketViewModel();
-                }
-                return _instance;
-            }
-        }
+        //public static ManageTicketViewModel Instance
+        //{
+        //    get
+        //    {
+        //        if (_instance == null)
+        //        {
+        //            _instance = new ManageTicketViewModel();
+        //        }
+        //        return _instance;
+        //    }
+        //}
 
-        private ManageTicketViewModel() { }
+        public ManageTicketViewModel() { }
 
         public void BookTickets()
         {

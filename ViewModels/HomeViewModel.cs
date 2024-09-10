@@ -1,31 +1,32 @@
-﻿using CineComplex.models;
+﻿using CineComplex.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CineComplex.Interfaces;
+using CineComplex.Classes;
 
 
 namespace CineComplex.ViewModels
 {
-    public class HomeViewModel : IViewModel
+    public class HomeViewModel : ABaseSingleton<HomeViewModel>
     {
-        private static HomeViewModel _instance;
+        //private static HomeViewModel _instance;
 
-        public static HomeViewModel Instance
-        {
-            get 
-            { 
-                if(_instance==null)
-                {
-                    _instance = new HomeViewModel();
-                }
-                return _instance; 
-            }
-        }
+        //public static HomeViewModel Instance
+        //{
+        //    get 
+        //    { 
+        //        if(_instance==null)
+        //        {
+        //            _instance = new HomeViewModel();
+        //        }
+        //        return _instance; 
+        //    }
+        //}
 
-        private HomeViewModel() { }
+        public HomeViewModel() { }
 
         public void LoginPrompt()
         {

@@ -1,12 +1,13 @@
+using CineComplex.Classes;
 using CineComplex.Interfaces;
-using CineComplex.models;
+using CineComplex.Models;
 using CineComplex.ViewModels;
 using MongoDB.Driver;
 
 
 namespace CineComplex.Views
 {
-    public class HomeView : IView
+    public class HomeView : ViewBase, IView
     {
         private int _choice = 0;
         public int Choice { get => _choice; set => _choice = value; }
