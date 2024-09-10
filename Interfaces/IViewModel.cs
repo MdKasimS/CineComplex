@@ -6,20 +6,10 @@ using System.Threading.Tasks;
 
 namespace CineComplex.Interfaces
 {
-    public class IViewModel<T>
+  
+    //This is base class for all Singleton classes in application 
+    public interface IViewModel
     {
-        private T _instance;
 
-        public T Instance
-        {
-            get
-            {
-                if(_instance == null)
-                {
-                    _instance = new T();
-                }
-                return _instance;
-            }
-        }
     }
 }
