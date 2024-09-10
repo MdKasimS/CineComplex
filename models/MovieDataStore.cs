@@ -1,4 +1,4 @@
-namespace CineComplex.models
+namespace CineComplex.Models
 {
     public class MovieDataStore
     {
