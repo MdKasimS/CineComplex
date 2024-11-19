@@ -26,41 +26,41 @@ namespace CineComplex.Models
             Bookings = new Dictionary<int,Booking>();
 
 
-            FetchBookings();
-            FetchCustomers();
-            FetchLogins();
-            FetchMovies();
-            FetchShows();
-            FetchTheatres();
+            LoadBookings();
+            LoadCustomers();
+            LoadLogins();
+            LoadMovies();
+            LoadShows();
+            LoadTheatres();
         }
 
-        public void FetchMovies()
+        public void LoadMovies()
         {
             //This method must feth all movies from Movie.csv and add them to Movies collection.
             Console.WriteLine("This will fetch Movies");
         }
 
-        public void FetchTheatres()
+        public void LoadTheatres()
         {
             //This method must fetch all theatres details from the Theatres.csv file and add them to Theatres collection.
             Console.WriteLine("This will fetch Theatres");
         }
-        public void FetchCustomers()
+        public void LoadCustomers()
         {
             // This mehtod should fetch all the customer details form the Login.csv fiel and add them to customers collection.
             Console.WriteLine("This will fetch Customers");
         }
-        public void FetchLogins()
+        public void LoadLogins()
         {
             // This method should fetch all the login details form the Login.csv file and aad them to the Logins collection.
             Console.WriteLine("This will fetch Logins");
         }
-        public void FetchShows()
+        public void LoadShows()
         {
             // This method should fetch all the shows details from the Shopws.csv fiel and add them to the Shows collection.
             Console.WriteLine("This will fetch Shows");
         }
-        public void FetchBookings()
+        public void LoadBookings()
         {
             // This method should fetch all the bookings information and ad them to the Bookings Collection.
             Console.WriteLine("This will fetch Bookings");
