@@ -1,4 +1,4 @@
-namespace CineComplex.Models
+ namespace CineComplex.Models
 {
     public class Theatre
     {
