@@ -8,6 +8,6 @@ namespace CineComplex.Classes
 {
     public class ViewBase:ABaseSingleton<ViewBase>  
     {
-        
+        public abstract void View();
     }
 }
