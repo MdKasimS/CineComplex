@@ -1,29 +1,18 @@
+using Microsoft.Data.Sqlite;
+
 namespace CineComplex.Models
 {
     public class SQLInteraction
     {
-        private Dictionary<int,Movie>? _movies;
-        private Dictionary<int,Theatre>? _theatres;
-        private Dictionary<int,Customer>? _customers;
-        private Dictionary<int,Credential>? _logins;
-        private Dictionary<int,Show>? _shows;
-        private Dictionary<int,Booking>? _bookings;
-
-        public Dictionary<int,Movie>? Movies { get => _movies; set => _movies = value; }
-        public Dictionary<int,Customer>? Customers { get => _customers; set => _customers = value; }
-        public Dictionary<int,Show>? Shows { get => _shows; set => _shows = value; }
-        public Dictionary<int,Booking>? Bookings { get => _bookings; set => _bookings = value; }
-        public Dictionary<int,Theatre>? Theatres { get => _theatres; set => _theatres = value; }
-        public Dictionary<int,Credential>? Logins { get => _logins; set => _logins = value; }
-
+        
         public SQLInteraction()
         {
-            Movies = new Dictionary<int,Movie>();
-            Theatres = new Dictionary<int,Theatre>();
-            Customers = new Dictionary<int,Customer>();
-            Logins = new Dictionary<int,Credential>();
-            Shows = new Dictionary<int,Show>();
-            Bookings = new Dictionary<int,Booking>();
+            //Movies = new Dictionary<int,Movie>();
+            //Theatres = new Dictionary<int,Theatre>();
+            //Customers = new Dictionary<int,Customer>();
+            //Logins = new Dictionary<int,Credential>();
+            //Shows = new Dictionary<int,Show>();
+            //Bookings = new Dictionary<int,Booking>();
 
 
             LoadBookings();
