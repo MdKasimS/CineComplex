@@ -10,6 +10,14 @@ namespace CineComplex.Models
         private decimal _silverSeatRate;
         private DateTime _startDate;
         private DateTime _endDate;
+        private static Dictionary<int, Show>? _shows;
+
+        #region Dictionaries
+
+        public static Dictionary<int, Show>? Shows { get => _shows; set => _shows = value; }
+
+
+        #endregion
 
         public int ShowId { get => _showId; set => _showId = value; }
         public int MovieId { get => _movieId; set => _movieId = value; }

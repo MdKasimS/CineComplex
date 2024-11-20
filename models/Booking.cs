@@ -12,6 +12,13 @@ namespace CineComplex.Models
         private List<int>? _seatNumbers;
         private DateTime _bookingDate;
         private decimal _amount;
+        private Dictionary<int, Booking>? _bookings;
+
+        #region Dictionaries
+        public Dictionary<int, Booking>? Bookings { get => _bookings; set => _bookings = value; }
+
+
+        #endregion
 
         public string? Email { get => _email; set => _email = value; }
         public int ShowId { get => _showId; set => _showId = value; }

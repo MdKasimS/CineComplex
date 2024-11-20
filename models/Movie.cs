@@ -2,6 +2,8 @@ namespace CineComplex.Models
 {
     public class Movie
     {
+        private Dictionary<int, Movie>? _movies;
+
         private int _id;
         private string? movieID;
         private string movieName;
@@ -21,6 +23,11 @@ namespace CineComplex.Models
         public string Story { get => story; set => story = value; }
         public string Genre { get => genre; set => genre = value; }
         public string Language { get => language; set => language = value; }
+
+        #region Dictionaries
+        public Dictionary<int, Movie>? Movies { get => _movies; set => _movies = value; }
+
+        #endregion
 
         public Movie(string movieName, string directorName, string producerName, string genre, string language, double duration, string story)
         {

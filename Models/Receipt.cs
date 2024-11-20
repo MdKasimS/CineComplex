@@ -8,5 +8,15 @@ namespace CineComplex.Models
 {
     public class Receipt
     {
+        private static Dictionary<int, Show>? _receipts;
+
+
+
+        #region Dictionaries
+        public static Dictionary<int, Receipt>? Receipts { get => _receipts; set => _receipts = value; }
+
+
+        #endregion
+
     }
 }

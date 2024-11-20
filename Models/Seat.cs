@@ -8,5 +8,13 @@ namespace CineComplex.Models
 {
     public class Seat
     {
+        private static Dictionary<int, Show>? _seats;
+
+        #region Dictionaries
+        public static Dictionary<int, Seat>? Seats { get => _seats; set => _seats = value; }
+
+
+        #endregion
+
     }
 }

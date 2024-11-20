@@ -7,6 +7,14 @@ namespace CineComplex.Models
         private string? _type;
         private static Credential? _instance;
 
+        private static Dictionary<int, Credential>? _credentials;
+
+        #region Dictionaries
+        public static Dictionary<int, Credential>? Credentials { get => _credentials; set => _credentials = value; }
+
+
+        #endregion
+
         private Credential()
         {
         }
@@ -26,5 +34,6 @@ namespace CineComplex.Models
 
             }
         }
+
     }
 }

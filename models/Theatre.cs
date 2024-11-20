@@ -5,6 +5,13 @@
         private int id;
         private string theatreName;
         private int numberOfSeats;
+        private static Dictionary<int, Theatre>? _theatres;
+
+        #region Dictionaries
+        public static Dictionary<int, Theatre>? Theatres { get => _theatres; set => _theatres = value; }
+
+
+        #endregion
 
         public int Id { get => id; set => id = value; }
         public string TheatreName { get => theatreName; set => theatreName = value; }
