@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace CineComplex.Classes.Base
 {
-    public abstract class AViewBase<T> : ABaseSingleton<T>, IView where T : AViewBase<T>, new()
+    public abstract class AViewBase<T> : ABaseSingleton<T> where T : AViewBase<T>, new()
     {
         // Protected constructor to prevent direct instantiation.
         protected AViewBase() { }
 
-        public abstract void View();
+        //public abstract void View();
 
     }
 }

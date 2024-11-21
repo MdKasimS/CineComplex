@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CineComplex.Classes.Base
 {
-    public class AViewModelBase<T> : ABaseSingleton<T>, IViewModel where T : AViewModelBase<T>, new()
+    public class AViewModelBase<T> : ABaseSingleton<T> where T : AViewModelBase<T>, new()
     {
     }
 }

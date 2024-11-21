@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CineComplex.Classes.Base
 {
-    public class AServiceBase<T> : ABaseSingleton<T>, IService where T : AServiceBase<T>, new()
+    public class AServiceBase<T> : ABaseSingleton<T> where T : AServiceBase<T>, new()
     {
     }
 }
