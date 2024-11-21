@@ -7,13 +7,13 @@ using MongoDB.Driver;
 
 namespace CineComplex.Views
 {
-    public class HomeView : AViewBase<HomeView>
+    public class HomeView : AViewBase<HomeView>, IView
     {
         private int _choice = 0;
         public int Choice { get => _choice; set => _choice = value; }
 
 
-        public override void View()
+        public void View()
         {
 
 

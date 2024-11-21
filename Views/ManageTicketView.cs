@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 
 namespace CineComplex.Views
 {
-    public class ManageTicketView : AViewBase<ManageTicketView>
+    public class ManageTicketView : AViewBase<ManageTicketView>, IView
     {
         private int _choice = 0;
+        //public int Choice { get => _choice; set => _choice = value; }
         public int Choice { get => _choice; set => _choice = value; }
 
         private List<string> MenuList = new List<string>()
@@ -24,7 +25,7 @@ namespace CineComplex.Views
             "6. Exit ",
         };
 
-        public override void View()
+        public void View()
         {
 
 
