@@ -3,26 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CineComplex.Services
 {
-    public class AuthenticationService: IService
+    public class AuthenticationService: AServiceBase<AuthenticationService>
     {
-        private static AuthenticationService _instance;
-
-        public static AuthenticationService Instance
-        {
-            get { 
-                if(_instance == null)
-                {
-                    return new AuthenticationService();
-                }
-                return _instance; 
-                }
-        }
+       
         public AuthenticationService()
         {
             Console.WriteLine("Authenticaition Service Is On...");
