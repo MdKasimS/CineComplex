@@ -10,5 +10,7 @@ namespace CineComplex.Interfaces
     {
         public void View();
         public int Choice { get; set; }
+        public List<string> MenuList { get; set; }
+        public void LoadMenuList();
     }
 }
