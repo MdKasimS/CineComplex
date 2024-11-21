@@ -9,23 +9,10 @@ using System.Threading.Tasks;
 
 namespace CineComplex.Views
 {
-    public class ManageTicketView : ViewBase, IView
+    public class ManageTicketView : AViewBase<ManageTicketView>
     {
         private int _choice = 0;
         public int Choice { get => _choice; set => _choice = value; }
-
-        //private static ManageTicketView _instance;
-        //public static ManageTicketView Instance
-        //{
-        //    get
-        //    {
-        //        if (_instance == null)
-        //        {
-        //            _instance = new ManageTicketView();
-        //        }
-        //        return _instance;
-        //    }
-        //}
 
         private List<string> MenuList = new List<string>()
         {
@@ -37,7 +24,7 @@ namespace CineComplex.Views
             "6. Exit ",
         };
 
-        public void View()
+        public override void View()
         {
 
 
@@ -99,6 +86,7 @@ namespace CineComplex.Views
             } while (Choice > 0 || Choice < 4);
         }
 
+       
     }
 }
 
