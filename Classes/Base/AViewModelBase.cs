@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Classes
+namespace CineComplex.Classes.Base
 {
     public class AViewModelBase<T> : ABaseSingleton<T>, IViewModel where T : AViewModelBase<T>, new()
     {

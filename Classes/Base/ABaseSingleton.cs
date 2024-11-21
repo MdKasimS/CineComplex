@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Classes
+namespace CineComplex.Classes.Base
 {
     public abstract class ABaseSingleton<T> where T : class, new()
     {
@@ -12,7 +12,7 @@ namespace CineComplex.Classes
 
         // Protected constructor to prevent direct instantiation.
         protected ABaseSingleton()
-        { 
+        {
             // Initialization code if necessary
         }
 

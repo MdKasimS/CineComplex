@@ -5,15 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Classes
+namespace CineComplex.Classes.Base
 {
     public abstract class AViewBase<T> : ABaseSingleton<T>, IView where T : AViewBase<T>, new()
     {
+        // Protected constructor to prevent direct instantiation.
         protected AViewBase() { }
-
 
         public abstract void View();
 
-        //public void View();
     }
 }
