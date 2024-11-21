@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CineComplex.Interfaces;
-using CineComplex.Classes;
+using CineComplex.Classes.Base;
 
 
 namespace CineComplex.ViewModels

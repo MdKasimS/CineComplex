@@ -1,4 +1,4 @@
-﻿using CineComplex.Classes;
+﻿using CineComplex.Classes.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;

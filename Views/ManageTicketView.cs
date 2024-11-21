@@ -1,4 +1,4 @@
-﻿using CineComplex.Classes;
+﻿using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.ViewModels;
 using System;
