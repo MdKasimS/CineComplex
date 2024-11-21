@@ -8,7 +8,7 @@ namespace CineComplex.Models
 {
     public class Receipt
     {
-        private static Dictionary<int, Show>? _receipts;
+        private static Dictionary<int, Receipt>? _receipts;
 
 
 
