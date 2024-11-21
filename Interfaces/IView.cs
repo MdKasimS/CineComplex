@@ -8,5 +8,6 @@ namespace CineComplex.Interfaces
 {
     public interface IView
     {
+        public void View();
     }
 }

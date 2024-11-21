@@ -10,6 +10,12 @@ namespace CineComplex.Classes
     {
         private static readonly Lazy<T> _instance = new Lazy<T>(() => new T());
 
+        // Protected constructor to prevent direct instantiation.
+        protected ABaseSingleton()
+        { 
+            // Initialization code if necessary
+        }
+
         public static T Instance
         {
             get
