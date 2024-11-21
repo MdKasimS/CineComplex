@@ -12,18 +12,18 @@ namespace CineComplex.Views
     public class ManageTicketView : AViewBase<ManageTicketView>, IView
     {
         private int _choice = 0;
-        //public int Choice { get => _choice; set => _choice = value; }
+        private List<string> _menuList;
         public int Choice { get => _choice; set => _choice = value; }
 
-        private List<string> MenuList = new List<string>()
+        public List<string> MenuList
         {
-            "1. Book Ticket",
-            "2. Show Shows",
-            "3. Cancel Tickets",
-            "4. Previous Bookings",
-            "5. Account",
-            "6. Exit ",
-        };
+            get { return _menuList; }
+            set { _menuList = value; }
+        }
+
+        public ManageTicketView()
+        {
+        }
 
         public void View()
         {
@@ -87,7 +87,20 @@ namespace CineComplex.Views
             } while (Choice > 0 || Choice < 4);
         }
 
-       
+        
+
+        public void LoadMenuList()
+        {
+            _menuList = new List<string>() 
+            { 
+                "1. Book Ticket", 
+                "2. Show Shows", 
+                "3. Cancel Tickets", 
+                "4. Previous Bookings", 
+                "5. Account", 
+                "6. Exit ", 
+            };
+        }
     }
 }
 

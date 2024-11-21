@@ -4,18 +4,23 @@ using CineComplex.Models;
 using CineComplex.ViewModels;
 using MongoDB.Driver;
 
-
 namespace CineComplex.Views
 {
     public class HomeView : AViewBase<HomeView>, IView
     {
         private int _choice = 0;
+
         public int Choice { get => _choice; set => _choice = value; }
 
-
+       
+        public List<string> MenuList
+        {
+            get;
+            set;
+        }
         public void View()
         {
-
+            HomeView.Instance.LoadMenuList();
 
             do//main loop
             {
@@ -34,12 +39,11 @@ namespace CineComplex.Views
                 Console.WriteLine("\nMenu : ");
                 Console.WriteLine("---------------");
 
-                Console.WriteLine("1. Enter Login Id ");
-                Console.WriteLine("2. Enter Password ");
-                Console.WriteLine("3. Login ");
-                Console.WriteLine("4. Forgot Password ");
-                Console.WriteLine("5. Exit");
-                
+                foreach (string instr in HomeView.Instance.MenuList)
+                {
+                    Console.WriteLine(instr);
+                }
+
                 Console.Write("Enter Your Choice : ");
 
 
@@ -57,7 +61,7 @@ namespace CineComplex.Views
                         break;
 
                     case 3:
-                        if(Services.AuthenticationService.AuthenticateUserForGivenCredential())
+                        if (Services.AuthenticationService.AuthenticateUserForGivenCredential())
                         {
                             ManageTicketView.Instance.View();
                         }
@@ -80,6 +84,17 @@ namespace CineComplex.Views
                         break;
                 }
             } while (Choice > 0 || Choice < 4);
+        }
+
+        public void LoadMenuList()
+        {
+            HomeView.Instance.MenuList = new List<string>() {
+                "1. Enter Login Id ",
+                "2. Enter Password ",
+                "3. Login ",
+                "4. Forgot Password ",
+                "5. Exit",
+            };
         }
 
     }
