@@ -4,7 +4,7 @@ using CineComplex.ViewModels;
 
 namespace CineComplex.Views
 {
-    public class ManageTicketView : AViewBase<ManageTicketView>, IView
+    public class ManageTicketsView : AViewBase<ManageTicketsView>, IView
     {
         private int _choice = 0;
         public int Choice { get => _choice; set => _choice = value; }
@@ -17,7 +17,7 @@ namespace CineComplex.Views
 
         public void View()
         {
-            ManageTicketView.Instance.LoadMenuList();
+            ManageTicketsView.Instance.LoadMenuList();
 
             do//main loop
             {
@@ -34,7 +34,7 @@ namespace CineComplex.Views
                 Console.WriteLine("\nMenu : ");
                 Console.WriteLine("---------------");
 
-                foreach (string instr in ManageTicketView.Instance.MenuList)
+                foreach (string instr in ManageTicketsView.Instance.MenuList)
                 {
                     Console.WriteLine(instr);
                 }
@@ -81,7 +81,7 @@ namespace CineComplex.Views
 
         public void LoadMenuList()
         {
-            ManageTicketView.Instance.MenuList = new List<string>() 
+            ManageTicketsView.Instance.MenuList = new List<string>() 
             { 
                 "1. Book Ticket", 
                 "2. Show Shows", 

@@ -61,7 +61,7 @@ namespace CineComplex.Views
                     case 3:
                         if (Services.AuthenticationService.AuthenticateUserForGivenCredential())
                         {
-                            ManageTicketView.Instance.View();
+                            ManageTicketsView.Instance.View();
                         }
                         else
                         {
