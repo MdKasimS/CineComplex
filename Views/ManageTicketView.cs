@@ -12,22 +12,17 @@ namespace CineComplex.Views
     public class ManageTicketView : AViewBase<ManageTicketView>, IView
     {
         private int _choice = 0;
-        private List<string> _menuList;
         public int Choice { get => _choice; set => _choice = value; }
 
         public List<string> MenuList
         {
-            get { return _menuList; }
-            set { _menuList = value; }
-        }
-
-        public ManageTicketView()
-        {
+            get;
+            set;
         }
 
         public void View()
         {
-
+            ManageTicketView.Instance.LoadMenuList();
 
             do//main loop
             {
@@ -44,7 +39,7 @@ namespace CineComplex.Views
                 Console.WriteLine("\nMenu : ");
                 Console.WriteLine("---------------");
 
-                foreach (string instr in MenuList)
+                foreach (string instr in HomeView.Instance.MenuList)
                 {
                     Console.WriteLine(instr);
                 }
@@ -91,7 +86,7 @@ namespace CineComplex.Views
 
         public void LoadMenuList()
         {
-            _menuList = new List<string>() 
+            ManageTicketView.Instance.MenuList = new List<string>() 
             { 
                 "1. Book Ticket", 
                 "2. Show Shows", 

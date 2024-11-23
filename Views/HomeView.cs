@@ -11,7 +11,6 @@ namespace CineComplex.Views
         private int _choice = 0;
 
         public int Choice { get => _choice; set => _choice = value; }
-
        
         public List<string> MenuList
         {
