@@ -2,6 +2,9 @@
 using MongoDB.Bson;
 using CineComplex.Views;
 using System.Runtime.InteropServices;
+using System.Xml.Serialization;
+using CineComplex.Classes.Base;
+using CineComplex.Interfaces;
 
 
 internal class Program
@@ -20,9 +23,12 @@ internal class Program
     const int SC_MAXIMIZE = 0xF030;
     const int SC_SIZE = 0xF000;
 
+
     private static void Main(string[] args)
     {
-        
+        int choice;
+
+
         Console.WindowHeight = 25;
         Console.WindowWidth = 80;
 
@@ -36,9 +42,55 @@ internal class Program
         DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_SIZE, MF_BYCOMMAND);
 
 
-        HomeView app = new HomeView();
-        //ManageTicketView app = new ManageTicketView();
+
+        int.TryParse(Console.ReadLine(), out choice);
+
+        IView app;
+        do
+        {
+            Console.Clear();
+            Console.Write("Enter Your Choice : ");
+            switch (choice)
+            {
+
+                case 1:
+                    Console.WriteLine("HomeView View");
+                    app = new HomeView();
+                    break;
+
+                case 2:
+                    Console.WriteLine("ManageTicketView View");
+                    app = new ManageTicketsView();
+                    break;
+
+                case 3:
+                    Console.WriteLine("HomeView View");
+                    break;
+
+                case 4:
+                    Console.WriteLine("HomeView View");
+                    break;
+
+                case 5:
+                    Console.WriteLine("HomeView View");
+                    break;
+
+                case 6:
+                    break;
+
+                case 7:
+                    break;
+
+                default:
+                    Console.WriteLine("Ok");
+                    break;
+
+            }
+        } while (choice != 9);
+
         app.View();
 
     }
+
+
 }
