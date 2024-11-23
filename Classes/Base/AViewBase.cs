@@ -7,7 +7,5 @@ namespace CineComplex.Classes.Base
         // Protected constructor to prevent direct instantiation.
         protected AViewBase() { }
 
-        //public abstract void View();
-
     }
 }
