@@ -12,20 +12,7 @@ namespace CineComplex.ViewModels
 {
     public class HomeViewModel : ABaseSingleton<HomeViewModel>
     {
-        //private static HomeViewModel _instance;
-
-        //public static HomeViewModel Instance
-        //{
-        //    get 
-        //    { 
-        //        if(_instance==null)
-        //        {
-        //            _instance = new HomeViewModel();
-        //        }
-        //        return _instance; 
-        //    }
-        //}
-
+       
         public HomeViewModel() { }
 
         public void LoginPrompt()
