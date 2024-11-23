@@ -27,9 +27,14 @@ internal class Program
     private static void Main(string[] args)
     {
         int choice;
+        public List<string> MenuList = new List<string>()
+        {
+            "1.Home View",
+            "9. Exit"
+        };
 
 
-        Console.WindowHeight = 25;
+    Console.WindowHeight = 25;
         Console.WindowWidth = 80;
 
 
@@ -43,52 +48,58 @@ internal class Program
 
 
 
-        int.TryParse(Console.ReadLine(), out choice);
 
-        IView app;
         do
         {
-            Console.Clear();
-            Console.Write("Enter Your Choice : ");
-            switch (choice)
+            foreach (string instr in MenuList)
             {
-
-                case 1:
-                    Console.WriteLine("HomeView View");
-                    app = new HomeView();
-                    break;
-
-                case 2:
-                    Console.WriteLine("ManageTicketView View");
-                    app = new ManageTicketsView();
-                    break;
-
-                case 3:
-                    Console.WriteLine("HomeView View");
-                    break;
-
-                case 4:
-                    Console.WriteLine("HomeView View");
-                    break;
-
-                case 5:
-                    Console.WriteLine("HomeView View");
-                    break;
-
-                case 6:
-                    break;
-
-                case 7:
-                    break;
-
-                default:
-                    Console.WriteLine("Ok");
-                    break;
-
+                Console.WriteLine(instr);
             }
-        } while (choice != 9);
 
-        app.View();
+int.TryParse(Console.ReadLine(), out choice);
+
+IView app = new HomeView();
+Console.Clear();
+Console.Write("Enter Your Choice : ");
+switch (choice)
+{
+
+    case 1:
+        Console.WriteLine("HomeView View");
+        //app = new HomeView();
+        break;
+
+    case 2:
+        Console.WriteLine("ManageTicketView View");
+        app = new ManageTicketsView();
+        break;
+
+    case 3:
+        Console.WriteLine("HomeView View");
+        break;
+
+    case 4:
+        Console.WriteLine("HomeView View");
+        break;
+
+    case 5:
+        Console.WriteLine("HomeView View");
+        break;
+
+    case 6:
+        break;
+
+    case 7:
+        break;
+
+    default:
+        Console.WriteLine("Ok");
+        break;
+
+}
+app.View();
+        } while (choice != 9) ;
+
 
     }
 
