@@ -21,5 +21,10 @@ namespace CineComplex.ViewModels
             Credential.Instance.Password = Console.ReadLine();
             Console.Clear();
         }
+
+        public void ForgotPasswordPrompt()
+        {
+
+        }
     }
 }
