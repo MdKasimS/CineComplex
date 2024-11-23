@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CineComplex.Classes.Base;
-using CineComplex.Interfaces;
 using CineComplex.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace CineComplex.Services
 {

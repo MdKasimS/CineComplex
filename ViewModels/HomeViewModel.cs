@@ -1,16 +1,10 @@
 ﻿using CineComplex.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CineComplex.Interfaces;
 using CineComplex.Classes.Base;
 
 
 namespace CineComplex.ViewModels
 {
-    public class HomeViewModel : ABaseSingleton<HomeViewModel>
+    public class HomeViewModel : AViewModelBase<HomeViewModel>
     {
        
         public HomeViewModel() { }
