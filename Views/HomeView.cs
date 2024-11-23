@@ -2,7 +2,6 @@ using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
 using CineComplex.ViewModels;
-using MongoDB.Driver;
 
 namespace CineComplex.Views
 {
