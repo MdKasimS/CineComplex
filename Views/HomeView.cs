@@ -71,6 +71,11 @@ namespace CineComplex.Views
                         }
                         break;
 
+                    case 4:
+                        HomeViewModel.Instance.ForgotPasswordPrompt();
+                        Console.Clear();
+                        break;
+
                     case 5:
                         Console.Write("\nPress any key.....");
                         Console.ReadKey();
