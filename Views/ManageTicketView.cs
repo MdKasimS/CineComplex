@@ -39,7 +39,7 @@ namespace CineComplex.Views
                 Console.WriteLine("\nMenu : ");
                 Console.WriteLine("---------------");
 
-                foreach (string instr in HomeView.Instance.MenuList)
+                foreach (string instr in ManageTicketView.Instance.MenuList)
                 {
                     Console.WriteLine(instr);
                 }
