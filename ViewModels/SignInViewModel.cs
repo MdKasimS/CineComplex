@@ -4,10 +4,10 @@ using CineComplex.Classes.Base;
 
 namespace CineComplex.ViewModels
 {
-    public class HomeViewModel : AViewModelBase<HomeViewModel>
+    public class SignInViewModel : AViewModelBase<SignInViewModel>
     {
        
-        public HomeViewModel() { }
+        public SignInViewModel() { }
 
         public void LoginPrompt()
         {

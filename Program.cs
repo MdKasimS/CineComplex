@@ -67,7 +67,7 @@ namespace CineComplex
                 Console.Write("Enter Your Choice : ");
                 int.TryParse(Console.ReadLine(), out choice);
 
-                IView app = HomeView.Instance;
+                IView app = SignInView.Instance;
 
 
                 switch (choice)

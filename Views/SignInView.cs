@@ -5,7 +5,7 @@ using CineComplex.ViewModels;
 
 namespace CineComplex.Views
 {
-    public class HomeView : AViewBase<HomeView>, IView
+    public class SignInView : AViewBase<SignInView>, IView
     {
         private int _choice = 0;
 
@@ -18,7 +18,7 @@ namespace CineComplex.Views
         }
         public void View()
         {
-            HomeView.Instance.LoadMenuList();
+            SignInView.Instance.LoadMenuList();
 
             do//main loop
             {
@@ -37,7 +37,7 @@ namespace CineComplex.Views
                 Console.WriteLine("\nMenu : ");
                 Console.WriteLine("---------------");
 
-                foreach (string instr in HomeView.Instance.MenuList)
+                foreach (string instr in SignInView.Instance.MenuList)
                 {
                     Console.WriteLine(instr);
                 }
@@ -49,12 +49,12 @@ namespace CineComplex.Views
                 switch (Choice)
                 {
                     case 1:
-                        HomeViewModel.Instance.LoginPrompt();
+                        SignInViewModel.Instance.LoginPrompt();
                         Console.Clear();
                         break;
 
                     case 2:
-                        HomeViewModel.Instance.PasswordPrompt();
+                        SignInViewModel.Instance.PasswordPrompt();
                         Console.Clear();
                         break;
 
@@ -72,7 +72,7 @@ namespace CineComplex.Views
                         break;
 
                     case 4:
-                        HomeViewModel.Instance.ForgotPasswordPrompt();
+                        SignInViewModel.Instance.ForgotPasswordPrompt();
                         Console.Clear();
                         break;
 
@@ -90,12 +90,13 @@ namespace CineComplex.Views
 
         public void LoadMenuList()
         {
-            HomeView.Instance.MenuList = new List<string>() {
+            SignInView.Instance.MenuList = new List<string>() {
                 "1. Enter Login Id ",
                 "2. Enter Password ",
                 "3. Login ",
-                "4. Forgot Password ",
-                "5. Exit",
+                "4. Sign Up ",
+                "5. Forgot Password ",
+                "6. Exit",
             };
         }
 
