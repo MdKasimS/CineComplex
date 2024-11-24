@@ -50,7 +50,6 @@ namespace CineComplex.Views
                         break;
 
                     case 2:
-                        HomeViewModel.Instance.PasswordPrompt();
                         Console.Clear();
                         break;
 
