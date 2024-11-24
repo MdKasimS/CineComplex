@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CineComplex.Views.FormViews
 {
-    public class RegistrationView : AViewBase<RegistrationView>, IView
+    public class SignUpFormView : AViewBase<SignUpFormView>, IView
     {
         public int Choice { get; set; }
         public List<string> MenuList { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -22,8 +22,9 @@ namespace CineComplex.Views.FormViews
                 "2. Enter Email",
                 "3. Enter Contact",
                 "4. Enter Password",
-                "5. Create User",
-                "6. Exit"
+                "5. Sign Up",
+                "6. Reset",
+                "7. Exit"
             };
         }
 
