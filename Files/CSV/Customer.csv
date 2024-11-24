@@ -1,0 +1,794 @@
+CustomerID,CustomerName,City
+12520,Claire Gute,Henderson
+13045,Darrin Van Huff,Los Angeles
+20335,Sean O'Donnell,Fort Lauderdale
+11710,Brosina Hoffman,Los Angeles
+10480,Andrew Allen,Concord
+15070,Irene Maddox,Seattle
+14815,Harold Pawlan,Fort Worth
+19075,Pete Kriz,Madison
+10270,Alejandro Grove,West Jordan
+21925,Zuschuss Donatelli,San Francisco
+16585,Ken Black,Fremont
+20065,Sandra Flanagan,Philadelphia
+13870,Emily Burns,Orem
+13945,Eric Hoffmann,Los Angeles
+21520,Tracy Blumstein,Philadelphia
+17560,Matt Abelman,Houston
+14485,Gene Hale,Richardson
+20710,Steve Nguyen,Houston
+16930,Linda Cazamias,Naperville
+19885,Ruben Ausman,Los Angeles
+14080,Erin Smith,Melbourne
+18715,Odella Nelson,Eagan
+18865,Patrick O'Donnell,Westland
+16900,Lena Hernandez,Dover
+13000,Darren Powers,New Albany
+15265,Janet Molinari,New York City
+21055,Ted Butterfield,Troy
+16720,Kunst Miller,Los Angeles
+18970,Paul Stevenson,Chicago
+11590,Brendan Sweed,Gilbert
+16270,Karen Daniels,Springfield
+14980,Henry MacAllister,New York City
+15745,Joel Eaton,Memphis
+16600,Ken Brennan,Houston
+20770,Stewart Carmichael,Decatur
+13690,Duane Noonan,San Francisco
+16105,Julie Creighton,Durham
+12400,Christopher Schild,Chicago
+18895,Paul Gonzalez,Rochester
+14455,Gary Mitchum,Houston
+15685,Jim Sink,Los Angeles
+16315,Karl Braun,Minneapolis
+19705,Roger Barcio,Portland
+18775,Parhena Norris,New York City
+16345,Katherine Ducich,San Francisco
+13855,Elpida Rittenbach,Saint Paul
+19465,Rick Bensley,Chicago
+14470,Gary Zandusky,Rochester
+16870,Lena Cacioppo,Aurora
+15250,Janet Martin,Charlotte
+19060,Pete Armstrong,Orland Park
+12805,Cynthia Voltz,New York City
+12565,Clay Ludtke,Urbandale
+19960,Ryan Crowe,Columbus
+13090,Dave Kipp,Seattle
+14650,Greg Guthrie,Bristol
+20725,Steven Cartwright,Wilmington
+10180,Alan Dominguez,Houston
+19165,Philip Fox,Bloomington
+21610,Troy Staebel,Phoenix
+16975,Lindsay Shagiari,Los Angeles
+13585,Dorothy Wardle,Columbus
+16885,Lena Creighton,Roseville
+15895,Jonathan Doherty,Philadelphia
+19975,Sally Hughsby,San Francisco
+20080,Sandra Glassco,Independence
+14920,Helen Andreada,Pasadena
+17680,Maureen Gastineau,Newark
+16165,Justin Ellison,Franklin
+21025,Tamara Willingham,Scottsdale
+20650,Stephanie Phelps,San Jose
+18490,Neil Knudson,Seattle
+13060,Dave Brooks,Seattle
+18670,Nora Paige,Edmond
+21070,Ted Trevino,Los Angeles
+13960,Eric Murdock,Philadelphia
+19900,Ruben Dartt,Carlsbad
+17740,Max Jones,Seattle
+11140,Becky Martin,San Antonio
+12130,Chad Sievert,Los Angeles
+15400,Jennifer Braxton,Chicago
+20500,Shirley Jackson,Houston
+15640,Jim Kriz,New York City
+13150,David Kendrick,Decatur
+19675,Robert Marley,Monroe
+19990,Sally Knutson,Fairfield
+14290,Frank Merwin,Los Angeles
+10360,Alice McCarthy,Grand Prairie
+17470,Mark Packer,New York City
+17515,Mary Zewe,Redlands
+12025,Cassandra Brandow,Hamilton
+21685,Valerie Mitchum,Westfield
+14365,Fred Hopkins,Philadelphia
+17305,Maria Bertelson,Akron
+11755,Bruce Stewart,Denver
+17140,Logan Currie,Dallas
+14890,Heather Kirkland,Franklin
+16810,Laurel Elliston,Whittier
+15985,Joseph Holt,Saginaw
+17980,Michael Stewart,Dallas
+21775,Victoria Wilson,Medina
+15910,Jonathan Howell,Los Angeles
+15925,Joni Blumstein,Dublin
+13180,David Smith,Detroit
+21670,Valerie Dominguez,Columbia
+14035,Erin Ashbrook,Charlotte
+13120,David Bremer,Santa Clara
+16645,Ken Lonsdale,Chicago
+13480,Dianna Wilson,Lakeville
+17155,Logan Haushalter,San Francisco
+16540,Kelly Collister,San Diego
+13315,Delfina Latchford,New York City
+12880,Dan Reichenbach,Chicago
+12670,Craig Carreira,New York City
+13600,Dorris liebe,Pasadena
+20290,Sean Braxton,Houston
+19825,Roy Collins,Chicago
+10210,Alan Hwang,Brentwood
+12535,Claudia Bergmann,Chapel Hill
+12310,Christine Abelman,Cincinnati
+16690,Kristen Hastings,San Francisco
+10990,Barry Blumstein,Inglewood
+10495,Andrew Gjertsen,Philadelphia
+15280,Jas O'Carroll,Los Angeles
+10195,Alan Haines,Tamarac
+18565,Nick Zandusky,Columbus
+16555,Kelly Lampkin,Colorado Springs
+10225,Alan Schoenberger,New York City
+12625,Corey Roper,Lakewood
+20395,Shahid Hopkins,Arlington
+11185,Ben Peterman,Arvada
+21205,Thomas Seio,Hackensack
+10525,Andy Gerbode,Saint Petersburg
+20860,Sung Pak,Philadelphia
+18445,Nathan Mautz,New York City
+14230,Frank Atkinson,Long Beach
+14620,Grace Kelly,Hesperia
+13510,Don Jones,Murfreesboro
+18850,Patrick O'Brill,Philadelphia
+15850,John Lucas,Philadelphia
+13615,Doug Bickford,Los Angeles
+10420,Alyssa Crouse,San Francisco
+12550,Clay Cheatham,San Francisco
+20995,Tamara Dahlen,Lowell
+10060,Adam Bellavance,New York City
+15505,Jeremy Lonsdale,New York City
+21745,Victoria Brennan,Columbus
+16435,Katrina Willman,New York City
+16060,Julia Dunbar,San Francisco
+17905,Michael Kennedy,Manchester
+14755,Guy Thornton,Harlingen
+10900,Arthur Gainer,Tucson
+18280,Muhammed MacIntyre,Quincy
+10405,Allen Rosenblatt,Franklin
+19915,Russell Applegate,Houston
+10285,Alejandro Savely,San Francisco
+16780,Laura Armstrong,Taylor
+13435,Denny Ordway,Pembroke Pines
+13225,Dean Katz,Philadelphia
+18430,Nathan Gelder,Cincinnati
+18190,Mike Vittorini,New York City
+15115,Jack Garza,Des Moines
+11095,Bart Pistole,Peoria
+21730,Victor Preis,Las Vegas
+20140,Saphhira Shifley,Warwick
+10675,Anna Gayman,Houston
+17185,Luke Foster,Miami
+19840,Roy Französisch,New York City
+16510,Keith Herrera,San Francisco
+16675,Kimberly Carter,Seattle
+12010,Caroline Jumper,Huntington Beach
+19150,Philip Brown,Los Angeles
+17965,Michael Paige,Lawrence
+18385,Natalie Fritzler,Jackson
+20485,Shirley Daniels,New Rochelle
+16630,Ken Heidel,San Antonio
+19795,Ross Baird,Gastonia
+18160,Mike Kennedy,Jacksonville
+19180,Philisse Overcash,Chicago
+11545,Brenda Bowman,Houston
+21595,Troy Blackwell,Columbus
+19360,Raymond Buch,Auburn
+13705,Ed Braxton,Akron
+20095,Sanjit Chand,Concord
+21040,Tanja Norvell,Phoenix
+15940,Joni Sundaresam,Park Ridge
+17785,Maya Herman,Lindenhurst
+15520,Jeremy Pistek,San Francisco
+15475,Jeremy Ellison,Troy
+15805,John Grady,New York City
+21865,Xylona Preis,San Diego
+14065,Erin Mull,New York City
+18070,Michelle Tran,Los Angeles
+20830,Sue Ann Reed,Chicago
+11905,Carl Weiss,Huntsville
+10960,Astrea Jones,Rochester
+20590,Sonia Sunley,Seattle
+19780,Rose O'Brian,Memphis
+17350,Maribeth Dona,Fayetteville
+17380,Maribeth Yedwab,Parker
+12385,Christopher Martinez,Atlanta
+17245,Lynn Smith,Gladstone
+11515,Bradley Nguyen,Los Angeles
+13210,Dean Braden,Houston
+17605,Matt Connell,Detroit
+11605,Brian Dahlen,Lawrence
+18790,Patricia Hirasaki,Lakeland
+18145,Mike Gockenbach,Philadelphia
+16240,Karen Bern,Los Angeles
+15340,Jasper Cacioppo,Los Angeles
+19615,Rob Lucas,Montgomery
+10375,Allen Armold,Mesa
+13915,Emily Phan,Chicago
+12985,Darren Koutras,Henderson
+11500,Bradley Drucker,Green Bay
+17065,Liz MacKendrick,Springfield
+10135,Adrian Shami,New York City
+11320,Bill Donatelli,San Francisco
+14710,Greg Tran,Houston
+10945,Ashley Jarboe,Wilmington
+18730,Olvera Toch,Los Angeles
+17080,Liz Pelletier,San Francisco
+12775,Cynthia Arntzen,Tampa
+15490,Jeremy Farry,Seattle
+14320,Frank Preis,Los Angeles
+13840,Ellis Ballard,Seattle
+15415,Jennifer Ferguson,New York City
+20200,Sarah Foster,Marysville
+21640,Trudy Glocke,Long Beach
+11950,Carlos Soltero,Chicago
+12145,Charles Crestani,Los Angeles
+13465,Dianna Vittorini,Denver
+11725,Bruce Degenhardt,Richmond
+21910,Zuschuss Carroll,Salem
+17830,Melanie Seite,Laredo
+16915,Lena Radford,San Diego
+21130,Theone Pippenger,Philadelphia
+12205,Chloris Kastensmidt,Philadelphia
+10240,Alan Shonely,Tampa
+10510,Andrew Roberts,Philadelphia
+18655,Nona Balk,Dallas
+14590,Giulietta Dortch,Philadelphia
+12595,Clytie Kelty,Grove City
+18355,Nat Gilpin,New York City
+12265,Christina Anderson,Chicago
+20965,Sylvia Foulston,Dearborn
+17800,Meg O'Connel,New York City
+10735,Annie Thurman,Seattle
+14380,Fred McMath,Aurora
+13420,Denny Joy,Warner Robins
+17725,Max Engle,Aurora
+16150,Justin Deggeller,Minneapolis
+15835,John Lee,Mission Viejo
+20305,Sean Christensen,Rochester Hills
+12430,Chuck Clark,Columbus
+10825,Anthony Rawles,Vancouver
+20740,Steven Roelle,New York City
+12730,Craig Reiter,Columbus
+14125,Eugene Hildebrand,Aurora
+20545,Sibella Parks,New York City
+21235,Tiffany House,Dallas
+19390,Resi Pölking,Cleveland
+19570,Rob Beeghly,Columbus
+11980,Carol Darley,Tyler
+13630,Doug Jacobs,New York City
+14635,Grant Thornton,Burlington
+17845,Michael Chen,Jackson
+19285,Ralph Arnett,New York City
+18325,Naresj Patel,Waynesboro
+10165,Alan Barnes,Los Angeles
+15550,Jesus Ocampo,Chester
+15370,Jay Kimmel,Long Beach
+11470,Brad Norvell,Cary
+13165,David Philippe,New York City
+21550,Tracy Hopkins,New York City
+10915,Arthur Prichep,Palm Coast
+19765,Roland Schwarz,Mount Vernon
+20365,Seth Vernon,Dover
+12325,Christine Kargatis,Orem
+19810,Ross DeVincentis,Los Angeles
+17545,Mathew Reese,Philadelphia
+20695,Steve Chapman,Hialeah
+15355,Jay Fein,Austin
+13900,Emily Grady,Oceanside
+13030,Darrin Sayre,Seattle
+19195,Phillina Ober,Naperville
+20875,Sung Shariari,Dallas
+19105,Peter Bühler,Evanston
+19735,Roland Fjeld,Trenton
+21895,Yoseph Carroll,San Francisco
+13285,Debra Catini,Cottage Grove
+12340,Christine Phan,New York City
+11020,Barry Französisch,Green Bay
+17020,Lisa Hazard,Columbus
+12250,Chris Selesnick,Bossier City
+10795,Anthony Johnson,Saint Petersburg
+11245,Benjamin Venier,Des Moines
+12865,Dan Lawera,Cincinnati
+11785,Bryan Mills,Columbus
+17110,Liz Thompson,Lancaster
+15730,Joe Kamberova,Asheville
+14020,Erica Smith,San Francisco
+19495,Rick Hansen,Rochester
+11920,Carlos Daly,Lake Elsinore
+14935,Helen Wasserman,San Diego
+18130,Mike Caudle,Monroe
+14440,Gary McGarr,San Francisco
+19015,Pauline Johnson,Santa Ana
+11110,Bart Watters,Milwaukee
+21325,Toby Ritter,Belleville
+18820,Patrick Gardner,San Francisco
+15175,James Lanier,Columbia
+11650,Brian Moss,New York City
+14095,Eudokia Martin,Los Angeles
+10885,Art Foster,Louisville
+14725,Guy Armstrong,Lorain
+12760,Cyma Kinney,Linden
+13105,Dave Poirier,Salinas
+11260,Berenike Kampe,New York City
+20125,Sanjit Jacobs,New Brunswick
+12445,Chuck Magee,San Francisco
+10780,Anthony Jacobs,Springfield
+16945,Linda Southworth,Philadelphia
+14740,Guy Phonely,Lancaster
+18910,Paul Knutson,Philadelphia
+20005,Sally Matthias,New York City
+10765,Anthony Garverick,Philadelphia
+19135,Peter McVee,Detroit
+16840,Lauren Leatherbury,Rochester
+15595,Jill Stevenson,Los Angeles
+13735,Ed Ludwig,Columbia
+18745,Pamela Coakley,San Francisco
+15040,Hunter Lopez,Houston
+17365,Maribeth Schnelling,Detroit
+14530,George Bell,Auburn
+16210,Justin Ritter,Springfield
+11335,Bill Eplett,Jackson
+20050,Sample Company A,Norwich
+19630,Rob Williams,Dallas
+20110,Sanjit Engle,New York City
+10075,Adam Hart,New York City
+15535,Jessica Myrick,Philadelphia
+15760,Joel Jenkins,Springfield
+19300,Ralph Kennedy,Philadelphia
+12040,Catherine Glotzbach,Philadelphia
+19270,Rachel Payne,Riverside
+16255,Karen Carlisle,San Francisco
+16360,Katherine Hughes,Philadelphia
+14665,Greg Hansen,Round Rock
+20275,Scott Williamson,Jackson
+15970,Joseph Airdo,Phoenix
+12925,Daniel Lacy,Oceanside
+16990,Lindsay Williams,San Francisco
+21190,Thomas Brumley,Fayetteville
+11800,Bryan Spruell,New York City
+19690,Robert Waldorf,Wilmington
+21580,Tracy Zic,Louisville
+10630,Ann Steele,Pasadena
+21340,Toby Swindell,Houston
+20155,Sara Luxemburg,Jacksonville
+18235,Mitch Willingham,Virginia Beach
+19585,Rob Dowd,Henderson
+19945,Ryan Akin,Murrieta
+17815,Meg Tillman,Scottsdale
+21790,Vivek Gonzalez,San Diego
+15880,John Stevenson,Seattle
+16225,Kalyca Meade,New York City
+14770,Hallie Redmond,Los Angeles
+13255,Deanra Eno,Springfield
+10390,Allen Goldenen,Cincinnati
+15445,Jennifer Jackson,Los Angeles
+15430,Jennifer Halladay,Burlington
+19660,Robert Dilbeck,Saint Peters
+17500,Mary O'Rourke,New York City
+18640,Noel Staavos,Chicago
+13300,Deirdre Greer,Philadelphia
+18595,Nicole Fjeld,New York City
+17650,Matthew Grinstein,Philadelphia
+21160,Theresa Swint,Toledo
+11620,Brian DeCherney,San Francisco
+12160,Charles McCrossin,Brownsville
+20560,Skye Norling,Los Angeles
+14005,Erica Hernandez,Denver
+14305,Frank Olsen,New York City
+17710,Maurice Satty,Mesa
+12100,Chad Cunningham,Columbus
+13540,Don Weiss,Seattle
+11395,Bill Tyler,Detroit
+12745,Craig Yedwab,Oakland
+11485,Brad Thomas,Clinton
+19045,Penelope Sewall,Charlotte
+18985,Paul Van Hugh,San Francisco
+18520,Neoma Murray,Riverside
+13495,Dionis Lloyd,San Francisco
+12355,Christine Sundaresam,Roswell
+14275,Frank Hawley,La Porte
+18340,Nat Carroll,Lansing
+10315,Alex Avila,Minneapolis
+16765,Larry Tron,Escondido
+10720,Anne Pryor,New York City
+18940,Paul MacIntyre,Jackson
+10435,Alyssa Tate,Los Angeles
+12055,Cathy Armstrong,Houston
+14830,Harold Ryan,Seattle
+11530,Bradley Talbott,Los Angeles
+16750,Larry Hughes,Charlotte
+20755,Steven Ward,New York City
+20620,Stefania Perrino,Philadelphia
+11170,Ben Ferrer,Los Angeles
+16480,Kean Thornton,Buffalo
+11695,Brooke Gillingham,Cincinnati
+14680,Greg Matthias,Seattle
+14155,Eva Jacobs,Gulfport
+18700,Nora Preis,Fresno
+18115,Mick Hernandez,Chester
+15700,Jocasta Rupert,Jacksonville
+20950,Suzanne McNair,Greenville
+12220,Chris Cortes,La Porte
+19225,Phillip Flathmann,San Francisco
+12850,Dan Campbell,Florence
+11770,Bryan Davis,Houston
+14500,Gene McClure,Providence
+21355,Todd Boyes,New York City
+16180,Justin Hirsh,Pueblo
+13975,Erica Bern,Fairfield
+19255,Quincy Jones,Saint Paul
+21535,Tracy Collins,Arlington
+12460,Chuck Sachs,Columbus
+14965,Henry Goldwyn,Los Angeles
+16825,Laurel Workman,Deltona
+17575,Matt Collins,Cincinnati
+17095,Liz Preis,Murray
+14170,Evan Bailliet,Wilmington
+14545,George Zrebassa,Lawrence
+12085,Cathy Prescott,Norwich
+14260,Frank Gastineau,San Francisco
+17005,Lisa DeCherney,San Francisco
+10255,Alejandro Ballentine,Lorain
+17935,Michael Nguyen,Dallas
+15670,Jim Radford,Middletown
+15190,Jamie Frazer,Los Angeles
+12115,Chad McGuire,New York City
+10045,Aaron Smayling,Jacksonville
+11290,Beth Paige,Evanston
+18370,Natalie DeCherney,Louisville
+16735,Larry Blacks,Fort Worth
+16465,Kean Takahito,Los Angeles
+14860,Harry Marie,Philadelphia
+10600,Ann Blume,Tucson
+20035,Sam Zeldin,Pico Rivera
+17890,Michael Granlund,Clinton
+16120,Julie Kriz,Aurora
+18955,Paul Prost,Smyrna
+21880,Yana Sorensen,Burlington
+16375,Katherine Murray,Salem
+10105,Adrian Barton,Phoenix
+14905,Helen Abelman,New York City
+11305,Beth Thompson,Costa Mesa
+20815,Stuart Van,Houston
+19540,Rick Wilson,Mesa
+12835,Damala Kotsonis,Salinas
+20530,Shui Tom,Parma
+17920,Michael Moore,San Francisco
+19030,Pauline Webber,Richmond
+20440,Shaun Chance,Aurora
+21085,Thais Sissman,Phoenix
+17425,Mark Cousins,Mobile
+17320,Maria Etezadi,Columbus
+18610,Nicole Hansen,Irving
+18085,Mick Brown,Vineland
+16495,Keith Dawkins,New York City
+16390,Katherine Nockton,Los Angeles
+18685,Nora Pelletier,Niagara Falls
+12505,Cindy Stewart,Thomasville
+17770,Maxwell Schwartz,New York City
+12655,Corinna Mitchell,Los Angeles
+12640,Corey-Lock,Philadelphia
+21370,Todd Sumrall,New York City
+15220,Jane Waco,Vancouver
+15790,John Dryer,Coppell
+19000,Pauline Chand,Los Angeles
+10540,Andy Reiter,New York City
+10855,Arianne Irving,Philadelphia
+21400,Tom Boeckenhauer,Seattle
+18925,Paul Lucas,Chicago
+14425,Gary Hwang,Tucson
+18175,Mike Pelletier,Laguna Niguel
+15655,Jim Mitchum,Bridgeton
+11890,Carl Ludwig,Everett
+13270,Deborah Brumfield,San Diego
+15085,Ivan Gibson,San Diego
+11425,Bobby Odegard,Richmond
+10150,Aimee Bixby,Long Beach
+16075,Julia West,Philadelphia
+13750,Edward Becker,Seattle
+20470,Sheri Gordon,New York City
+12190,Charlotte Melton,Philadelphia
+10840,Anthony Witt,Allen
+18100,Mick Crebagga,El Paso
+21460,Tonja Turnell,Aurora
+21805,Vivek Grady,Virginia Beach
+18295,Muhammed Yedwab,Grapevine
+19480,Rick Duston,Olympia
+13390,Dennis Pardue,Peoria
+17395,Marina Lichtenstein,Los Angeles
+15385,Jenna Caffey,Kent
+15160,James Galang,Los Angeles
+17275,Marc Crier,Lafayette
+18400,Natalie Webber,Tigard
+21280,Toby Braunhardt,Washington
+11380,Bill Stewart,Skokie
+15010,Hilary Holden,San Francisco
+12280,Christina DeMoss,Seattle
+21100,Thea Hendricks,Los Angeles
+18055,Michelle Moray,Seattle
+18505,Neola Schneider,Dallas
+19645,Robert Barroso,North Las Vegas
+20455,Shaun Weien,Suffolk
+13930,Eric Barreto,San Francisco
+18760,Pamela Stobb,Los Angeles
+14995,Herbert Flentye,Indianapolis
+14950,Henia Zydlo,Columbus
+12790,Cynthia Delaney,San Diego
+15205,Jamie Kunitz,San Francisco
+14215,Filia McAdams,Dublin
+13885,Emily Ducich,San Diego
+13450,Dianna Arnett,Houston
+15955,Joni Wasserman,Oakland
+19375,Raymond Messe,Houston
+17755,Max Ludwig,Suffolk
+12685,Craig Carroll,Greensboro
+15610,Jim Epp,Milwaukee
+19855,Roy Phan,Kenosha
+21175,Thomas Boland,Houston
+11455,Brad Eason,Olathe
+15565,Jill Fjeld,Dallas
+19210,Phillip Breyer,Tulsa
+11680,Brian Thompson,Newark
+15235,Janet Lee,Chicago
+12070,Cathy Hwang,Raleigh
+18460,Neil Ducich,Macon
+10975,Barbara Fisher,Charlotte
+16330,Katharine Harms,Bowling Green
+14605,Giulietta Weimer,Seattle
+18625,Noah Childs,Aurora
+18010,Michelle Ellison,San Francisco
+11230,Benjamin Patterson,Spokane
+15775,John Castell,San Antonio
+10090,Adam Shillingsburg,Charlottesville
+10450,Amy Cox,Minneapolis
+17860,Michael Dominguez,Indianapolis
+13660,Duane Benoit,Oceanside
+13990,Erica Hackney,Roswell
+13765,Edward Hooks,Watertown
+20230,Scot Coram,Arlington
+15715,Joe Elijah,Broomfield
+10615,Ann Chong,New York City
+16015,Joy Daniels,Chicago
+12415,Christy Brittain,Columbus
+16030,Joy Smith,Houston
+17215,Luke Weiss,Pasadena
+20800,Stuart Calhoun,Houston
+10705,Anne McFarland,Auburn
+19510,Rick Huthwaite,Providence
+11995,Carol Triggs,Rochester
+17590,Matt Collister,Perth Amboy
+12610,Corey Catlett,Philadelphia
+16525,Kelly Andreada,Ontario
+20980,Tamara Chand,Seattle
+11080,Bart Folk,Baltimore
+17260,Magdelene Morse,Wilmington
+10120,Adrian Hane,Tucson
+11200,Ben Wallace,Boynton Beach
+20245,Scot Wooten,Stockton
+11665,Brian Stugart,Philadelphia
+19345,Randy Ferguson,Dover
+21850,William Brown,Philadelphia
+21625,Trudy Brown,Grand Prairie
+10870,Art Ferguson,College Station
+19435,Richard Bierner,Saint Louis
+16285,Karen Ferguson,Manteca
+15820,John Huston,Kent
+15100,Ivan Liston,San Francisco
+18805,Patrick Bzostek,Salt Lake City
+19600,Rob Haberlin,Huntsville
+10930,Arthur Wiediger,Aurora
+17410,Maris LaWare,Fairfield
+13555,Dorothy Badders,Jacksonville
+17620,Matt Hagelstein,San Francisco
+13375,Dennis Kane,Marion
+11440,Bobby Trafton,Littleton
+13405,Denny Blanton,La Porte
+21310,Toby Gnade,Los Angeles
+11005,Barry Franz,Pasadena
+16195,Justin MacKendrick,Los Angeles
+17335,Maria Zettner,San Diego
+18220,Mitch Webber,New York City
+17485,Mark Van Huff,Arlington
+20320,Sean Miller,Monroe
+21415,Tom Prescott,Seattle
+15625,Jim Karlsson,Seattle
+18835,Patrick Jones,Murfreesboro
+19420,Ricardo Sperren,Seattle
+20935,Susan Vittorini,New York City
+11125,Becky Castell,Peoria
+13825,Elizabeth Moffitt,Sioux Falls
+11575,Brendan Murry,New York City
+16705,Kristina Nunn,Fort Collins
+16570,Kelly Williams,Clarksville
+20260,Scott Cohen,San Francisco
+12295,Christina VanderZanden,Fresno
+20605,Speros Goranitis,New York City
+21010,Tamara Manning,San Francisco
+13810,Eleni McCrary,Los Angeles
+18040,Michelle Lonsdale,Albuquerque
+12580,Clay Rozendal,Elmhurst
+10750,Annie Zypern,New York City
+19240,Pierre Wener,Louisville
+20380,Shahid Collister,Seattle
+11935,Carlos Meador,Fayetteville
+14695,Greg Maxwell,Los Angeles
+21250,Tim Brockman,New York City
+15865,John Murray,Jamestown
+20575,Sonia Cooley,Mishawaka
+17200,Luke Schmidt,Skokie
+19315,Ralph Ritter,San Francisco
+12910,Daniel Byrd,Tampa
+21220,Thomas Thornton,Houston
+17170,Lori Olson,La Quinta
+16615,Ken Dana,Scottsdale
+18580,Nicole Brennan,Philadelphia
+11635,Brian Derr,Bowling Green
+12235,Chris McAfee,Carrollton
+13780,Edward Nazzal,New York City
+16450,Kean Nguyen,Jacksonville
+11350,Bill Overfelt,Los Angeles
+10300,Aleksandra Gannaway,Los Angeles
+17635,Matthew Clasen,Saint Louis
+21385,Tom Ashbrook,New York City
+15295,Jason Fortune-,Seattle
+21265,Tim Taslimi,Los Angeles
+20170,Sarah Bern,New York City
+12700,Craig Leslie,Springfield
+15025,Hunter Glantz,Amarillo
+18310,Nancy Lomonaco,Los Angeles
+19525,Rick Reed,Lowell
+21295,Toby Carlisle,San Diego
+20785,Stewart Visinsky,Pueblo
+11410,Bobby Elias,Lancaster
+20680,Steve Carroll,Columbus
+13135,David Flashing,Vallejo
+14350,Fred Harton,Seattle
+17530,MaryBeth Skach,San Diego
+19555,Ritsa Hightower,Tallahassee
+14515,George Ashbrook,San Francisco
+16135,Julie Prescott,Columbus
+13240,Dean percer,Murray
+17950,Michael Oakman,Dallas
+13330,Denise Leinenbach,Las Cruces
+18025,Michelle Huthwaite,Seattle
+12940,Daniel Raglin,Franklin
+13015,Darrin Martin,Encinitas
+11965,Carol Adams,Hoover
+10660,Anna Chung,Huntsville
+13345,Denise Monton,Roswell
+21715,Vicky Freymann,Columbus
+12370,Christopher Conant,Fayetteville
+11275,Beth Fritzler,Tucson
+14845,Harry Greene,Lake Charles
+11155,Becky Pak,Columbus
+14140,Eugene Moren,Glendale
+17995,Michelle Arnett,Watertown
+10555,Andy Yotov,Oceanside
+14575,Giulietta Baptist,Philadelphia
+16045,Julia Barnett,Columbus
+17875,Michael Grace,New York City
+20425,Sharelle Roach,Louisville
+16000,Joy Bell-,Brownsville
+12955,Dario Medina,Lincoln Park
+21475,Tony Chapman,Columbus
+20350,Sean Wendt,Detroit
+19450,Richard Eichhorn,Dallas
+11215,Benjamin Farhat,Albuquerque
+16405,Katrina Bavinger,Apple Valley
+15310,Jason Gross,Providence
+14050,Erin Creighton,New York City
+14110,Eugene Barchas,Philadelphia
+15460,Jennifer Patt,Oceanside
+11845,Cari Sayre,Seattle
+14410,Gary Hansen,Glendale
+19090,Pete Takahito,Houston
+15130,Jack Lebron,Houston
+10030,Aaron Hawkins,Philadelphia
+12475,Cindy Chapman,New York City
+13195,David Wiener,Houston
+20215,Sarah Jordon,Grand Prairie
+11740,Bruce Geld,Philadelphia
+16795,Laurel Beltran,Highland Park
+11815,Candace McMahon,Pasadena
+14185,Evan Henry,Decatur
+21505,Tony Sayre,Columbia
+18880,Patrick Ryan,Oakland
+17050,Liz Carlisle,Mission Viejo
+12490,Cindy Schnelling,Conroe
+13075,Dave Hallsten,Richmond
+15145,Jack O'Briant,Philadelphia
+10690,Anna Häberlin,New York City
+14875,Heather Jas,Jacksonville
+17455,Mark Hamilton,Jacksonville
+19930,Russell D'Ascenzo,Austin
+20020,Sam Craven,Plano
+20665,Stephanie Ulpright,Jackson
+14335,Fred Chung,Mesquite
+19330,Randy Bradley,Philadelphia
+18535,Nick Crebassa,Dallas
+12970,Darren Budd,Los Angeles
+17665,Maureen Fritzler,Toledo
+19750,Roland Murray,New York City
+21835,Vivian Mathis,Newark
+13720,Ed Jacobs,San Diego
+18415,Nathan Cano,Jacksonville
+17230,Lycoris Saunders,Dover
+16420,Katrina Edelman,Bristol
+13675,Duane Huffman,Quincy
+19120,Peter Fuller,Gilbert
+21700,Valerie Takahito,Philadelphia
+17695,Maureen Gnade,Buffalo
+20920,Susan Pistek,Los Angeles
+12175,Charles Sheldon,Columbia
+12895,Dana Kaydos,Kenosha
+16660,Khloe Miller,Roswell
+10645,Anna Andreadi,Chester
+13570,Dorothy Dickinson,Houston
+10465,Amy Hunt,New York City
+21565,Tracy Poddar,Aurora
+13795,Eileen Kiefer,Santa Ana
+12820,Cyra Reiten,New York City
+20890,Susan Gilcrest,Mcallen
+10585,Angele Hood,Chicago
+18475,Neil Französisch,Rockford
+11365,Bill Shonely,New York City
+20635,Stefanie Holloman,Jackson
+19720,Roger Demir,Daytona Beach
+10330,Alex Grayson,Stockton
+14560,Georgia Rosenberg,San Francisco
+21820,Vivek Sundaresam,Los Angeles
+21490,Tony Molinari,Oklahoma City
+21430,Tom Stivers,Los Angeles
+13360,Dennis Bolton,New York City
+18550,Nick Radford,Aurora
+11860,Cari Schnelling,Jacksonville
+18250,Monica Federle,Los Angeles
+17125,Liz Willingham,Norwich
+10345,Alex Russell,Lawrence
+16300,Karen Seio,Lehi
+10015,Aaron Bergman,Seattle
+17035,Lisa Ryan,Philadelphia
+20410,Shahid Shariari,Los Angeles
+15580,Jill Matthias,Monroe
+15325,Jason Klamczynski,Dallas
+13525,Don Miller,Houston
+18265,Muhammed Lee,Seattle
+17290,Marc Harrigan,Los Angeles
+14245,Frank Carlisle,Lakewood
+21115,Thea Hudgings,Philadelphia
+16090,Juliana Krohn,Omaha
+20185,Sarah Brown,Concord
+11035,Barry Gonzalez,Monroe
+11065,Barry Weirich,Raleigh
+18205,Mitch Gastineau,Jacksonville
+13645,Doug O'Connell,Los Angeles
+11050,Barry Pond,Cranston
+21655,Trudy Schmidt,Milwaukee
+14200,Evan Minnotte,Virginia Beach
+10810,Anthony O'Donnell,Los Angeles
+17440,Mark Haberlin,New York City
+20515,Shirley Schmidt,Louisville
+16855,Lela Donovan,Chicago
+21760,Victoria Pisteka,San Francisco
+21145,Theresa Coyne,Lakewood
+15055,Ionia McGrath,Roseville
+10570,Anemone Ratner,Columbus
+12715,Craig Molinari,Huntsville
+14395,Fred Wasserman,Huntsville
+16960,Lindsay Castell,Arlington
+14800,Harold Engle,Chicago
+11560,Brendan Dodson,Fresno
+14785,Harold Dahlen,Philadelphia
+11875,Carl Jackson,Philadelphia
+19870,Roy Skaria,Burlington
+20845,Sung Chung,Arlington Heights
+19405,Ricardo Emerson,Kent
+20905,Susan MacKendrick,Newark
