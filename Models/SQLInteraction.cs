@@ -1,10 +1,11 @@
+using CineComplex.Classes.Base;
 using Microsoft.Data.Sqlite;
 
 namespace CineComplex.Models
 {
-    public class SQLInteraction
+    public class SQLInteraction:ABaseSingleton<SQLInteraction>
     {
-        
+
         public SQLInteraction()
         {
             //Movies = new Dictionary<int,Movie>();
