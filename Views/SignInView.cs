@@ -49,12 +49,12 @@ namespace CineComplex.Views
                 switch (Choice)
                 {
                     case 1:
-                        SignInViewModel.Instance.LoginPrompt();
+                        SignInViewModel.Instance.GetSignInId();
                         Console.Clear();
                         break;
 
                     case 2:
-                        SignInViewModel.Instance.PasswordPrompt();
+                        SignInViewModel.Instance.GetSignIPassword();
                         Console.Clear();
                         break;
 

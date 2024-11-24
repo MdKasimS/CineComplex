@@ -9,13 +9,13 @@ namespace CineComplex.ViewModels
        
         public SignInViewModel() { }
 
-        public void LoginPrompt()
+        public void GetSignInId()
         {
             Console.Write("Enter LoginID : ");
             Credential.Instance.LoginId = Console.ReadLine();
             Console.Clear();
         }
-        public void PasswordPrompt()
+        public void GetSignIPassword()
         {
             Console.Write("Enter Password : ");
             Credential.Instance.Password = Console.ReadLine();
