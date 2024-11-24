@@ -3,7 +3,7 @@ namespace CineComplex.Models
 
     public enum UserType
     {
-        Customer,
+        User,
         Admin
     }
 
