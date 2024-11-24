@@ -67,14 +67,14 @@ namespace CineComplex.Views
                     case 6:
                         Console.Write("\nPress any key.....");
                         Console.ReadKey();
-                        Environment.Exit(0);
+                        //Environment.Exit(0);
                         break;
 
                     default:
                         Console.WriteLine("Please enter the valid Choice .....");
                         break;
                 }
-            } while (Choice > 0 || Choice < 4);
+            } while (Choice!=6);
         }
 
         

@@ -7,101 +7,114 @@ using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 
 
-internal class Program
+namespace CineComplex
 {
-    [DllImport("user32.dll")]
-    public static extern int DeleteMenu(IntPtr hMenu, int nPosition, int wFlags);
-
-    [DllImport("user32.dll")]
-    private static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
-
-    [DllImport("kernel32.dll", ExactSpelling = true)]
-    private static extern IntPtr GetConsoleWindow();
-
-    const int MF_BYCOMMAND = 0x00000000;
-    const int SC_MINIMIZE = 0xF020;
-    const int SC_MAXIMIZE = 0xF030;
-    const int SC_SIZE = 0xF000;
 
 
-    private static void Main(string[] args)
+    internal class Program
     {
-        int choice;
-        public List<string> MenuList = new List<string>()
+        [DllImport("user32.dll")]
+        public static extern int DeleteMenu(IntPtr hMenu, int nPosition, int wFlags);
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
+
+        [DllImport("kernel32.dll", ExactSpelling = true)]
+        private static extern IntPtr GetConsoleWindow();
+
+        const int MF_BYCOMMAND = 0x00000000;
+        const int SC_MINIMIZE = 0xF020;
+        const int SC_MAXIMIZE = 0xF030;
+        const int SC_SIZE = 0xF000;
+
+        private static void Main(string[] args)
+        {
+            int choice;
+            List<string> MenuList = new List<string>()
         {
             "1.Home View",
-            "9. Exit"
+            "2.ManageTicketView View",
+            "9.Exit"
         };
 
 
-    Console.WindowHeight = 25;
-        Console.WindowWidth = 80;
+            Console.WindowHeight = 25;
+            Console.WindowWidth = 80;
 
 
-        Console.BufferHeight = Console.WindowHeight; // Set the buffer height equal to the window height
-        Console.BufferWidth = Console.WindowWidth;   // Set the buffer width equal to the window width
+            Console.BufferHeight = Console.WindowHeight; // Set the buffer height equal to the window height
+            Console.BufferWidth = Console.WindowWidth;   // Set the buffer width equal to the window width
 
 
-        DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_MINIMIZE, MF_BYCOMMAND);
-        DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_MAXIMIZE, MF_BYCOMMAND);
-        DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_SIZE, MF_BYCOMMAND);
+            DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_MINIMIZE, MF_BYCOMMAND);
+            DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_MAXIMIZE, MF_BYCOMMAND);
+            DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_SIZE, MF_BYCOMMAND);
 
 
 
 
-        do
-        {
-            foreach (string instr in MenuList)
+            do
             {
-                Console.WriteLine(instr);
-            }
 
-int.TryParse(Console.ReadLine(), out choice);
+                Console.Clear();
+                foreach (string instr in MenuList)
+                {
+                    Console.WriteLine(instr);
+                }
 
-IView app = new HomeView();
-Console.Clear();
-Console.Write("Enter Your Choice : ");
-switch (choice)
-{
+                Console.Write("Enter Your Choice : ");
+                int.TryParse(Console.ReadLine(), out choice);
 
-    case 1:
-        Console.WriteLine("HomeView View");
-        //app = new HomeView();
-        break;
-
-    case 2:
-        Console.WriteLine("ManageTicketView View");
-        app = new ManageTicketsView();
-        break;
-
-    case 3:
-        Console.WriteLine("HomeView View");
-        break;
-
-    case 4:
-        Console.WriteLine("HomeView View");
-        break;
-
-    case 5:
-        Console.WriteLine("HomeView View");
-        break;
-
-    case 6:
-        break;
-
-    case 7:
-        break;
-
-    default:
-        Console.WriteLine("Ok");
-        break;
-
-}
-app.View();
-        } while (choice != 9) ;
+                IView app = HomeView.Instance;
 
 
+                switch (choice)
+                {
+
+                    case 1:
+                        //Console.WriteLine("HomeView View");
+                        app.View();
+                        break;
+
+                    case 2:
+                        //Console.WriteLine();
+                        app = ManageTicketsView.Instance;
+                        app.View();
+                        break;
+
+                    case 3:
+                        Console.WriteLine("HomeView View");
+                        break;
+
+                    case 4:
+                        Console.WriteLine("HomeView View");
+                        break;
+
+                    case 5:
+                        Console.WriteLine("HomeView View");
+                        break;
+
+                    case 6:
+                        break;
+
+                    case 7:
+                        break;
+
+                    case 8:
+                        break;
+                    case 9:
+                        break;
+                    case 10:
+                        break;
+
+                    default:
+                        Console.WriteLine("Ok");
+                        break;
+
+                }
+                //View();
+            } while (choice != 9);
+
+        }
     }
-
-
 }
