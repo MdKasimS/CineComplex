@@ -72,7 +72,7 @@ namespace CineComplex.Views
                         break;
 
                     case 4:
-                        SignInViewModel.Instance.ForgotPasswordPrompt();
+                        SignInViewModel.Instance.ForgotPassword();
                         Console.Clear();
                         break;
 

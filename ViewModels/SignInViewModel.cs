@@ -22,7 +22,7 @@ namespace CineComplex.ViewModels
             Console.Clear();
         }
 
-        public void ForgotPasswordPrompt()
+        public void ForgotPassword()
         {
 
         }
