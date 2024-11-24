@@ -79,7 +79,6 @@ namespace CineComplex.Views
                     case 5:
                         Console.Write("\nPress any key.....");
                         Console.ReadKey();
-                        //Environment.Exit(0);
                         break;
 
                     default:

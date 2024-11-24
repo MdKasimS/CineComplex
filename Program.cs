@@ -55,8 +55,10 @@ namespace CineComplex
 
             do
             {
-
                 Console.Clear();
+                Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
+                Console.WriteLine("================================================");
+
                 foreach (string instr in MenuList)
                 {
                     Console.WriteLine(instr);
@@ -72,12 +74,10 @@ namespace CineComplex
                 {
 
                     case 1:
-                        //Console.WriteLine("HomeView View");
                         app.View();
                         break;
 
                     case 2:
-                        //Console.WriteLine();
                         app = ManageTicketsView.Instance;
                         app.View();
                         break;
@@ -112,7 +112,6 @@ namespace CineComplex
                         break;
 
                 }
-                //View();
             } while (choice != 9);
 
         }
