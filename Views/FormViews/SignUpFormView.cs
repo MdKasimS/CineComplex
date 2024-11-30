@@ -1,5 +1,6 @@
 ﻿using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
+using CineComplex.ViewModels.FormViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,13 @@ namespace CineComplex.Views.FormViews
 {
     public class SignUpFormView : AViewBase<SignUpFormView>, IView
     {
-        public int Choice { get; set; }
-        public List<string> MenuList { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
+        private int _choice = 0;
+        public int Choice { get => _choice; set => _choice = value; }
+        public List<string> MenuList { get; set; }
 
         public void LoadMenuList()
         {
-            Instance.MenuList = new List<string>()
+            SignUpFormView.Instance.MenuList = new List<string>()
             {
                 "1. Enter Name",
                 "2. Enter Email",
@@ -30,10 +31,64 @@ namespace CineComplex.Views.FormViews
 
         public void View()
         {
+            SignUpFormView.Instance.LoadMenuList();
             do
             {
+                Console.Clear();
+                Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
+                Console.WriteLine("================================================");
 
-            } while (Choice != Instance.MenuList.Count);
+                Console.WriteLine("\nSign Up Form - CineComplex");
+                Console.WriteLine("-------------------------------------------------");
+
+                Console.WriteLine($"Entered Name : {SignUpFormViewModel.Instance.UserName}");
+                Console.WriteLine($"Entered Email : {SignUpFormViewModel.Instance.Email}");
+                Console.WriteLine($"Entered Contact : {SignUpFormViewModel.Instance.Contact}");
+                Console.WriteLine($"Entered Password : {SignUpFormViewModel.Instance.Password}");
+
+                Console.WriteLine();
+
+                Console.WriteLine("\nMenu : ");
+                Console.WriteLine("---------------");
+
+                foreach (string instr in SignUpFormView.Instance.MenuList)
+                {
+                    Console.WriteLine(instr);
+                }
+
+                Console.Write("Enter Your Choice : ");
+
+                int.TryParse(Console.ReadLine(), out _choice);
+                switch (Choice)
+                {
+                    case 1:
+                        SignUpFormViewModel.Instance.UserName = Console.ReadLine();
+                        break;
+                    case 2:
+                        SignUpFormViewModel.Instance.Email = Console.ReadLine();
+                        break;
+                    case 3:
+                        SignUpFormViewModel.Instance.Contact = Console.ReadLine();
+                        break;
+                    case 4:
+                        SignUpFormViewModel.Instance.Password = Console.ReadLine();
+                        break;
+
+                    case 5:
+                        SignUpFormViewModel.Instance.CreateUser();
+                        break;
+
+                    case 6:
+                        SignUpFormViewModel.Instance.ResetForm();
+                        break;
+
+                    default:
+                        Console.WriteLine("Please enter the valid Choice .....");
+                        break;
+                }
+
+
+            } while (Choice != SignUpFormView.Instance.MenuList.Count);
         }
     }
 }
