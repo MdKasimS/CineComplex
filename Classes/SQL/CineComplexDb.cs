@@ -16,8 +16,10 @@ namespace CineComplex.Classes.SQL
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
-        { 
-            optionsBuilder.UseSqlite("Data Source=users.db"); 
+        {
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            string dbPath = Path.Combine(basePath, "CineComplexDatabase.db");
+            optionsBuilder.UseSqlite($"Data Source={dbPath}");
         }
     }
 }
