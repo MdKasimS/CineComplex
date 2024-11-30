@@ -41,11 +41,6 @@ namespace CineComplex.Views.FormViews
                 Console.WriteLine("\nSign Up Form - CineComplex");
                 Console.WriteLine("-------------------------------------------------");
 
-                Console.WriteLine($"Entered Name : {SignUpFormViewModel.Instance.UserName}");
-                Console.WriteLine($"Entered Email : {SignUpFormViewModel.Instance.Email}");
-                Console.WriteLine($"Entered Contact : {SignUpFormViewModel.Instance.Contact}");
-                Console.WriteLine($"Entered Password : {SignUpFormViewModel.Instance.Password}");
-
                 Console.WriteLine();
 
                 Console.WriteLine("\nMenu : ");
