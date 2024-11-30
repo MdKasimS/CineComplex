@@ -10,9 +10,9 @@ namespace CineComplex.Models
     public class Customer
     {
         private int id;
-        private string? _customerId;
-        private string? _customerName;
-        private string? _city;
+        private string _customerId;
+        private string _customerName;
+        private string _city;
         private static Dictionary<int, Customer>? _customers;
 
         public Customer(string cn, string city)
