@@ -2,6 +2,7 @@ using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
 using CineComplex.ViewModels;
+using CineComplex.Views.FormViews;
 
 namespace CineComplex.Views
 {
@@ -72,20 +73,20 @@ namespace CineComplex.Views
                         break;
 
                     case 4:
+                        SignUpFormView.Instance.View();
+                        break;
+
+                    case 5:
                         SignInViewModel.Instance.ForgotPassword();
                         Console.Clear();
                         break;
 
-                    case 5:
-                        Console.Write("\nPress any key.....");
-                        Console.ReadKey();
-                        break;
 
                     default:
                         Console.WriteLine("Please enter the valid Choice .....");
                         break;
                 }
-            } while (Choice!=5);
+            } while (Choice!=SignInView.Instance.MenuList.Count);
         }
 
         public void LoadMenuList()
