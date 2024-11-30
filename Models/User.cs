@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CineComplex.Classes.SQL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,13 @@ namespace CineComplex.Models
         public string Password { get; set; }
         public string Email { get; set; }
         public string Contact { get; set; }
+
+        public static async Task CreateNewUser(User _newUser)
+        {
+            await Task.Run(() =>
+            {
+              
+            });
+        }
     }
 }

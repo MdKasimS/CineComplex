@@ -71,11 +71,11 @@ namespace CineComplex.Views.FormViews
                         break;
 
                     case 5:
-                        SignUpFormViewModel.Instance.CreateUser();
+                        SignUpFormViewModel.Instance.CreateUserCommand();
                         break;
 
                     case 6:
-                        SignUpFormViewModel.Instance.ResetForm();
+                        SignUpFormViewModel.Instance.ResetFormCommand();
                         break;
 
                     default:
