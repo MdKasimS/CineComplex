@@ -28,5 +28,12 @@ namespace CineComplex.ViewModels.FormViewModels
             SignUpFormViewModel.Instance.Password = "";
         }
 
+        public void ShowFormData()
+        {
+            Console.WriteLine($"Entered Name : {SignUpFormViewModel.Instance.UserName}");
+            Console.WriteLine($"Entered Email : {SignUpFormViewModel.Instance.Email}");
+            Console.WriteLine($"Entered Contact : {SignUpFormViewModel.Instance.Contact}");
+            Console.WriteLine($"Entered Password : {SignUpFormViewModel.Instance.Password}");
+        }
     }
 }
