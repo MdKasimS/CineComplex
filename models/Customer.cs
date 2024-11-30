@@ -28,9 +28,9 @@ namespace CineComplex.Models
         #endregion
 
         public int Id { get => id; set => id = value; }
-        public string? CustomerId { get => _customerId; set => _customerId = value; }
-        public string? CustomerName { get => _customerName; set => _customerName = value; }
-        public string? City { get => _city; set => _city = value; }
+        public string CustomerId { get => _customerId; set => _customerId = value; }
+        public string CustomerName { get => _customerName; set => _customerName = value; }
+        public string City { get => _city; set => _city = value; }
 
         public void DisplayCustomerDetails()
         {
