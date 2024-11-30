@@ -41,6 +41,7 @@ namespace CineComplex.Views.FormViews
                 Console.WriteLine("\nSign Up Form - CineComplex");
                 Console.WriteLine("-------------------------------------------------");
 
+                SignUpFormViewModel.Instance.ShowFormData();
                 Console.WriteLine();
 
                 Console.WriteLine("\nMenu : ");
