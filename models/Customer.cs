@@ -9,11 +9,6 @@ namespace CineComplex.Models
 
     public class Customer
     {
-        private int id;
-        private string _customerId;
-        private string _customerName;
-        private string _city;
-        private static Dictionary<int, Customer>? _customers;
 
         public Customer(string cn, string city)
         {
@@ -22,15 +17,15 @@ namespace CineComplex.Models
         }
 
         #region Dictionaries
-        public static Dictionary<int, Customer>? Customers { get => _customers; set => _customers = value; }
+        public static Dictionary<int, Customer>? Customers { get ; set; }
 
 
         #endregion
 
-        public int Id { get => id; set => id = value; }
-        public string CustomerId { get => _customerId; set => _customerId = value; }
-        public string CustomerName { get => _customerName; set => _customerName = value; }
-        public string City { get => _city; set => _city = value; }
+        public int Id { get; set; }
+        public string CustomerId { get; set; }
+        public string CustomerName { get; set; }
+        public string City { get; set; }
 
         public void DisplayCustomerDetails()
         {
