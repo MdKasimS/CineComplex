@@ -32,8 +32,9 @@ namespace CineComplex
             int choice;
             List<string> MenuList = new List<string>()
         {
-            "1.Home View",
-            "2.ManageTicketView View",
+            "1.Start View",
+            "2.Home View",
+            "3.ManageTicket View",
             "9.Exit"
         };
 
@@ -67,22 +68,26 @@ namespace CineComplex
                 Console.Write("Enter Your Choice : ");
                 int.TryParse(Console.ReadLine(), out choice);
 
-                IView app = SignInView.Instance;
+                IView app = StartView.Instance;
 
 
                 switch (choice)
                 {
 
                     case 1:
+                        //Start View
                         app.View();
                         break;
 
                     case 2:
-                        app = ManageTicketsView.Instance;
+                        //SignIn View
+                        app = SignInView.Instance;
                         app.View();
                         break;
 
                     case 3:
+                        //ManageTicket View
+                        app = ManageTicketsView.Instance;
                         Console.WriteLine("HomeView View");
                         break;
 
