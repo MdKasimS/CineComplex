@@ -30,7 +30,7 @@ namespace CineComplex.ViewModels.FormViewModels
             _newUser.Password = Password;
             _newUser.Email = Email;
             _newUser.Contact = Contact;
-            if (await AuthenticationService.IsValidRegistration(_newUser))
+            if (await AuthenticationService.IsValidUserRegistration(_newUser))
             {
                 await User.CreateNewUser(_newUser);
 
