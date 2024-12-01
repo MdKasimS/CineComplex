@@ -32,6 +32,7 @@ namespace CineComplex.Views.FormViews
         public void View()
         {
             SignUpFormView.Instance.LoadMenuList();
+
             do
             {
                 Console.Clear();
@@ -58,15 +59,19 @@ namespace CineComplex.Views.FormViews
                 switch (Choice)
                 {
                     case 1:
+                        Console.Write("Enter User Name: ");
                         SignUpFormViewModel.Instance.UserName = Console.ReadLine();
                         break;
                     case 2:
+                        Console.Write("Enter Email: ");
                         SignUpFormViewModel.Instance.Email = Console.ReadLine();
                         break;
                     case 3:
+                        Console.Write("Enter Contact: ");
                         SignUpFormViewModel.Instance.Contact = Console.ReadLine();
                         break;
                     case 4:
+                        Console.Write("Enter Password: ");
                         SignUpFormViewModel.Instance.Password = Console.ReadLine();
                         break;
 

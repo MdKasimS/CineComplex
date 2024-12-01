@@ -15,17 +15,22 @@ namespace CineComplex.Models
         public string Email { get; set; }
         public string Contact { get; set; }
 
+
+
         public static async Task CreateNewUser(User _newUser)
         {
+            var context = new CineComplexDb();
+            Console.WriteLine("Creating new user...");
             await Task.Run(() =>
             {
-
+                context.Users.Add(_newUser);
+                context.SaveChanges();
             });
         }
 
         public static bool IsValidUserRegistration(User _newUser)
         {
-
+           
             if (string.IsNullOrWhiteSpace(_newUser.Username) || string.IsNullOrWhiteSpace(_newUser.Password) || string.IsNullOrWhiteSpace(_newUser.Email))
             {
                 Console.Clear();
@@ -41,9 +46,10 @@ namespace CineComplex.Models
                 Console.ReadKey();
                 return false;
             }
-
-            using (var context = new CineComplexDb())
+            try
             {
+                var context = new CineComplexDb();
+            
                 if (context.Users.Any(u => u.Contact == _newUser.Contact))
                 {
                     Console.Clear();
@@ -62,8 +68,13 @@ namespace CineComplex.Models
 
                 }
                 return true;
+            
             }
-
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            return false;
+            }
         }
 
     }
