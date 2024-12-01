@@ -21,5 +21,15 @@ namespace CineComplex.Classes.SQL
             string dbPath = Path.Combine(basePath, "CineComplexDatabase.db");
             optionsBuilder.UseSqlite($"Data Source={dbPath}");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder) 
+        {
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Contact)
+                .IsUnique(); 
+            
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Email).IsUnique(); 
+        }
     }
 }
