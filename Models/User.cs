@@ -22,5 +22,52 @@ namespace CineComplex.Models
               
             });
         }
+
+        public static async Task<bool> IsValidUserRegistration(User _newUser)
+        {
+            await Task.Run(() =>
+            {
+                if (string.IsNullOrWhiteSpace(_newUser.Username) || string.IsNullOrWhiteSpace(_newUser.Password) || string.IsNullOrWhiteSpace(_newUser.Email))
+                {
+                    Console.Clear();
+                    Console.WriteLine("All fields are required. Press any key to continue...");
+                    Console.ReadKey();
+                    return false;
+                }
+
+                if (!System.Text.RegularExpressions.Regex.IsMatch(_newUser.Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+                {
+                    Console.Clear();
+                    Console.WriteLine("Invalid email format. Press any key to continue...");
+                    Console.ReadKey();
+                    return false;
+                }
+
+                using (var context = new CineComplexDb())
+                {
+                    if (context.Users.Any(u => u.Contact == _newUser.Contact))
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Username already exists. Press any key to continue...");
+                        Console.ReadKey();
+                        return false;
+
+                    }
+
+                    if (context.Users.Any(u => u.Email == _newUser.Email))
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Email already registered. Press any key to continue...");
+                        Console.ReadKey();
+                        return false;
+
+                    }
+                    return false;
+                }
+
+            });
+            return true;
+        }
+
     }
 }
