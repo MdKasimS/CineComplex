@@ -59,6 +59,14 @@ namespace CineComplex.Views
                         SignInView.Instance.View();
                         break;
 
+                    case 2:
+                        SignInView.Instance.View();
+                        break;
+
+                    case 3:
+                        SignInView.Instance.View();
+                        break;
+
 
                     default:
                         Console.WriteLine("Please enter the valid Choice .....");
@@ -67,5 +75,5 @@ namespace CineComplex.Views
             } while (Choice != HomeView.Instance.MenuList.Count);
         }
 
-            }
+    }
 }
