@@ -3,7 +3,7 @@ using Microsoft.Data.Sqlite;
 
 namespace CineComplex.Models
 {
-    public class SQLInteraction:ABaseSingleton<SQLInteraction>
+    public class SQLInteraction : ABaseSingleton<SQLInteraction>
     {
 
         public SQLInteraction()
@@ -15,6 +15,7 @@ namespace CineComplex.Models
             //Shows = new Dictionary<int,Show>();
             //Bookings = new Dictionary<int,Booking>();
 
+            
 
             LoadBookings();
             LoadCustomers();
