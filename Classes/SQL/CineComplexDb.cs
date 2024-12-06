@@ -20,8 +20,8 @@ namespace CineComplex.Classes.SQL
         {
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
             string dbPath = Path.Combine(basePath, "CineComplexDatabase.db");
-            optionsBuilder.UseSqlite($"Data Source={dbPath}")
-                .LogTo(Console.WriteLine, LogLevel.Information); 
+            optionsBuilder.UseSqlite($"Data Source={dbPath}");
+//                .LogTo(Console.WriteLine, LogLevel.Information); 
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
