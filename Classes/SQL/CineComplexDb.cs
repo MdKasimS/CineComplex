@@ -44,13 +44,7 @@ namespace CineComplex.Classes.SQL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<User>()
-            //    .HasIndex(u => u.Contact)
-            //    .IsUnique(); 
-
-            //modelBuilder.Entity<User>()
-            //    .HasIndex(u => u.Email).IsUnique(); 
-
+           
             modelBuilder.Entity<User>(entity =>
             {
                 entity.HasKey(e => e.Id); // Primary Key
