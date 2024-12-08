@@ -1,6 +1,7 @@
 using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
+using CineComplex.Services;
 using CineComplex.ViewModels;
 using CineComplex.Views.FormViews;
 
@@ -10,7 +11,7 @@ namespace CineComplex.Views
     {
         private int _choice = 0;
         public int Choice { get => _choice; set => _choice = value; }
-       
+
         public List<string> MenuList
         {
             get;
@@ -44,22 +45,24 @@ namespace CineComplex.Views
 
                 Console.Write("Enter Your Choice : ");
 
-
                 int.TryParse(Console.ReadLine(), out _choice);
+                
                 switch (Choice)
                 {
                     case 1:
+                        Console.Write("Enter LoginID : ");
                         SignInViewModel.Instance.GetSignInId();
                         Console.Clear();
                         break;
 
                     case 2:
+                        Console.Write("Enter Password : ");
                         SignInViewModel.Instance.GetSignIPassword();
                         Console.Clear();
                         break;
 
                     case 3:
-                        if (Services.AuthenticationService.AuthenticateUserForGivenCredential())
+                        if (AuthenticationService.AuthenticateUserForGivenCredential())
                         {
                             ManageTicketsView.Instance.View();
                         }
@@ -85,7 +88,7 @@ namespace CineComplex.Views
                         Console.WriteLine("Please enter the valid Choice .....");
                         break;
                 }
-            } while (Choice!=SignInView.Instance.MenuList.Count);
+            } while (Choice != SignInView.Instance.MenuList.Count);
         }
 
         public void LoadMenuList()
