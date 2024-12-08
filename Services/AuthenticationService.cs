@@ -28,12 +28,7 @@ namespace CineComplex.Services
 
         private bool _isValidUser()
         {
-            //Credential.Instance.LoginId
-
-            //Code to Check in database
-
-            //Make it red after using Spectre
-            System.Console.WriteLine("Alert: A malicious user logged in");
+            Console.WriteLine("Alert: A malicious user logged in");
             return false;
         }
 
@@ -46,8 +41,7 @@ namespace CineComplex.Services
         {
             try
             {
-                //var context = new CineComplexDb();
-
+                
                 if (SQLInteraction.Db.Users.Any(u => u.Contact == _newUser.Contact))
                 {
                     Console.Clear();
