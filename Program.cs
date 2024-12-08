@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Xml.Serialization;
 using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
+using CineComplex.Models;
 
 
 namespace CineComplex
@@ -31,12 +32,12 @@ namespace CineComplex
         {
             int choice;
             List<string> MenuList = new List<string>()
-        {
-            "1.Start View",
-            "2.Home View",
-            "3.ManageTicket View",
-            "9.Exit"
-        };
+            {
+              "1.Start View",
+              "2.Home View",
+              "3.ManageTicket View",
+              "9.Exit"
+            };
 
 
             Console.WindowHeight = 25;
@@ -51,7 +52,7 @@ namespace CineComplex
             DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_MAXIMIZE, MF_BYCOMMAND);
             DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_SIZE, MF_BYCOMMAND);
 
-
+            SQLInteraction.Instance.Init();
 
 
             do
