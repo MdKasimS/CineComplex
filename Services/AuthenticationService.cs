@@ -42,5 +42,38 @@ namespace CineComplex.Services
             return false;
         }
 
+        public static bool AuthorizeNewUser(User _newUser)
+        {
+            try
+            {
+                //var context = new CineComplexDb();
+
+                if (SQLInteraction.Db.Users.Any(u => u.Contact == _newUser.Contact))
+                {
+                    Console.Clear();
+                    Console.WriteLine("Username already exists. Press any key to continue...");
+                    Console.ReadKey();
+                    return false;
+
+                }
+
+                if (SQLInteraction.Db.Users.Any(u => u.Email == _newUser.Email))
+                {
+                    Console.Clear();
+                    Console.WriteLine("Email already registered. Press any key to continue...");
+                    Console.ReadKey();
+                    return false;
+
+                }
+                return true;
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
     }
 }
