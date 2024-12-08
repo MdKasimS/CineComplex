@@ -16,8 +16,6 @@ namespace CineComplex.Models
         public string Email { get; set; }
         public string Contact { get; set; }
 
-
-
         public static async Task CreateNewUser(User _newUser)
         {
             //var context = new CineComplexDb();
