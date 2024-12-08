@@ -30,15 +30,14 @@ namespace CineComplex.Models
                     Db.Database.EnsureCreated();
 
                     // Example: Add a user
-                    var user = new User { 
-                        Email = "admin@cinecomplex.com", 
-                        Password = "password123", 
-                        Contact = "1234567890", 
-                        Username = "admin-su" 
-                    };
-                    Db.Users.Add(user);
+                    //var user = new User { 
+                    //    Email = "admin@cinecomplex.com", 
+                    //    Password = "password123", 
+                    //    Contact = "1234567890", 
+                    //    Username = "admin-su" 
+                    //};
+                    //Db.Users.Add(user);
                     Db.SaveChanges(); // Example: Display all users
-                    DisplayAllUsers();// Db);
                 }
             }
             finally
@@ -57,25 +56,7 @@ namespace CineComplex.Models
         {
             Console.WriteLine("Application Started...");
         }
-        static void DisplayAllUsers()//CineComplexDb context)
-        {
-            Console.Clear();
-            var users = SQLInteraction.Db.Users.ToList();
-
-            if (users.Any())
-            {
-                foreach (var user in users)
-                {
-                    Console.WriteLine($"ID: {user.Id}, Username: {user.Username}, Email: {user.Email}, Contact: {user.Contact}");
-                }
-
-            }
-            else
-            {
-                Console.WriteLine("No users found.");
-            }
-            Console.ReadKey();
-        }
+        
         public void LoadMovies()
         {
             //This method must feth all movies from Movie.csv and add them to Movies collection.
