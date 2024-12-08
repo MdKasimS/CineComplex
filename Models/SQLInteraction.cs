@@ -1,13 +1,15 @@
 using CineComplex.Classes.Base;
+using CineComplex.Classes.SQL;
 using Microsoft.Data.Sqlite;
 
 namespace CineComplex.Models
 {
     public class SQLInteraction : ABaseSingleton<SQLInteraction>
     {
-
+        public static CineComplexDb Db { get; set; }
         public SQLInteraction()
         {
+
             //Movies = new Dictionary<int,Movie>();
             //Theatres = new Dictionary<int,Theatre>();
             //Customers = new Dictionary<int,Customer>();
@@ -15,7 +17,34 @@ namespace CineComplex.Models
             //Shows = new Dictionary<int,Show>();
             //Bookings = new Dictionary<int,Booking>();
 
-            
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            string dbPath = Path.Combine(basePath, "CineComplexDatabase.db");
+
+            var connection = new SqliteConnection($"Data Source={dbPath}"); 
+            try
+            {
+                connection.Open();
+
+                using (Db = new CineComplexDb(connection))
+                {
+                    Db.Database.EnsureCreated();
+
+                    // Example: Add a user
+                    var user = new User { 
+                        Email = "admin@cinecomplex.com", 
+                        Password = "password123", 
+                        Contact = "1234567890", 
+                        Username = "admin-su" 
+                    };
+                    Db.Users.Add(user);
+                    Db.SaveChanges(); // Example: Display all users
+                    DisplayAllUsers();// Db);
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
 
             LoadBookings();
             LoadCustomers();
@@ -24,7 +53,29 @@ namespace CineComplex.Models
             LoadShows();
             LoadTheatres();
         }
+        public void Init()
+        {
+            Console.WriteLine("Application Started...");
+        }
+        static void DisplayAllUsers()//CineComplexDb context)
+        {
+            Console.Clear();
+            var users = SQLInteraction.Db.Users.ToList();
 
+            if (users.Any())
+            {
+                foreach (var user in users)
+                {
+                    Console.WriteLine($"ID: {user.Id}, Username: {user.Username}, Email: {user.Email}, Contact: {user.Contact}");
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("No users found.");
+            }
+            Console.ReadKey();
+        }
         public void LoadMovies()
         {
             //This method must feth all movies from Movie.csv and add them to Movies collection.
