@@ -1,4 +1,5 @@
 ﻿using CineComplex.Models;
+using CineComplex.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
@@ -14,15 +15,14 @@ namespace CineComplex.Classes.SQL
     {
         private readonly DbConnection _connection;
 
+        public CineComplexDb() { }
         public CineComplexDb(DbConnection connection)
         {
             _connection = connection;
         }
 
-        public DbSet<User> Users
-        {
-            get; set;
-        }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Auth> Auths { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -42,7 +42,7 @@ namespace CineComplex.Classes.SQL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
+
             modelBuilder.Entity<User>(entity =>
             {
                 entity.HasKey(e => e.Id); // Primary Key
@@ -55,7 +55,13 @@ namespace CineComplex.Classes.SQL
                 entity.HasIndex(e => e.Email).IsUnique();
                 entity.HasIndex(e => e.Contact).IsUnique();
             });
-
+        
+        modelBuilder.Entity<Auth>(entity => 
+            { 
+                entity.HasKey(e => e.UserId); 
+                entity.Property(e => e.Password).IsRequired();
+        entity.Property(e => e.PrivilegeLevel).IsRequired();
+    });
         }
     }
 }
