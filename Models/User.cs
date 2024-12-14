@@ -23,13 +23,24 @@ namespace CineComplex.Models
             {
                 SQLInteraction.Db.Users.Add(_newUser);
                 SQLInteraction.Db.SaveChanges();
+
+                SQLInteraction.Db.Auths.Add(new Auth()
+                {
+                    UserId = _newUser.Id,
+                    Password = _newUser.Password,
+                    PrivilegeLevel = 0
+                });
+                SQLInteraction.Db.SaveChanges();
+
             });
         }
 
         public static bool IsValidUserRegistration(User _newUser)
         {
            
-            if (string.IsNullOrWhiteSpace(_newUser.Username) || string.IsNullOrWhiteSpace(_newUser.Password) || string.IsNullOrWhiteSpace(_newUser.Email))
+            if (string.IsNullOrWhiteSpace(_newUser.Username) 
+                || string.IsNullOrWhiteSpace(_newUser.Password) 
+                || string.IsNullOrWhiteSpace(_newUser.Email))
             {
                 Console.Clear();
                 Console.WriteLine("All fields are required. Press any key to continue...");
