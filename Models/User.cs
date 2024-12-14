@@ -18,7 +18,6 @@ namespace CineComplex.Models
 
         public static async Task CreateNewUser(User _newUser)
         {
-            //var context = new CineComplexDb();
             Console.WriteLine("Creating new user...");
             await Task.Run(() =>
             {
