@@ -13,12 +13,10 @@ namespace CineComplex.ViewModels
         public void GetSignInId()
         {
             Credential.Instance.LoginId = Console.ReadLine();
-            Console.Clear();
         }
         public void GetSignIPassword()
         {
             Credential.Instance.Password = Console.ReadLine();
-            Console.Clear();
         }
 
         public void ForgotPassword()
@@ -26,8 +24,9 @@ namespace CineComplex.ViewModels
             //Now this method is in VM and we need View to be created when this method is called. Don't know how to handle it?
             if(Instance.AreAllCredentialsAvailable())
             {
-
+               
             }
+
         }
 
         private bool AreAllCredentialsAvailable()
