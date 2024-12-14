@@ -1,4 +1,5 @@
 ﻿using CineComplex.Classes.SQL;
+using CineComplex.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,16 +16,14 @@ namespace CineComplex.Models
         public string Email { get; set; }
         public string Contact { get; set; }
 
-
-
         public static async Task CreateNewUser(User _newUser)
         {
-            var context = new CineComplexDb();
+            //var context = new CineComplexDb();
             Console.WriteLine("Creating new user...");
             await Task.Run(() =>
             {
-                context.Users.Add(_newUser);
-                context.SaveChanges();
+                SQLInteraction.Db.Users.Add(_newUser);
+                SQLInteraction.Db.SaveChanges();
             });
         }
 
@@ -46,35 +45,8 @@ namespace CineComplex.Models
                 Console.ReadKey();
                 return false;
             }
-            try
-            {
-                var context = new CineComplexDb();
+            return AuthenticationService.AuthorizeNewUser(_newUser);
             
-                if (context.Users.Any(u => u.Contact == _newUser.Contact))
-                {
-                    Console.Clear();
-                    Console.WriteLine("Username already exists. Press any key to continue...");
-                    Console.ReadKey();
-                    return false;
-
-                }
-
-                if (context.Users.Any(u => u.Email == _newUser.Email))
-                {
-                    Console.Clear();
-                    Console.WriteLine("Email already registered. Press any key to continue...");
-                    Console.ReadKey();
-                    return false;
-
-                }
-                return true;
-            
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            return false;
-            }
         }
 
     }

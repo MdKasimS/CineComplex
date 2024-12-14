@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CineComplex.Views.Admin
 {
-    public class UserManagementView : AViewBase<UserManagementView>, IView
+    public class AdminHomeView : AViewBase<AdminHomeView>, IView
     {
         public int Choice { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public List<string> MenuList { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
