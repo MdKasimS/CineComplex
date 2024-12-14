@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Views.User
+namespace CineComplex.Views.UserClient
 {
     public class UserHomeView : AViewBase<UserHomeView>, IView
     {
@@ -21,7 +21,7 @@ namespace CineComplex.Views.User
 
         public void View()
         {
-            UserHomeView.Instance.LoadMenuList();
+            Instance.LoadMenuList();
 
             do//main loop
             {
@@ -38,7 +38,7 @@ namespace CineComplex.Views.User
                 Console.WriteLine("\nMenu : ");
                 Console.WriteLine("---------------");
 
-                foreach (string instr in UserHomeView.Instance.MenuList)
+                foreach (string instr in Instance.MenuList)
                 {
                     Console.WriteLine(instr);
                 }
@@ -46,7 +46,7 @@ namespace CineComplex.Views.User
                 Console.Write("Enter Your Choice : ");
 
                 int.TryParse(Console.ReadLine(), out _choice);
-            } while (Choice != UserHomeView.Instance.MenuList.Count);
+            } while (Choice != Instance.MenuList.Count);
         }
 
         public void LoadMenuList()

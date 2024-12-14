@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Views.Admin
+namespace CineComplex.Views.AdminClient
 {
     public class UserManagementView : AViewBase<UserManagementView>, IView
     {
@@ -18,7 +18,7 @@ namespace CineComplex.Views.Admin
         public List<string> MenuList { get; set; }
         public void LoadMenuList()
         {
-            UserManagementView.Instance.MenuList = new List<string>()
+            Instance.MenuList = new List<string>()
             {
                 "1. Show Users",
                 "2. Create User",
@@ -32,7 +32,7 @@ namespace CineComplex.Views.Admin
 
         public void View()
         {
-            UserManagementView.Instance.LoadMenuList();
+            Instance.LoadMenuList();
 
             do
             {
@@ -48,7 +48,7 @@ namespace CineComplex.Views.Admin
                 Console.WriteLine("\nMenu : ");
                 Console.WriteLine("---------------");
 
-                foreach (string instr in UserManagementView.Instance.MenuList)
+                foreach (string instr in Instance.MenuList)
                 {
                     Console.WriteLine(instr);
                 }
@@ -59,7 +59,7 @@ namespace CineComplex.Views.Admin
                 switch (Choice)
                 {
                     case 1:
-                        UserManagementView.Instance.DisplayAllUsers();
+                        Instance.DisplayAllUsers();
                         break;
                     case 2:
 
@@ -81,7 +81,7 @@ namespace CineComplex.Views.Admin
                 }
 
 
-            } while (Choice != UserManagementView.Instance.MenuList.Count);
+            } while (Choice != Instance.MenuList.Count);
         }
 
         public void DisplayAllUsers()

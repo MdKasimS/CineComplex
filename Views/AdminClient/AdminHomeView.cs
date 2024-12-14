@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Views.Admin
+namespace CineComplex.Views.AdminClient
 {
     public class AdminHomeView : AViewBase<AdminHomeView>, IView
     {

@@ -6,8 +6,8 @@ using System.Xml.Serialization;
 using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
-using CineComplex.Views.Admin;
 using CineComplex.Views.FormViews;
+using CineComplex.Views.AdminClient;
 
 
 namespace CineComplex

@@ -1,4 +1,4 @@
-namespace ExceptionPack
+namespace CineComplex.Classes.Exceptions
 {
     public class InavlidDuarationException
     {
