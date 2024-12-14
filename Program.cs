@@ -107,6 +107,7 @@ namespace CineComplex
                     case 5:
                         //User Management View
                         app = UserManagementView.Instance;
+                        app.View();
                         Console.WriteLine("HomeView View");
                         break;
 

@@ -92,7 +92,7 @@ namespace CineComplex.Views.AdminClient
 
             if (existingUsers.Any())
             {
-                ConsoleTable.From<User>(existingUsers).Write(Format.MarkDown);
+                ConsoleTable.From<User>(existingUsers).Write(Format.Mar);
             }
             else
             {
