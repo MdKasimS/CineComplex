@@ -20,25 +20,16 @@ namespace CineComplex.Models
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
             string dbPath = Path.Combine(basePath, "CineComplexDatabase.db");
 
-            var connection = new SqliteConnection($"Data Source={dbPath}"); 
+            var connection = new SqliteConnection($"Data Source={dbPath}");
             try
             {
                 connection.Open();
 
-                using (Db = new CineComplexDb(connection))
-                {
-                    Db.Database.EnsureCreated();
+                Db = new CineComplexDb(connection);
 
-                    // Example: Add a user
-                    //var user = new User { 
-                    //    Email = "admin@cinecomplex.com", 
-                    //    Password = "password123", 
-                    //    Contact = "1234567890", 
-                    //    Username = "admin-su" 
-                    //};
-                    //Db.Users.Add(user);
-                    Db.SaveChanges(); // Example: Display all users
-                }
+                Db.Database.EnsureCreated();
+                Db.SaveChanges(); // Example: Display all users
+
             }
             finally
             {
@@ -56,7 +47,7 @@ namespace CineComplex.Models
         {
             Console.WriteLine("Application Started...");
         }
-        
+
         public void LoadMovies()
         {
             //This method must feth all movies from Movie.csv and add them to Movies collection.
