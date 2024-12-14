@@ -48,7 +48,7 @@ namespace CineComplex.Models
                 return false;
             }
 
-            if (!System.Text.RegularExpressions.Regex.IsMatch(_newUser.Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            if (!AuthenticationService.IsValidEmail(_newUser.Email))
             {
                 Console.Clear();
                 Console.WriteLine("Invalid email format. Press any key to continue...");

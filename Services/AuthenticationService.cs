@@ -32,6 +32,11 @@ namespace CineComplex.Services
             return false;
         }
 
+        public static bool IsValidEmail(string email)
+        {
+            return System.Text.RegularExpressions.Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+        }
+
         private bool _isPasswordCorrect()
         {
             return false;
@@ -41,7 +46,7 @@ namespace CineComplex.Services
         {
             try
             {
-                
+                //:Todo Create proper error handling and message displaying for creds. Currently control doesn't reaches inside if block
                 if (SQLInteraction.Db.Users.Any(u => u.Contact == _newUser.Contact))
                 {
                     Console.Clear();
