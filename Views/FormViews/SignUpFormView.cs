@@ -17,7 +17,7 @@ namespace CineComplex.Views.FormViews
 
         public void LoadMenuList()
         {
-            SignUpFormView.Instance.MenuList = new List<string>()
+            Instance.MenuList = new List<string>()
             {
                 "1. Enter Name",
                 "2. Enter Email",
@@ -31,7 +31,7 @@ namespace CineComplex.Views.FormViews
 
         public void View()
         {
-            SignUpFormView.Instance.LoadMenuList();
+            Instance.LoadMenuList();
 
             do
             {
@@ -89,7 +89,7 @@ namespace CineComplex.Views.FormViews
                 }
 
 
-            } while (Choice != SignUpFormView.Instance.MenuList.Count);
+            } while (Choice != Instance.MenuList.Count);
         }
     }
 }
