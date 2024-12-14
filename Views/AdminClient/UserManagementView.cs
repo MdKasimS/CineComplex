@@ -1,9 +1,11 @@
 ﻿using CineComplex.Classes.Base;
+using CineComplex.Classes;
 using CineComplex.Interfaces;
 using CineComplex.Models;
 using CineComplex.ViewModels.FormViewModels;
 using CineComplex.Views.FormViews;
 using ConsoleTables;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -92,6 +94,18 @@ namespace CineComplex.Views.AdminClient
 
             if (existingUsers.Any())
             {
+                Console.Clear();
+                Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
+                Console.WriteLine("================================================");
+
+                Console.WriteLine("\nManage Users - CineComplex");
+                Console.WriteLine("-------------------------------------------------");
+
+                Console.WriteLine();
+
+                Console.WriteLine("\nUsers : ");
+                Console.WriteLine("---------------");
+
                 ConsoleTable.From<User>(existingUsers).Write(Format.MarkDown);
                 Console.WriteLine($"Count {existingUsers.Count}");
             }
