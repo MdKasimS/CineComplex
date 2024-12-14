@@ -1,5 +1,6 @@
 ﻿using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
+using CineComplex.Views.FormViews;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,8 @@ namespace CineComplex.Views
                 "1. Login ",
                 "2. Register ",
                 "3. Forgot Password ",
-                "4. Exit",
+                "4. Create View And ViewModel Files",
+                "5. Exit",
             };
         }
 
@@ -58,6 +60,10 @@ namespace CineComplex.Views
                 {
                     case 1:
                         HomeView.Instance.View();
+                        break;
+
+                    case 2:
+                        ForgotPasswordFormView.Instance.View();
                         break;
 
                     default:
