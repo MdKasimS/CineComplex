@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Xml.Serialization;
 using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
+using CineComplex.Views.Admin;
 
 
 namespace CineComplex
@@ -92,6 +93,8 @@ namespace CineComplex
                         break;
 
                     case 4:
+                        app = UserManagementView.Instance;
+                        app.View();
                         Console.WriteLine("HomeView View");
                         break;
 
