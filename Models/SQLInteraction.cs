@@ -31,9 +31,11 @@ namespace CineComplex.Models
                 Db.SaveChanges(); // Example: Display all users
 
             }
-            finally
+            catch(Exception e)
             {
-                connection.Close();
+                Console.Clear();
+                Console.WriteLine(e.Message);
+                Console.ReadKey();
             }
 
             LoadBookings();
