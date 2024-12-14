@@ -3,6 +3,7 @@ using CineComplex.Interfaces;
 using CineComplex.Models;
 using CineComplex.ViewModels.FormViewModels;
 using CineComplex.Views.FormViews;
+using ConsoleTables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,7 +49,7 @@ namespace CineComplex.Views.AdminClient
                 Console.WriteLine("\nMenu : ");
                 Console.WriteLine("---------------");
 
-                foreach (string instr in Instance.MenuList)
+                foreach (string instr in UserManagementView.Instance.MenuList)
                 {
                     Console.WriteLine(instr);
                 }
@@ -59,7 +60,7 @@ namespace CineComplex.Views.AdminClient
                 switch (Choice)
                 {
                     case 1:
-                        Instance.DisplayAllUsers();
+                        UserManagementView.Instance.DisplayAllUsers();
                         break;
                     case 2:
 
@@ -81,7 +82,7 @@ namespace CineComplex.Views.AdminClient
                 }
 
 
-            } while (Choice != Instance.MenuList.Count);
+            } while (Choice != UserManagementView.Instance.MenuList.Count);
         }
 
         public void DisplayAllUsers()
@@ -91,10 +92,7 @@ namespace CineComplex.Views.AdminClient
 
             if (existingUsers.Any())
             {
-                foreach (var user in existingUsers)
-                {
-                    Console.WriteLine($"ID: {user.Id}, Username: {user.Username}, Email: {user.Email}, Contact: {user.Contact}");
-                }
+                ConsoleTable.From<User>(existingUsers).Write(Format.MarkDown);
             }
             else
             {
