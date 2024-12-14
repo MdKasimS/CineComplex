@@ -38,7 +38,7 @@ namespace CineComplex.Views
                 Console.WriteLine("\nMenu : ");
                 Console.WriteLine("---------------");
 
-                foreach (string instr in SignInView.Instance.MenuList)
+                foreach (string instr in Instance.MenuList)
                 {
                     Console.WriteLine(instr);
                 }
@@ -46,7 +46,7 @@ namespace CineComplex.Views
                 Console.Write("Enter Your Choice : ");
 
                 int.TryParse(Console.ReadLine(), out _choice);
-                
+
                 switch (Choice)
                 {
                     case 1:
@@ -79,7 +79,7 @@ namespace CineComplex.Views
                         break;
 
                     case 5:
-                        SignInViewModel.Instance.ForgotPassword();
+                        ForgotPasswordFormView.Instance.View();
                         Console.Clear();
                         break;
 
@@ -88,12 +88,12 @@ namespace CineComplex.Views
                         Console.WriteLine("Please enter the valid Choice .....");
                         break;
                 }
-            } while (Choice != SignInView.Instance.MenuList.Count);
+            } while (Choice != Instance.MenuList.Count);
         }
 
         public void LoadMenuList()
         {
-            SignInView.Instance.MenuList = new List<string>() {
+            Instance.MenuList = new List<string>() {
                 "1. Enter Login Id ",
                 "2. Enter Password ",
                 "3. Login ",
