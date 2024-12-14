@@ -18,7 +18,6 @@ namespace CineComplex.Models
 
         public static async Task CreateNewUser(User _newUser)
         {
-            Console.WriteLine("Creating new user...");
             await Task.Run(() =>
             {
                 SQLInteraction.Db.Users.Add(_newUser);
@@ -35,27 +34,30 @@ namespace CineComplex.Models
             });
         }
 
-        public static bool IsValidUserRegistration(User _newUser)
+        private static bool AreAllFieldsForRegistartionAvailable(User _newUser)
         {
-           
-            if (string.IsNullOrWhiteSpace(_newUser.Username) 
-                || string.IsNullOrWhiteSpace(_newUser.Password) 
+            if (string.IsNullOrWhiteSpace(_newUser.Username)
+                || string.IsNullOrWhiteSpace(_newUser.Password)
                 || string.IsNullOrWhiteSpace(_newUser.Email))
             {
-                Console.Clear();
-                Console.WriteLine("All fields are required. Press any key to continue...");
-                Console.ReadKey();
-                return false;
+                return false;  
             }
-
-            if (!AuthenticationService.IsValidEmail(_newUser.Email))
+            return true;
+        }
+        public static bool IsValidUserRegistration(User _newUser)
+        {
+           //:TODO please remove any view related code
+           if(AreAllFieldsForRegistartionAvailable(_newUser))
             {
-                Console.Clear();
-                Console.WriteLine("Invalid email format. Press any key to continue...");
-                Console.ReadKey();
-                return false;
-            }
+                if (!AuthenticationService.IsValidEmail(_newUser.Email))
+                {
+                    return false;
+                }
             return AuthenticationService.AuthorizeNewUser(_newUser);
+            }
+            return false;
+
+            
             
         }
 
