@@ -56,14 +56,17 @@ namespace CineComplex.Views
                 switch (Choice)
                 {
                     case 1:
+                        //User SignIn View
                         SignInView.Instance.View();
                         break;
 
                     case 2:
+                        //Admin SignIn View
                         SignInView.Instance.View();
                         break;
 
                     case 3:
+                        //Theatre Owner SignIn View
                         SignInView.Instance.View();
                         break;
 

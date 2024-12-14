@@ -26,8 +26,6 @@ namespace CineComplex.Classes.SQL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            
-
             if (_connection != null)
             {
                 optionsBuilder.UseSqlite(_connection);

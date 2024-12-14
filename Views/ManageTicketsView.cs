@@ -28,7 +28,6 @@ namespace CineComplex.Views
                 Console.WriteLine(" Manage Tickets");
                 Console.WriteLine("-------------------------------------------------");
 
-
                 Console.WriteLine();
 
                 Console.WriteLine("\nMenu : ");
@@ -72,7 +71,7 @@ namespace CineComplex.Views
                         Console.WriteLine("Please enter the valid Choice .....");
                         break;
                 }
-            } while (Choice!=6);
+            } while (Choice!= ManageTicketsView.Instance.MenuList.Count);
         }
 
         

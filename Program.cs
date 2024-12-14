@@ -6,6 +6,8 @@ using System.Xml.Serialization;
 using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
+using CineComplex.Views.Admin;
+using CineComplex.Views.FormViews;
 
 
 namespace CineComplex
@@ -30,16 +32,6 @@ namespace CineComplex
 
         private static void Main(string[] args)
         {
-            int choice;
-            List<string> MenuList = new List<string>()
-            {
-              "1.Start View",
-              "2.Home View",
-              "3.ManageTicket View",
-              "9.Exit"
-            };
-
-
             Console.WindowHeight = 25;
             Console.WindowWidth = 80;
 
@@ -52,8 +44,19 @@ namespace CineComplex
             DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_MAXIMIZE, MF_BYCOMMAND);
             DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_SIZE, MF_BYCOMMAND);
 
-            SQLInteraction.Instance.Init();
+            int choice;
+            
+            List<string> MenuList = new List<string>()
+            {
+              "1.Start View",
+              "2.Home View",
+              "3.Manage Ticket View",
+              "4.SignUp View",
+              "5.User Management View",
+              "9.Exit"
+            };
 
+            SQLInteraction.Instance.Init();
 
             do
             {
@@ -81,24 +84,29 @@ namespace CineComplex
                         break;
 
                     case 2:
-                        //SignIn View
+                        //Home View
                         app = SignInView.Instance;
                         app.View();
+                        Console.WriteLine("SignIn View");
                         break;
 
                     case 3:
                         //ManageTicket View
                         app = ManageTicketsView.Instance;
-                        Console.WriteLine("HomeView View");
+                        app.View();
+                        Console.WriteLine("ManageTickets View");
                         break;
 
                     case 4:
-                        app = UserManagementView.Instance;
+                        //SignUp View
+                        app = SignUpFormView.Instance;
                         app.View();
-                        Console.WriteLine("HomeView View");
+                        Console.WriteLine("SignUp View");
                         break;
 
                     case 5:
+                        //User Management View
+                        app = UserManagementView.Instance;
                         Console.WriteLine("HomeView View");
                         break;
 
