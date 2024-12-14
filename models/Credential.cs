@@ -21,7 +21,6 @@ namespace CineComplex.Models
 
         public string? LoginId { get => _loginId; set => _loginId = value; }
         public string? Password { get => _password; set => _password = value; }
-        //public string? Type { get => _type; set => _type = value; }
         public static Credential Instance
         {
             get
