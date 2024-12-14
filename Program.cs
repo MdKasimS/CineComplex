@@ -8,6 +8,7 @@ using CineComplex.Interfaces;
 using CineComplex.Models;
 using CineComplex.Views.FormViews;
 using CineComplex.Views.AdminClient;
+using CineComplex.Views.UserClient;
 
 
 namespace CineComplex
@@ -33,7 +34,7 @@ namespace CineComplex
         private static void Main(string[] args)
         {
             Console.WindowHeight = 25;
-            Console.WindowWidth = 80;
+            Console.WindowWidth = 120;
 
 
             Console.BufferHeight = Console.WindowHeight; // Set the buffer height equal to the window height
@@ -94,7 +95,7 @@ namespace CineComplex
                         //ManageTicket View
                         app = ManageTicketsView.Instance;
                         app.View();
-                        Console.WriteLine("ManageTickets View");
+                        Console.WriteLine("Admin ManageTickets View");
                         break;
 
                     case 4:
@@ -104,14 +105,18 @@ namespace CineComplex
                         Console.WriteLine("SignUp View");
                         break;
 
-                    case 5:
+                    case 6:
                         //User Management View
                         app = UserManagementView.Instance;
                         app.View();
-                        Console.WriteLine("HomeView View");
+                        Console.WriteLine("UserManagementView View");
                         break;
 
-                    case 6:
+                    case 5:
+                        //User Home View
+                        app = UserHomeView.Instance;
+                        app.View();
+                        Console.WriteLine("User HomeView View");
                         break;
 
                     case 7:

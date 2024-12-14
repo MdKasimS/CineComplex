@@ -17,7 +17,7 @@ namespace CineComplex.Views
 
         public void View()
         {
-            ManageTicketsView.Instance.LoadMenuList();
+            Instance.LoadMenuList();
 
             do//main loop
             {
@@ -71,14 +71,14 @@ namespace CineComplex.Views
                         Console.WriteLine("Please enter the valid Choice .....");
                         break;
                 }
-            } while (Choice!= ManageTicketsView.Instance.MenuList.Count);
+            } while (Choice!= Instance.MenuList.Count);
         }
 
         
 
         public void LoadMenuList()
         {
-            ManageTicketsView.Instance.MenuList = new List<string>() 
+            Instance.MenuList = new List<string>() 
             { 
                 "1. Book Ticket", 
                 "2. Show Shows", 

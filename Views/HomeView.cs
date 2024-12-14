@@ -75,7 +75,7 @@ namespace CineComplex.Views
                         Console.WriteLine("Please enter the valid Choice .....");
                         break;
                 }
-            } while (Choice != HomeView.Instance.MenuList.Count);
+            } while (Choice != Instance.MenuList.Count);
         }
 
     }

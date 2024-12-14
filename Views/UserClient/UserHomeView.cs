@@ -68,8 +68,9 @@ namespace CineComplex.Views.UserClient
                 "2. Show Shows",
                 "3. Cancel Tickets",
                 "4. Previous Bookings",
-                "5. Account",
-                "6. Exit ",
+                "5. Show Profile",
+                "6. Show Balance",
+                "7. Exit ",
             };
         }
 
