@@ -15,7 +15,13 @@ namespace CineComplex.Classes.SQL
     {
         private readonly DbConnection _connection;
 
+        /// <summary>
+        /// Migration tools needs parameterless constructor because it instantiates while doing migration process
+        /// dotnet ef migrations add CreateAuthTable
+        /// dotnet ef database update
+        /// </summary>
         public CineComplexDb() { }
+
         public CineComplexDb(DbConnection connection)
         {
             _connection = connection;
