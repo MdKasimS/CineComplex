@@ -62,10 +62,10 @@ namespace CineComplex.Views.AdminClient
                 switch (Choice)
                 {
                     case 1:
-                        UserManagementView.Instance.DisplayAllUsers();
+                        Instance.DisplayAllUsers();
                         break;
                     case 2:
-
+                        SignUpFormView.Instance.View();
                         break;
                     case 3:
                         break;
