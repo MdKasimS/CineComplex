@@ -35,8 +35,14 @@ namespace CineComplex.Services
             return false;
         }
 
+        /// <summary>
+        /// Check at https://www.rhyous.com/2010/06/15/csharp-email-regular-expression/
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public static Result<bool> IsValidEmail(string email)
         {
+ 
             String theEmailPattern = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*"
                                    + "@"
                                    + @"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\z";
