@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Text.RegularExpressions;
 using CineComplex.Classes.Base;
 using CineComplex.Classes.SQL;
 using CineComplex.Interfaces;
@@ -34,7 +36,19 @@ namespace CineComplex.Services
 
         public static bool IsValidEmail(string email)
         {
-            return System.Text.RegularExpressions.Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+            //Console.WriteLine($"Email: {email}, Valid: {System.Text.RegularExpressions.Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$")}");
+            //return System.Text.RegularExpressions.Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+
+            try
+            {
+                MailAddress m = new MailAddress(email);
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
         }
 
         private bool _isPasswordCorrect()
