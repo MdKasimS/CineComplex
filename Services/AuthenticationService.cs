@@ -59,7 +59,7 @@ namespace CineComplex.Services
                 //Added Result mechanism to handle custom error messages
                 if (SQLInteraction.Db.Users.Any(u => u.Contact == _newUser.Contact))
                 {
-                    return new Result<bool>(false, false, "Username already exists. Press any key to continue..."); //false;
+                    return new Result<bool>(false, false, "Contact already exists. Press any key to continue..."); //false;
                 }
 
                 if (SQLInteraction.Db.Users.Any(u => u.Email == _newUser.Email))

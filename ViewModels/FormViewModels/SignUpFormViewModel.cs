@@ -1,4 +1,5 @@
-﻿using CineComplex.Classes.Base;
+﻿using CineComplex.Classes;
+using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
 using CineComplex.Services;
@@ -23,29 +24,40 @@ namespace CineComplex.ViewModels.FormViewModels
 
         #region Commands
 
-        public async Task CreateUserCommand()
+        public Result<bool> CreateUserCommand()
         {
             User _newUser = new User();
             _newUser.Username = UserName;
             _newUser.Password = Password;
             _newUser.Email = Email;
             _newUser.Contact = Contact;
-            if (User.IsValidUserRegistration(_newUser))
-            {
-                await User.CreateNewUser(_newUser);
 
+            Result<bool> isValidRegistration = IsValidRegistration(_newUser);
+            if (isValidRegistration.IsSuccessful)
+            {
+                User.CreateNewUser(_newUser);
+                
+                isValidRegistration.Message = "User Created Successful. Press Any Key To Continue...";
+                return isValidRegistration;
             }
+            return isValidRegistration;
         }
 
-        private bool IsValidRegistration(User _newUser)
+        private Result<bool> IsValidRegistration(User _newUser)
         {
-            if (User.IsValidUserRegistration(_newUser))
+            Result<bool> isValidRegistration = User.IsValidUserRegistration(_newUser);
+            
+            if (isValidRegistration.IsSuccessful)
             {
-                Console.Clear();
-                Console.WriteLine("All fields are required. Press any key to continue...");
-                Console.ReadKey();
+                isValidRegistration.Value = true;
+                isValidRegistration.IsSuccessful = true;
+                return isValidRegistration;
             }
-            return true;
+
+            //isValidRegistration.Value = false;
+            //isValidRegistration.IsSuccessful = false;
+            return isValidRegistration;
+
         }
 
         public void ResetFormCommand()
@@ -59,7 +71,7 @@ namespace CineComplex.ViewModels.FormViewModels
 
         #region Methods
 
-        
+
         #endregion
     }
 }

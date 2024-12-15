@@ -40,7 +40,7 @@ namespace CineComplex.ViewModels
                 return false;
             }
 
-            if (!AuthenticationService.IsValidEmail(Credential.Instance.LoginId))
+            if (!AuthenticationService.IsValidEmail(Credential.Instance.LoginId).IsSuccessful)
             {
                 Console.Clear();
                 Console.WriteLine("Invalid user Id format. Press any key to continue...");

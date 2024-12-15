@@ -76,8 +76,22 @@ namespace CineComplex.Views.FormViews
                         break;
 
                     case 5:
-                        Console.WriteLine("Creating new user...");
-                        SignUpFormViewModel.Instance.CreateUserCommand();
+
+                        var result = SignUpFormViewModel.Instance.CreateUserCommand();
+                        Console.WriteLine(result.Message);
+                        Console.ReadKey();
+
+                        //if (SignUpFormViewModel.Instance.CreateUserCommand())
+                        //{
+                        //    //SignUpFormViewModel.Instance.ResetFormCommand();
+                        //    break;
+                        //}
+                        //else
+                        //{
+                        //    Console.Write("FAILED: ");
+                        //    Console.Write("All fields are required. Press any key to continue...");
+                        //    Console.ReadKey();
+                        //}
                         break;
 
                     case 6:
