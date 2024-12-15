@@ -1,4 +1,5 @@
-﻿using CineComplex.Classes.SQL;
+﻿using CineComplex.Classes;
+using CineComplex.Classes.SQL;
 using CineComplex.Services;
 using System;
 using System.Collections.Generic;
@@ -34,31 +35,33 @@ namespace CineComplex.Models
             });
         }
 
-        private static bool AreAllFieldsForRegistartionAvailable(User _newUser)
+        private static Result<bool> AreAllFieldsForRegistartionAvailable(User _newUser)
         {
             if (string.IsNullOrWhiteSpace(_newUser.Username)
                 || string.IsNullOrWhiteSpace(_newUser.Password)
-                || string.IsNullOrWhiteSpace(_newUser.Email))
+                || string.IsNullOrWhiteSpace(_newUser.Email)
+                || string.IsNullOrWhiteSpace(_newUser.Contact))
             {
-                return false;  
+                return new Result<bool>(false, false, "All Fields Are Required. Press Any Key To Continue..."); ;//false;  
             }
-            return true;
+            return new Result<bool>(true, true, ""); ;
         }
-        public static bool IsValidUserRegistration(User _newUser)
+        public static Result<bool> IsValidUserRegistration(User _newUser)
         {
+            Result<bool> isValidResult = AreAllFieldsForRegistartionAvailable(_newUser);
            //:TODO please remove any view related code
-           if(AreAllFieldsForRegistartionAvailable(_newUser))
+           if (isValidResult.IsSuccessful)
             {
-                if (!AuthenticationService.IsValidEmail(_newUser.Email))
+                isValidResult = AuthenticationService.IsValidEmail(_newUser.Email);
+                if (!isValidResult.IsSuccessful)
                 {
-                    return false;
+                    return isValidResult; //false;
                 }
-            return AuthenticationService.AuthorizeNewUser(_newUser);
+                
+                return AuthenticationService.AuthorizeNewUser(_newUser);
             }
-            return false;
 
-            
-            
+            return isValidResult; //false; 
         }
 
     }

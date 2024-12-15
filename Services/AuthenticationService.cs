@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
+using CineComplex.Classes;
 using CineComplex.Classes.Base;
 using CineComplex.Classes.SQL;
 using CineComplex.Interfaces;
@@ -34,12 +35,15 @@ namespace CineComplex.Services
             return false;
         }
 
-        public static bool IsValidEmail(string email)
+        public static Result<bool> IsValidEmail(string email)
         {
             String theEmailPattern = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*"
                                    + "@"
                                    + @"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\z";
-            return Regex.IsMatch(email, theEmailPattern);
+            if(Regex.IsMatch(email, theEmailPattern))
+                return new Result<bool>(true, true, "");
+            else
+                return new Result<bool>(false, false, "Invalid Email Address. Press Any Key To Continue...");
         }
 
         private bool _isPasswordCorrect()
@@ -47,35 +51,28 @@ namespace CineComplex.Services
             return false;
         }
 
-        public static bool AuthorizeNewUser(User _newUser)
+        public static Result<bool> AuthorizeNewUser(User _newUser)
         {
             try
             {
                 //:Todo Create proper error handling and message displaying for creds. Currently control doesn't reaches inside if block
+                //Added Result mechanism to handle custom error messages
                 if (SQLInteraction.Db.Users.Any(u => u.Contact == _newUser.Contact))
                 {
-                    Console.Clear();
-                    Console.WriteLine("Username already exists. Press any key to continue...");
-                    Console.ReadKey();
-                    return false;
-
+                    return new Result<bool>(false, false, "Username already exists. Press any key to continue..."); //false;
                 }
 
                 if (SQLInteraction.Db.Users.Any(u => u.Email == _newUser.Email))
                 {
-                    Console.Clear();
-                    Console.WriteLine("Email already registered. Press any key to continue...");
-                    Console.ReadKey();
-                    return false;
-
+                    return new Result<bool>(false, false, "Email already registered. Press any key to continue..."); //false;
                 }
-                return true;
+                return new Result<bool>(true, true, ""); //true;
 
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                return false;
+                return new Result<bool>(false, false, "Something Unusual Error Occured. Press any key to continue..."); //false;
             }
         }
 
