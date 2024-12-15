@@ -21,7 +21,7 @@ namespace CineComplex.Services
 
         public static bool AuthenticateUserForGivenCredential()
         {
-            if (AuthenticationService.Instance._isValidUser())
+            if (Instance._isValidUser())
             {
                 Console.WriteLine($"User {Credential.Instance.LoginId} logged in.");
                 return true;
