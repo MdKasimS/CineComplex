@@ -39,16 +39,21 @@ namespace CineComplex.Services
             //Console.WriteLine($"Email: {email}, Valid: {System.Text.RegularExpressions.Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$")}");
             //return System.Text.RegularExpressions.Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
 
-            try
-            {
-                MailAddress m = new MailAddress(email);
+            //try
+            //{
+            //    MailAddress m = new MailAddress(email);
 
-                return true;
-            }
-            catch (FormatException)
-            {
-                return false;
-            }
+            //    return true;
+            //}
+            //catch (FormatException)
+            //{
+            //    return false;
+            //}
+
+            String theEmailPattern = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*"
+                                   + "@"
+                                   + @"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\z";
+            return Regex.IsMatch(email, theEmailPattern);
         }
 
         private bool _isPasswordCorrect()
