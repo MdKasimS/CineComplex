@@ -45,15 +45,12 @@ namespace CineComplex.Views
                 switch (Choice)
                 {
                     case 1:
-                        Console.Clear();
                         break;
 
                     case 2:
-                        Console.Clear();
                         break;
 
                     case 3:
-                        Services.AuthenticationService.AuthenticateUserForGivenCredential();
                         break;
 
                     case 4:
