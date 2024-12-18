@@ -117,7 +117,7 @@ namespace CineComplex.Views.AdminClient
                     var pagedUsers = existingUsers.Skip(currentPage * pageSize).Take(pageSize);
                     foreach (User u in pagedUsers)
                     {
-                        table.AddRow($"{u.Id,-10}", $"{u.Username,-20}", $"{u.Contact,-15}", $"{u.Email,-25}");
+                        table.AddRow($"{u.Id}", $"{u.Username,-20}", $"{u.Contact,-5}", $"{u.Email,-25}");
                     }
 
                     if(pagedUsers.Count()!=0 && pagedUsers.Count()<10)
