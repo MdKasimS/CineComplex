@@ -3,6 +3,7 @@ using CineComplex.Interfaces;
 using CineComplex.Models;
 using CineComplex.Services;
 using CineComplex.ViewModels;
+using CineComplex.Views.AdminClient;
 using CineComplex.Views.FormViews;
 
 namespace CineComplex.Views
@@ -64,7 +65,7 @@ namespace CineComplex.Views
                     case 3:
                         if (AuthenticationService.AuthenticateUserForGivenCredential())
                         {
-                            ManageTicketsView.Instance.View();
+                            AdminHomeView.Instance.View();
                         }
                         else
                         {

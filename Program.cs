@@ -57,7 +57,8 @@ namespace CineComplex
               "6.User Management View",
               "7.Account View",
               "8.Forgot Password View ", 
-              "9.Exit"
+              "9.Exit",
+              "10. Admin Home View"
             };
 
             SQLInteraction.Instance.Init();
@@ -140,6 +141,9 @@ namespace CineComplex
                         break;
 
                     case 10:
+                        app = AdminHomeView.Instance;
+                        app.View();
+                        Console.WriteLine("AccountView View");
                         break;
 
                     default:

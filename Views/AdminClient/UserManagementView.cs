@@ -89,6 +89,7 @@ namespace CineComplex.Views.AdminClient
 
         public void DisplayAllUsers()
         {
+            //Properties marked as NotMapped(hence set null) are also being used as columns for ConsoleTables
             Console.Clear();
             List<User> existingUsers = SQLInteraction.Db.Users.ToList();
 

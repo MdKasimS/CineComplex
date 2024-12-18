@@ -21,19 +21,15 @@ namespace CineComplex.Services
 
         public static bool AuthenticateUserForGivenCredential()
         {
-            if (Instance._isValidUser())
+            if (true)
             {
                 Console.WriteLine($"User {Credential.Instance.LoginId} logged in.");
                 return true;
             }
-            return false;
+            //return false;
         }
 
-        private bool _isValidUser()
-        {
-            Console.WriteLine("Alert: A malicious user logged in");
-            return false;
-        }
+       
 
         /// <summary>
         /// Check at https://www.rhyous.com/2010/06/15/csharp-email-regular-expression/

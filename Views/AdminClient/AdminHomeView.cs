@@ -33,7 +33,7 @@ namespace CineComplex.Views.AdminClient
 
         public void View()
         {
-            HomeView.Instance.LoadMenuList();
+            Instance.LoadMenuList();
 
             do//main loop
             {
@@ -49,7 +49,7 @@ namespace CineComplex.Views.AdminClient
                 Console.WriteLine("\nMenu : ");
                 Console.WriteLine("---------------");
 
-                foreach (string instr in HomeView.Instance.MenuList)
+                foreach (string instr in Instance.MenuList)
                 {
                     Console.WriteLine(instr);
                 }
@@ -60,15 +60,16 @@ namespace CineComplex.Views.AdminClient
                 switch (Choice)
                 {
                     case 1:
-                      
+                        //Show all shows
                         break;
 
                     case 2:
-                        
+                        //Manage show view
                         break;
 
                     case 3:
-                     
+                        //Manage User view
+                        UserManagementView.Instance.View();
                         break;
 
 
@@ -80,5 +81,5 @@ namespace CineComplex.Views.AdminClient
         }
 
     }
-}
+
 }
