@@ -63,8 +63,6 @@ namespace CineComplex.Views
                         break;
 
                     case 6:
-                        Console.Write("\nPress any key.....");
-                        Console.ReadKey();
                         break;
 
                     default:

@@ -53,7 +53,10 @@ namespace CineComplex
               "2.Home View",
               "3.Manage Ticket View",
               "4.SignUp View",
-              "5.User Management View",
+              "5.User Home View",
+              "6.User Management View",
+              "7.Account View",
+              "8.Forgot Password View ", 
               "9.Exit"
             };
 
@@ -74,7 +77,6 @@ namespace CineComplex
                 int.TryParse(Console.ReadLine(), out choice);
 
                 IView app = StartView.Instance;
-
 
                 switch (choice)
                 {
@@ -105,13 +107,6 @@ namespace CineComplex
                         Console.WriteLine("SignUp View");
                         break;
 
-                    case 6:
-                        //User Management View
-                        app = UserManagementView.Instance;
-                        app.View();
-                        Console.WriteLine("UserManagementView View");
-                        break;
-
                     case 5:
                         //User Home View
                         app = UserHomeView.Instance;
@@ -119,13 +114,29 @@ namespace CineComplex
                         Console.WriteLine("User HomeView View");
                         break;
 
+                    case 6:
+                        //User Management View
+                        app = UserManagementView.Instance;
+                        app.View();
+                        Console.WriteLine("UserManagementView View");
+                        break;
+
                     case 7:
+                        //Profile View
+                        app = AccountView.Instance;
+                        app.View();
+                        Console.WriteLine("AccountView View");
                         break;
 
                     case 8:
+                        //ForgotPassowrd View
+                        app = ForgotPasswordFormView.Instance;
+                        app.View();
+                        Console.WriteLine("AccountView View");
                         break;
 
                     case 9:
+                        //Keep this empty for easy testing purposes
                         break;
 
                     case 10:
