@@ -1,3 +1,4 @@
+using CineComplex.Classes;
 using CineComplex.Classes.Base;
 using CineComplex.Classes.SQL;
 using Microsoft.Data.Sqlite;
@@ -19,6 +20,8 @@ namespace CineComplex.Models
 
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
             string dbPath = Path.Combine(basePath, "CineComplexDatabase.db");
+
+           
 
             var connection = new SqliteConnection($"Data Source={dbPath}");
             try

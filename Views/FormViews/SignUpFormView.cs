@@ -79,7 +79,7 @@ namespace CineComplex.Views.FormViews
                     case 5:
 
                         Result<bool> result = SignUpFormViewModel.Instance.CreateUserCommand();
-                        Console.WriteLine(result.Message);
+                        Console.Write(result.Message);
                         Console.ReadKey();
 
                         if (result.IsSuccessful)
