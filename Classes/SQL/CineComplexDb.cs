@@ -55,7 +55,6 @@ namespace CineComplex.Classes.SQL
                 entity.Property(e => e.Username).IsRequired().HasMaxLength(50); // Name is required, max length 50 
                 entity.Property(e => e.Email).IsRequired().HasMaxLength(50); // Email is required, max length 50 
                 entity.Property(e => e.Contact).IsRequired().HasMaxLength(15); // Contact is required, max length 15
-                entity.Property(e => e.Password).IsRequired().HasMaxLength(15);
 
                 // Set unique constraints
                 entity.HasIndex(e => e.Email).IsUnique();
