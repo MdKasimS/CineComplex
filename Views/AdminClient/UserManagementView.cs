@@ -95,26 +95,74 @@ namespace CineComplex.Views.AdminClient
 
             if (existingUsers.Any())
             {
-                Console.Clear();
-                Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
-                Console.WriteLine("================================================");
+                ConsoleTable table;
+                int pageSize = 10;
+                int currentPage = 0;
+                bool hasMorePages = true;
+                do
+                {
+                    Console.Clear();
+                    Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
+                    Console.WriteLine("================================================");
 
-                Console.WriteLine("\nManage Users - CineComplex");
-                Console.WriteLine("-------------------------------------------------");
+                    Console.WriteLine("\nManage Users - CineComplex");
+                    Console.WriteLine("-------------------------------------------------");
 
-                Console.WriteLine();
+                    Console.WriteLine();
 
-                Console.WriteLine("\nUsers : ");
-                Console.WriteLine("---------------");
+                    Console.WriteLine("\nUsers : ");
+                    Console.WriteLine("---------------");
 
-                ConsoleTable.From<User>(existingUsers).Write(Format.MarkDown);
-                Console.WriteLine($"Count {existingUsers.Count}");
+                    table = new ConsoleTable(new List<string>() { "Id", "UserName", "Contact", "Email" }.ToArray());
+                    var pagedUsers = existingUsers.Skip(currentPage * pageSize).Take(pageSize);
+                    foreach (User u in pagedUsers)
+                    {
+                        table.AddRow(u.Id, u.Username, u.Contact, u.Email);
+                    }
+
+                    if(pagedUsers.Count()!=0 && pagedUsers.Count()<10)
+                    {
+                        for(int i=0; i< 10-pagedUsers.Count();++i)
+                        {
+                            table.AddRow("","","","");
+                        }
+                    }
+
+                    hasMorePages = pagedUsers.Count() == 0 ? false : true;
+                    if (hasMorePages)
+                    {
+                        table.Write(Format.MarkDown);
+                        Console.WriteLine($"Count {table.Rows.Count}");
+
+                        currentPage++;
+                      
+                        Console.WriteLine("\nMenu : ");
+                        Console.WriteLine("---------------");
+                        Console.WriteLine("1. Press Enter to view the next page");
+                        Console.WriteLine("2. Enter Id For Record Selection");
+                        Console.WriteLine("3. Type 3 to exit");
+                        Console.Write("Your Choice: ");
+
+                        var input = Console.ReadLine();
+                        if (input?.ToLower() == "3") 
+                        { 
+                            break; 
+                        }
+
+                        //else
+                        //{
+                            //Code to handle selected record
+                        //}
+                        
+                    }
+                } while (hasMorePages);
+
             }
             else
             {
                 Console.WriteLine("No users found.");
             }
-            Console.ReadKey();
+            //Console.ReadKey();
         }
     }
 }

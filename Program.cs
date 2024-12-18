@@ -33,7 +33,7 @@ namespace CineComplex
 
         private static void Main(string[] args)
         {
-            Console.WindowHeight = 25;
+            Console.WindowHeight = 35;
             Console.WindowWidth = 120;
 
 
