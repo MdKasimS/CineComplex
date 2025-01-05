@@ -93,6 +93,10 @@ namespace CineComplex.Views.FormViews
                         SignUpFormViewModel.Instance.ResetFormCommand();
                         break;
 
+                    case 7:
+                        SignUpFormViewModel.Instance.ResetFormCommand();
+                        break;
+
                     default:
                         Console.WriteLine("Please enter the valid Choice .....");
                         break;

@@ -54,8 +54,6 @@ namespace CineComplex.ViewModels.FormViewModels
                 return isValidRegistration;
             }
 
-            //isValidRegistration.Value = false;
-            //isValidRegistration.IsSuccessful = false;
             return isValidRegistration;
 
         }
