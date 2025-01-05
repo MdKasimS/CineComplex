@@ -1,5 +1,7 @@
 ﻿using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
+using CineComplex.ViewModels;
+using CineComplex.ViewModels.AdminViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,7 +74,10 @@ namespace CineComplex.Views.AdminClient
                         UserManagementView.Instance.View();
                         break;
 
-
+                    case 7:
+                        AdminHomeViewModel.Instance.SignOut();
+                        SignInViewModel.Instance.ResetFormCommand();
+                        break;
                     default:
                         Console.WriteLine("Please enter the valid Choice .....");
                         break;

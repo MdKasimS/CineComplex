@@ -5,15 +5,11 @@ namespace CineComplex.Models
         private string? _loginId;
         private string? _password;
         //private string? _type;
+        private string? _sessionTokenId;
         private static Credential? _instance;
 
-        private static Dictionary<int, Credential>? _credentials;
+        
 
-        #region Dictionaries
-        public static Dictionary<int, Credential>? Credentials { get => _credentials; set => _credentials = value; }
-
-
-        #endregion
 
         private Credential()
         {
@@ -21,6 +17,7 @@ namespace CineComplex.Models
 
         public string? LoginId { get => _loginId; set => _loginId = value; }
         public string? Password { get => _password; set => _password = value; }
+        public string? SessionTokenId { get => _sessionTokenId; set => _sessionTokenId = value; }
         public static Credential Instance
         {
             get

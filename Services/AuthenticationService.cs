@@ -8,6 +8,7 @@ using CineComplex.Classes.Base;
 using CineComplex.Classes.SQL;
 using CineComplex.Interfaces;
 using CineComplex.Models;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CineComplex.Services
 {
@@ -19,17 +20,37 @@ namespace CineComplex.Services
             Console.WriteLine("Authenticaition Service Is On...");
         }
 
-        public static bool AuthenticateUserForGivenCredential()
+        public static Result<bool> AuthenticateUserForGivenCredential()
         {
-            if (true)
+            if (!Credential.Instance.LoginId.IsNullOrEmpty() && !Credential.Instance.Password.IsNullOrEmpty())
             {
-                Console.WriteLine($"User {Credential.Instance.LoginId} logged in.");
-                return true;
+                Result<bool> emailValidationResult = AuthenticationService.IsValidEmail(Credential.Instance.LoginId);
+
+                if (emailValidationResult.IsSuccessful)
+                {
+                    
+                    User userToAuthenticate = SQLInteraction.Db.Users.FirstOrDefault(u => u.Email == Credential.Instance.LoginId);
+
+                    if (userToAuthenticate != null)
+                    {
+                        Auth auth = SQLInteraction.Db.Auths.FirstOrDefault(a => a.UserId == userToAuthenticate.Id);
+                        if (auth != null && auth.Password == Credential.Instance.Password)
+                        {
+                            SessionService.LogSession(auth);
+                            return new Result<bool>(true, true, $"User {Credential.Instance.LoginId} Logged In..."); //false;
+                        }
+                        return new Result<bool>(false, false, $"Authentication Failed... Press Any Key To Continue.");
+                    }
+                   
+                    return new Result<bool>(false, false, $"User {Credential.Instance.LoginId} Doesn't Exists... Press Any Key To Continue.");
+                }
+                return emailValidationResult;
             }
-            //return false;
+
+            return new Result<bool>(false, false, "All Fields Are Needed... Press Any Key To Continue.");
         }
 
-       
+
 
         /// <summary>
         /// Check at https://www.rhyous.com/2010/06/15/csharp-email-regular-expression/
@@ -38,19 +59,14 @@ namespace CineComplex.Services
         /// <returns></returns>
         public static Result<bool> IsValidEmail(string email)
         {
- 
+
             String theEmailPattern = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*"
                                    + "@"
                                    + @"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\z";
-            if(Regex.IsMatch(email, theEmailPattern))
+            if (Regex.IsMatch(email, theEmailPattern))
                 return new Result<bool>(true, true, "");
             else
                 return new Result<bool>(false, false, "Invalid Email Address. Press Any Key To Continue...");
-        }
-
-        private bool _isPasswordCorrect()
-        {
-            return false;
         }
 
         public static Result<bool> AuthorizeNewUser(User _newUser)

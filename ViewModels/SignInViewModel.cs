@@ -1,6 +1,8 @@
 ﻿using CineComplex.Models;
 using CineComplex.Classes.Base;
 using CineComplex.Services;
+using CineComplex.ViewModels.FormViewModels;
+using CineComplex.Classes;
 
 
 namespace CineComplex.ViewModels
@@ -27,6 +29,17 @@ namespace CineComplex.ViewModels
                
             }
 
+        }
+
+        public Result<bool> SignIn()
+        {
+            return AuthenticationService.AuthenticateUserForGivenCredential();
+        }
+
+        public void ResetFormCommand()
+        {
+            Credential.Instance.LoginId = "";
+            Credential.Instance.Password = "";
         }
 
         private bool AreAllCredentialsAvailable()

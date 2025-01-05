@@ -1,3 +1,4 @@
+using CineComplex.Classes;
 using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
@@ -63,14 +64,14 @@ namespace CineComplex.Views
                         break;
 
                     case 3:
-                        if (AuthenticationService.AuthenticateUserForGivenCredential())
+                        Result<bool> authenticationResult = SignInViewModel.Instance.SignIn();
+                        if (authenticationResult.IsSuccessful)
                         {
                             AdminHomeView.Instance.View();
                         }
                         else
                         {
-                            Console.Clear();
-                            Console.WriteLine("Authentication Failed... Press Any Key To Continue.");
+                            Console.Write($"{authenticationResult.Message}");
                             Console.ReadLine();
                         }
                         break;
@@ -84,6 +85,9 @@ namespace CineComplex.Views
                         Console.Clear();
                         break;
 
+                    case 6:
+                        SignInViewModel.Instance.ResetFormCommand();
+                        break;
 
                     default:
                         Console.WriteLine("Please enter the valid Choice .....");
@@ -100,9 +104,11 @@ namespace CineComplex.Views
                 "3. Login ",
                 "4. Sign Up ",
                 "5. Forgot Password ",
-                "6. Exit",
+                "6. Reset Form ",
+                "7. Exit",
             };
         }
 
+        
     }
 }
