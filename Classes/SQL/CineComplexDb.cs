@@ -29,6 +29,7 @@ namespace CineComplex.Classes.SQL
 
         public DbSet<User> Users { get; set; }
         public DbSet<Auth> Auths { get; set; }
+        public DbSet<Session> Sessions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -61,12 +62,25 @@ namespace CineComplex.Classes.SQL
                 entity.HasIndex(e => e.Contact).IsUnique();
             });
         
-        modelBuilder.Entity<Auth>(entity => 
+            modelBuilder.Entity<Auth>(entity => 
             { 
                 entity.HasKey(e => e.UserId); 
                 entity.Property(e => e.Password).IsRequired();
-        entity.Property(e => e.PrivilegeLevel).IsRequired();
-    });
+                entity.Property(e => e.PrivilegeLevel).IsRequired();
+            });
+
+            modelBuilder.Entity<Session>(entity => 
+            {
+                entity.ToTable("Sessions");
+                entity.HasKey(e => e.Id); 
+                entity.Property(e => e.UserId).IsRequired(); 
+                entity.Property(e => e.Token).IsRequired().HasMaxLength(256); 
+                entity.Property(e => e.LoginTimestamp).IsRequired(); 
+                entity.Property(e => e.ExpirationTimestamp).IsRequired(); 
+                entity.HasIndex(e => e.Token).IsUnique(); 
+                entity.HasOne<Auth>().WithMany().HasForeignKey(s => s.UserId); 
+            });
         }
+
     }
 }
