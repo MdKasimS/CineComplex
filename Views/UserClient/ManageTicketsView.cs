@@ -2,7 +2,7 @@
 using CineComplex.Interfaces;
 using CineComplex.ViewModels;
 
-namespace CineComplex.Views
+namespace CineComplex.Views.UserClient
 {
     public class ManageTicketsView : AViewBase<ManageTicketsView>, IView
     {

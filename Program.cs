@@ -51,14 +51,15 @@ namespace CineComplex
             {
               "1.Start View",
               "2.Home View",
-              "3.Manage Ticket View",
+              "3.Manage Ticket View (User Client)",
               "4.SignUp View",
               "5.User Home View",
               "6.User Management View",
               "7.Account View",
               "8.Forgot Password View ", 
               "9.Exit",
-              "10. Admin Home View"
+              "10.Admin Home View",
+              "11.Manage Ticket View (Admin Client)"
             };
 
             SQLInteraction.Instance.Init();
@@ -96,7 +97,7 @@ namespace CineComplex
 
                     case 3:
                         //ManageTicket View
-                        app = ManageTicketsView.Instance;
+                        app = CineComplex.Views.UserClient.ManageTicketsView.Instance;
                         app.View();
                         Console.WriteLine("Admin ManageTickets View");
                         break;
@@ -142,6 +143,12 @@ namespace CineComplex
 
                     case 10:
                         app = AdminHomeView.Instance;
+                        app.View();
+                        Console.WriteLine("AccountView View");
+                        break;
+
+                    case 11:
+                        app = CineComplex.Views.AdminClient.ManageTicketsView.Instance;
                         app.View();
                         Console.WriteLine("AccountView View");
                         break;

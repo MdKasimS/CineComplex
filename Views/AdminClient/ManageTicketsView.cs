@@ -2,8 +2,8 @@
 using CineComplex.Interfaces;
 using CineComplex.ViewModels;
 
-namespace CineComplex.Views
-{
+namespace CineComplex.Views.AdminClient
+{ 
     public class ManageTicketsView : AViewBase<ManageTicketsView>, IView
     {
         private int _choice = 0;
@@ -68,8 +68,6 @@ namespace CineComplex.Views
                 }
             } while (Choice!= Instance.MenuList.Count);
         }
-
-        
 
         public void LoadMenuList()
         {

@@ -63,6 +63,9 @@ namespace CineComplex.Views
                         break;
 
                     case 2:
+                        break;
+
+                    case 3:
                         ForgotPasswordFormView.Instance.View();
                         break;
 
