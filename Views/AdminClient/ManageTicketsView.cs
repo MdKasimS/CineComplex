@@ -1,37 +1,18 @@
 ﻿using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.ViewModels;
-using CineComplex.ViewModels.AdminViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CineComplex.Views.AdminClient
+namespace CineComplex.Views
 {
-    public class AdminHomeView : AViewBase<AdminHomeView>, IView
+    public class ManageTicketsView : AViewBase<ManageTicketsView>, IView
     {
         private int _choice = 0;
         public int Choice { get => _choice; set => _choice = value; }
+
         public List<string> MenuList
         {
             get;
             set;
-        }
-
-        public void LoadMenuList()
-        {
-            Instance.MenuList = new List<string>() {
-                "1. See Shows",
-                "2. Manage Shows",
-                "3. Manage Users",
-                "4. Manage Admins",
-                "5. Manage Tickets",
-                "6. Manage Movies",
-                "7. Manage CineComplexes",
-                "8. Exit",
-            };
         }
 
         public void View()
@@ -44,7 +25,7 @@ namespace CineComplex.Views.AdminClient
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine("\nHome - CineComplex");
+                Console.WriteLine(" Manage Tickets");
                 Console.WriteLine("-------------------------------------------------");
 
                 Console.WriteLine();
@@ -52,40 +33,56 @@ namespace CineComplex.Views.AdminClient
                 Console.WriteLine("\nMenu : ");
                 Console.WriteLine("---------------");
 
-                foreach (string instr in Instance.MenuList)
+                foreach (string instr in ManageTicketsView.Instance.MenuList)
                 {
                     Console.WriteLine(instr);
                 }
 
                 Console.Write("Enter Your Choice : ");
 
+
                 int.TryParse(Console.ReadLine(), out _choice);
                 switch (Choice)
                 {
                     case 1:
-                        //Show all shows
                         break;
 
                     case 2:
-                        //Manage show view
                         break;
 
                     case 3:
-                        //Manage User view
-                        UserManagementView.Instance.View();
                         break;
 
-                    case 7:
-                        AdminHomeViewModel.Instance.SignOut();
-                        SignInViewModel.Instance.ResetFormCommand();
+                    case 4:
                         break;
+
+                    case 5:
+                        break;
+
+                    case 6:
+                        break;
+
                     default:
                         Console.WriteLine("Please enter the valid Choice .....");
                         break;
                 }
-            } while (Choice != Instance.MenuList.Count);
+            } while (Choice!= Instance.MenuList.Count);
         }
 
-    }
+        
 
+        public void LoadMenuList()
+        {
+            Instance.MenuList = new List<string>() 
+            { 
+                "1. Book Ticket", 
+                "2. Show Shows", 
+                "3. Cancel Tickets", 
+                "4. Previous Bookings", 
+                "5. Account", 
+                "6. Exit ", 
+            };
+        }
+    }
 }
+
