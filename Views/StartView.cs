@@ -21,10 +21,10 @@ namespace CineComplex.Views
         public void LoadMenuList()
         {
             StartView.Instance.MenuList = new List<string>() {
-                "1. Login ",
-                "2. Register ",
-                "3. Forgot Password ",
-                "4. Create View And ViewModel Files",
+                "1. Login",
+                "2. Forgot Password",
+                "3. Contact Us",
+                "4. Careers",
                 "5. Exit",
             };
         }
@@ -63,10 +63,15 @@ namespace CineComplex.Views
                         break;
 
                     case 2:
+                        ForgotPasswordFormView.Instance.View();
                         break;
 
                     case 3:
-                        ForgotPasswordFormView.Instance.View();
+                        //Contact Us
+                        break;
+
+                    case 4:
+                        //Careers
                         break;
 
                     default:

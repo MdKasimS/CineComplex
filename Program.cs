@@ -90,7 +90,7 @@ namespace CineComplex
 
                     case 2:
                         //Home View
-                        app = SignInView.Instance;
+                        app = HomeView.Instance;
                         app.View();
                         Console.WriteLine("SignIn View");
                         break;
