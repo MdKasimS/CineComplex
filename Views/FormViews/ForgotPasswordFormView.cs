@@ -21,7 +21,7 @@ namespace CineComplex.Views.FormViews
         }
         public void LoadMenuList()
         {
-            StartView.Instance.MenuList = new List<string>() {
+            ForgotPasswordFormView.Instance.MenuList = new List<string>() {
                 "1. Enter User Id ",
                 "2. Enter Email  ",
                 "3. Enter Contact ",
