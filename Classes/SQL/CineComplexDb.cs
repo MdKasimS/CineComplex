@@ -33,6 +33,7 @@ namespace CineComplex.Classes.SQL
         public DbSet<BankAccount> BankAccounts { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<CinePlex> Cineplexes { get; set; }
+        public DbSet<UserProfile> UserProfiles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -64,7 +65,33 @@ namespace CineComplex.Classes.SQL
                 entity.HasIndex(e => e.Email).IsUnique();
                 entity.HasIndex(e => e.Contact).IsUnique();
             });
-        
+
+            modelBuilder.Entity<UserProfile>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+
+                entity.HasOne(up => up.UserAccount)
+                      .WithOne()
+                      .HasForeignKey<UserProfile>(up => up.UserId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(up => up.AddressDetails)
+                      .WithOne()
+                      .HasForeignKey<UserProfile>(up => up.AddressId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(up => up.BankDetails)
+                  .WithOne()
+                  .HasForeignKey<UserProfile>(up => up.BankAccountId)
+                  .OnDelete(DeleteBehavior.Restrict);
+
+                //What if need only single association but UI can suggest multiple.
+                entity.HasOne(up => up.BankDetails)
+                      .WithMany()
+                      .HasForeignKey(up => up.BankAccountId)
+                      .OnDelete(DeleteBehavior.Restrict);
+            });
+
             modelBuilder.Entity<Auth>(entity => 
             { 
                 entity.HasKey(e => e.UserId); 
@@ -72,16 +99,17 @@ namespace CineComplex.Classes.SQL
                 entity.Property(e => e.PrivilegeLevel).IsRequired();
             });
 
-            modelBuilder.Entity<Session>(entity => 
+            modelBuilder.Entity<Session>(entity =>
             {
-                entity.ToTable("Sessions");
-                entity.HasKey(e => e.Id); 
-                entity.Property(e => e.UserId).IsRequired(); 
-                entity.Property(e => e.Token).IsRequired().HasMaxLength(256); 
-                entity.Property(e => e.LoginTimestamp).IsRequired(); 
-                entity.Property(e => e.ExpirationTimestamp).IsRequired(); 
-                entity.HasIndex(e => e.Token).IsUnique(); 
-                entity.HasOne<Auth>().WithMany().HasForeignKey(s => s.UserId); 
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Token).IsRequired().HasMaxLength(200);
+                entity.Property(e => e.LoginTimestamp).IsRequired();
+                entity.Property(e => e.ExpirationTimestamp).IsRequired();
+
+                entity.HasOne(s => s.User)
+                      .WithMany()
+                      .HasForeignKey(s => s.UserId)
+                      .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<BankAccount>(entity =>
@@ -128,7 +156,11 @@ namespace CineComplex.Classes.SQL
                       .IsRequired()
                       .HasMaxLength(50); // Example configuration
 
-                entity.Property(e => e.ZipCode)
+                entity.Property(e => e.Country)
+                      .IsRequired()
+                      .HasMaxLength(15); // Example configuration
+
+                entity.Property(e => e.PinCode)
                       .IsRequired()
                       .HasMaxLength(10); // Example configuration
             });
@@ -137,20 +169,17 @@ namespace CineComplex.Classes.SQL
             {
                 entity.HasKey(e => e.Id);
 
-                entity.Property(e => e.FranchiseOperator).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.FranchiseOperator)
+                      .IsRequired().HasMaxLength(100);
+
+                entity.Property(e => e.NumberOfTheatres).IsRequired();
 
                 // Configure relationships
-                entity.HasOne(e => e.UserAccount)
+                entity.HasOne(e => e.Profile)
                       .WithOne()
-                      .HasForeignKey<CinePlex>(e => e.Id);
+                      .HasForeignKey<CinePlex>(e => e.UserProfileId)
+                      .OnDelete(DeleteBehavior.Cascade);
 
-                entity.HasOne(e => e.BankDetails)
-                      .WithOne()
-                      .HasForeignKey<CinePlex>(e => e.BankAccountId);
-
-                entity.HasOne(e => e.AddressDetails)
-                      .WithOne()
-                      .HasForeignKey<CinePlex>(e => e.AddressId);
             });
         
         }
