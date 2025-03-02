@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CineComplex.Views.UserClient
 {
-    public class AccountView : AViewBase<AccountView>, IView
+    public class ProfileView : AViewBase<ProfileView>, IView
     {
         private int _choice = 0;
         public int Choice { get => _choice; set => _choice = value; }

@@ -51,7 +51,7 @@ namespace CineComplex.Views.UserClient
                     case 1:
                         break;
                     case 5:
-                        AccountView.Instance.View();
+                        ProfileView.Instance.View();
                         break;
                     default:
                         Console.WriteLine("Please enter the valid Choice .....");
