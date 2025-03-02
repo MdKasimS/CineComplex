@@ -33,7 +33,7 @@ namespace CineComplex
 
         private static void Main(string[] args)
         {
-            Console.WindowHeight = 35;
+            Console.WindowHeight = 15;
             Console.WindowWidth = 120;
 
 
@@ -63,102 +63,105 @@ namespace CineComplex
             };
 
             SQLInteraction.Instance.Init();
+            IView app = StartView.Instance;
+            app.View();
 
-            do
-            {
-                Console.Clear();
-                Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
-                Console.WriteLine("================================================");
 
-                foreach (string instr in MenuList)
-                {
-                    Console.WriteLine(instr);
-                }
+            //do
+            //{
+            //    Console.Clear();
+            //    Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
+            //    Console.WriteLine("================================================");
 
-                Console.Write("Enter Your Choice : ");
-                int.TryParse(Console.ReadLine(), out choice);
+            //    foreach (string instr in MenuList)
+            //    {
+            //        Console.WriteLine(instr);
+            //    }
 
-                IView app = StartView.Instance;
+            //    Console.Write("Enter Your Choice : ");
+            //    int.TryParse(Console.ReadLine(), out choice);
 
-                switch (choice)
-                {
+            //    IView app = StartView.Instance;
 
-                    case 1:
-                        //Start View
-                        app.View();
-                        break;
+            //    switch (choice)
+            //    {
 
-                    case 2:
-                        //Home View
-                        app = HomeView.Instance;
-                        app.View();
-                        Console.WriteLine("SignIn View");
-                        break;
+            //        case 1:
+            //            //Start View
+            //            app.View();
+            //            break;
 
-                    case 3:
-                        //ManageTicket View
-                        app = CineComplex.Views.UserClient.ManageTicketsView.Instance;
-                        app.View();
-                        Console.WriteLine("Admin ManageTickets View");
-                        break;
+            //        case 2:
+            //            //Home View
+            //            app = HomeView.Instance;
+            //            app.View();
+            //            Console.WriteLine("SignIn View");
+            //            break;
 
-                    case 4:
-                        //SignUp View
-                        app = SignUpFormView.Instance;
-                        app.View();
-                        Console.WriteLine("SignUp View");
-                        break;
+            //        case 3:
+            //            //ManageTicket View
+            //            app = CineComplex.Views.UserClient.ManageTicketsView.Instance;
+            //            app.View();
+            //            Console.WriteLine("Admin ManageTickets View");
+            //            break;
 
-                    case 5:
-                        //User Home View
-                        app = UserHomeView.Instance;
-                        app.View();
-                        Console.WriteLine("User HomeView View");
-                        break;
+            //        case 4:
+            //            //SignUp View
+            //            app = SignUpFormView.Instance;
+            //            app.View();
+            //            Console.WriteLine("SignUp View");
+            //            break;
 
-                    case 6:
-                        //User Management View
-                        app = UserManagementView.Instance;
-                        app.View();
-                        Console.WriteLine("UserManagementView View");
-                        break;
+            //        case 5:
+            //            //User Home View
+            //            app = UserHomeView.Instance;
+            //            app.View();
+            //            Console.WriteLine("User HomeView View");
+            //            break;
 
-                    case 7:
-                        //Profile View
-                        app = AccountView.Instance;
-                        app.View();
-                        Console.WriteLine("AccountView View");
-                        break;
+            //        case 6:
+            //            //User Management View
+            //            app = UserManagementView.Instance;
+            //            app.View();
+            //            Console.WriteLine("UserManagementView View");
+            //            break;
 
-                    case 8:
-                        //ForgotPassowrd View
-                        app = ForgotPasswordFormView.Instance;
-                        app.View();
-                        Console.WriteLine("AccountView View");
-                        break;
+            //        case 7:
+            //            //Profile View
+            //            app = AccountView.Instance;
+            //            app.View();
+            //            Console.WriteLine("AccountView View");
+            //            break;
 
-                    case 9:
-                        //Keep this empty for easy testing purposes
-                        break;
+            //        case 8:
+            //            //ForgotPassowrd View
+            //            app = ForgotPasswordFormView.Instance;
+            //            app.View();
+            //            Console.WriteLine("AccountView View");
+            //            break;
 
-                    case 10:
-                        app = AdminHomeView.Instance;
-                        app.View();
-                        Console.WriteLine("AccountView View");
-                        break;
+            //        case 9:
+            //            //Keep this empty for easy testing purposes
+            //            break;
 
-                    case 11:
-                        app = CineComplex.Views.AdminClient.ManageTicketsView.Instance;
-                        app.View();
-                        Console.WriteLine("AccountView View");
-                        break;
+            //        case 10:
+            //            app = AdminHomeView.Instance;
+            //            app.View();
+            //            Console.WriteLine("AccountView View");
+            //            break;
 
-                    default:
-                        Console.WriteLine("Ok");
-                        break;
+            //        case 11:
+            //            app = CineComplex.Views.AdminClient.ManageTicketsView.Instance;
+            //            app.View();
+            //            Console.WriteLine("AccountView View");
+            //            break;
 
-                }
-            } while (choice != 9);
+            //        default:
+            //            Console.WriteLine("Ok");
+            //            break;
+
+            //    }
+            //} while (choice != 9);
 
         }
     }
