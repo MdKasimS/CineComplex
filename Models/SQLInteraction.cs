@@ -89,11 +89,7 @@ namespace CineComplex.Models
             // if obj ==null throw Null Reference Exception
             // Exception Messsage - "Movie details can't be null."
         }
-        public void AddTheatre(Theatre obj)
-        {
-            // if obj == null thriw Null Reference Exception
-            // Exception message - "Theatre details can't be null."
-        }
+       
         public void AddCustomers(Customer obj)
         {
 
@@ -110,10 +106,7 @@ namespace CineComplex.Models
         {
 
         }
-        public void DeleteTheatre(Theatre obj)
-        {
-
-        }
+        
         public void DeleteCustomers(Customer obj)
         {
 
@@ -130,10 +123,7 @@ namespace CineComplex.Models
         {
 
         }
-        public void UpdateTheatre(Theatre obj)
-        {
-
-        }
+       
         public void UpdateCustomers(Customer obj)
         {
 
@@ -150,10 +140,7 @@ namespace CineComplex.Models
         {
 
         }
-        public void SearchTheatre(Theatre obj)
-        {
-
-        }
+       
         public void SearchCustomers(Customer obj)
         {
 
