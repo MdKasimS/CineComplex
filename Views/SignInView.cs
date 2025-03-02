@@ -108,7 +108,5 @@ namespace CineComplex.Views
                 "7. Exit",
             };
         }
-
-        
     }
 }
