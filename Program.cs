@@ -33,7 +33,7 @@ namespace CineComplex
 
         private static void Main(string[] args)
         {
-            Console.WindowHeight = 15;
+            Console.WindowHeight = 25;
             Console.WindowWidth = 120;
 
 
@@ -64,6 +64,7 @@ namespace CineComplex
 
             SQLInteraction.Instance.Init();
             IView app = StartView.Instance;
+            //IView app = ManageCineplexView.Instance;
             app.View();
 
 
