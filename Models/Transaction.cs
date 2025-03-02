@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CineComplex.Models
 {
-    public class Bill
+    public class Transaction
     {
         public int Id { get; set; }
-        public Tax TaxLevied { get; set; }
 
-        public Discount AppliedDiscount { get; set; }
+        public int Status { get; set; }
+
     }
 }
