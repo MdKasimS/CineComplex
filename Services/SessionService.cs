@@ -22,15 +22,6 @@ namespace CineComplex.Services
             await Session.CreateSession(auth);
 
         }
-
-        public static void ValidateTokenId(string token)
-        {
-
-        }
-
-        public static string GenerateTokeId(Auth auth)
-        {
-            return new string("");
-        }
+      
     }
 }
