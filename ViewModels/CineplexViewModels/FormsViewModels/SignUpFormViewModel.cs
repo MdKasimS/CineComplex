@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.ViewModels.FormViewModels
+namespace CineComplex.ViewModels.CineplexViewModels
 {
     public class SignUpFormViewModel : AViewModelBase<SignUpFormViewModel>, IViewModel
     {

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Views.FormViews
+namespace CineComplex.Views.UserClient.Forms
 {
     public class AddressFormView : AViewBase<AddressFormView>, IView
     {
