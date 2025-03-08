@@ -14,6 +14,8 @@ namespace CineComplex.Models
         public string BankName { get; set; }
         public string IFSCNumber { get; set; }
         public string AccountHolderName { get; set; }
+        public int UserProfileId { get; set; }
+        public UserProfile UserProfile { get; set; }
 
     }
 }

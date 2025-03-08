@@ -17,6 +17,7 @@ namespace CineComplex.Models
         public string Country { get; set; }
         public string PinCode { get; set; }
         public string OtherDetails { get; set; }
-
+        public int UserProfileId { get; set; }
+        public UserProfile UserProfile { get; set; }
     }
 }

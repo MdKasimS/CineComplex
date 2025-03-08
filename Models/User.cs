@@ -20,7 +20,8 @@ namespace CineComplex.Models
         public string Password { get; set; }
         public string Email { get; set; }
         public string Contact { get; set; }
-
+        public UserProfile UserProfile { get; set; }
+        public Session UserSession { get; set; }
         public static async Task CreateNewUser(User _newUser)
         {
             await Task.Run(() =>
@@ -34,11 +35,18 @@ namespace CineComplex.Models
                     Password = _newUser.Password,
                     PrivilegeLevel = 0
                 });
+
+                UserProfile userProfile = new UserProfile
+                {
+                    UserAccount = _newUser
+                };
+
+                // Add the new UserProfile to the context
+                SQLInteraction.Db.UserProfiles.Add(userProfile);
                 SQLInteraction.Db.SaveChanges();
 
             });
         }
-
         private static Result<bool> AreAllFieldsForRegistartionAvailable(User _newUser)
         {
             if (string.IsNullOrWhiteSpace(_newUser.Username)

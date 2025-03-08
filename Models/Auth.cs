@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Services
+namespace CineComplex.Models
 {
     public class Auth
     {
