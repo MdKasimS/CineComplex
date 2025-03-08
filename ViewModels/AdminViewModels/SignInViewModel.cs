@@ -5,7 +5,7 @@ using CineComplex.ViewModels.FormViewModels;
 using CineComplex.Classes;
 
 
-namespace CineComplex.ViewModels
+namespace CineComplex.ViewModels.AdminViewModels
 {
     public class SignInViewModel : AViewModelBase<SignInViewModel>
     {

@@ -7,7 +7,7 @@ using CineComplex.ViewModels;
 using CineComplex.Views.AdminClient;
 using CineComplex.Views.FormViews;
 
-namespace CineComplex.Views
+namespace CineComplex.Views.AdminClient
 {
     public class SignInView : AViewBase<SignInView>, IView
     {
