@@ -6,6 +6,7 @@ using CineComplex.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,23 +25,26 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
 
         #region Commands
 
-        public Result<bool> CreateUserCommand()
+        public async Task<Result<bool>> CreateUserCommand()
         {
-            User _newUser = new User();
-            _newUser.Username = UserName;
-            _newUser.Password = Password;
-            _newUser.Email = Email;
-            _newUser.Contact = Contact;
-
-            Result<bool> isValidRegistration = User.IsValidUserRegistration(_newUser);
-            if (isValidRegistration.IsSuccessful)
+            return await Task.Run(() =>
             {
-                User.CreateNewUser(_newUser);
-                
-                isValidRegistration.Message = "User Created Successful. Press Any Key To Continue...";
+                User _newUser = new User();
+                _newUser.Username = UserName;
+                _newUser.Password = Password;
+                _newUser.Email = Email;
+                _newUser.Contact = Contact;
+
+                Result<bool> isValidRegistration = User.IsValidUserRegistration(_newUser);
+                if (isValidRegistration.IsSuccessful)
+                {
+                    User.CreateNewUser(_newUser);
+                    
+                    isValidRegistration.Message = "User Created Successful. Press Any Key To Continue...";
+                    return isValidRegistration;
+                }
                 return isValidRegistration;
-            }
-            return isValidRegistration;
+            });
         }
 
         public void ResetFormCommand()
