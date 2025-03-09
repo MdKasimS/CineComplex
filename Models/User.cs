@@ -48,7 +48,7 @@ namespace CineComplex.Models
                 SQLInteraction.Db.UserProfiles.Add(userProfile);
                 SQLInteraction.Db.SaveChanges();
 
-                SessionService.LogSession(auth);
+                //SessionService.LogSession(auth);
 
             });
         }
