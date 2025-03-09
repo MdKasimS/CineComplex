@@ -48,7 +48,7 @@ namespace CineComplex.Views.AdminClient
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine("\nManage Cineplex View - CineComplex");
+                Console.WriteLine("\nManage CineComplex - Admin");
                 Console.WriteLine("-------------------------------------------------");
 
                 Console.WriteLine();
