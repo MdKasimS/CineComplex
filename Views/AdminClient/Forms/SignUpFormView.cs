@@ -40,7 +40,7 @@ namespace CineComplex.Views.FormViews
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine("\nSign Up Form - CineComplex");
+                Console.WriteLine("\nSign Up Form - Admin");
                 Console.WriteLine("-------------------------------------------------");
 
                 SignUpFormView.Instance.ShowFormData();
