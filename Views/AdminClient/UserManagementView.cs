@@ -1,16 +1,8 @@
 ﻿using CineComplex.Classes.Base;
-using CineComplex.Classes;
 using CineComplex.Interfaces;
 using CineComplex.Models;
-using CineComplex.ViewModels.FormViewModels;
-using CineComplex.Views.FormViews;
 using ConsoleTables;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CineComplex.Views.AdminClient
 {
@@ -43,7 +35,7 @@ namespace CineComplex.Views.AdminClient
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine("\nManage Users - CineComplex");
+                Console.WriteLine("\nManage Users - Admin");
                 Console.WriteLine("-------------------------------------------------");
 
                 Console.WriteLine();

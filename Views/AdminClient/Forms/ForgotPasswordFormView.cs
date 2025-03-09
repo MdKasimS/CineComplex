@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CineComplex.Views.FormViews
+namespace CineComplex.Views.AdminClient.FormViews
 {
     public class ForgotPasswordFormView : AViewBase<ForgotPasswordFormView>, IView
     {
