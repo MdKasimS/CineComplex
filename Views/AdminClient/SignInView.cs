@@ -27,7 +27,7 @@ namespace CineComplex.Views.AdminClient
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine("\nAdmin SignIn View - CineComplex");
+                Console.WriteLine("\nSignIn View - Admin");
                 Console.WriteLine("-------------------------------------------------");
 
                 Console.WriteLine($"Entered Login Id : {Credential.Instance.LoginId}");
