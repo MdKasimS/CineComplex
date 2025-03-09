@@ -11,9 +11,9 @@ namespace CineComplex.Services
 {
     public class SessionService : AServiceBase<SessionService>, IService
     {
-        public static void TerminateSession(string tokenId)
+        public static async void TerminateSession(string tokenId)
         {
-            Session.DeleteSession(tokenId);
+            await Session.DeleteSession(tokenId);
         }
 
         public static async Task LogSession(Auth auth)
