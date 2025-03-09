@@ -25,7 +25,7 @@ namespace CineComplex.Views.AdminClient
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine(" Manage Tickets");
+                Console.WriteLine("Manage Tickets -  Admin");
                 Console.WriteLine("-------------------------------------------------");
 
                 Console.WriteLine();
