@@ -16,7 +16,7 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
     {
         #region Properties
 
-        public string UserName{get;  set ; }
+        public string UserName { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
         public string Contact { get; set; }
@@ -39,7 +39,7 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
                 if (isValidRegistration.IsSuccessful)
                 {
                     User.CreateNewUser(_newUser);
-                    
+
                     isValidRegistration.Message = "User Created Successful. Press Any Key To Continue...";
                     return isValidRegistration;
                 }
@@ -47,12 +47,15 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
             });
         }
 
-        public void ResetFormCommand()
+        public async void ResetFormCommand()
         {
-            SignUpFormViewModel.Instance.UserName = "";
-            SignUpFormViewModel.Instance.Email = "";
-            SignUpFormViewModel.Instance.Contact = "";
-            SignUpFormViewModel.Instance.Password = "";
+            await Task.Run(() =>
+            {
+                SignUpFormViewModel.Instance.UserName = "";
+                SignUpFormViewModel.Instance.Email = "";
+                SignUpFormViewModel.Instance.Contact = "";
+                SignUpFormViewModel.Instance.Password = "";
+            });
         }
         #endregion
 
