@@ -10,6 +10,7 @@ namespace CineComplex.ViewModels.UserClient
     public class SignInViewModel : AViewModelBase<SignInViewModel>
     {
        
+
         public SignInViewModel() { }
 
         public void GetSignInId()
@@ -31,9 +32,16 @@ namespace CineComplex.ViewModels.UserClient
 
         }
 
-        public Result<bool> SignIn()
+        public Result<bool> SignInCommand()
         {
-            return AuthenticationService.AuthenticateUserForGivenCredential();
+            Result<bool> signInResult = AuthenticationService.AuthenticateUserForGivenCredential();
+            
+            if (signInResult.IsSuccessful)
+            {
+                Credential.Instance.IsSignedIn = true;
+            }
+
+            return signInResult;
         }
 
         public void ResetFormCommand()
