@@ -40,7 +40,7 @@ namespace CineComplex.Views.UserClient.Forms
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine($"Forgot Password : Enter Any Of The Detail");
+                Console.WriteLine($"User Forgot Password : Enter Any Of The Detail");
                 Console.WriteLine("-------------------------------------------------");
 
 
