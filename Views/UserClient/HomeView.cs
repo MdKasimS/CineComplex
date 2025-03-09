@@ -12,13 +12,7 @@ namespace CineComplex.Views.UserClient
     {
         private int _choice = 0;
         public int Choice { get => _choice; set => _choice = value; }
-
-        public List<string> MenuList
-        {
-            get;
-            set;
-        }
-
+        public List<string> MenuList{ get; set; }
         public void View()
         {
             Instance.LoadMenuList();
@@ -59,7 +53,6 @@ namespace CineComplex.Views.UserClient
                 }
             } while (Choice != Instance.MenuList.Count);
         }
-
         public void LoadMenuList()
         {
             Instance.MenuList = new List<string>()
@@ -73,7 +66,5 @@ namespace CineComplex.Views.UserClient
                 "7. Exit ",
             };
         }
-
-
     }
 }
