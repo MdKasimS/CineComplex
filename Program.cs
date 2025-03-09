@@ -63,7 +63,7 @@ namespace CineComplex
             };
 
             SQLInteraction.Instance.Init();
-            IView app = StartView.Instance;
+            IView app = Views.HomeView.Instance;
             //IView app = ManageCineplexView.Instance;
             app.View();
 

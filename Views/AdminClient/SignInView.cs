@@ -4,6 +4,7 @@ using CineComplex.Interfaces;
 using CineComplex.Models;
 using CineComplex.Services;
 using CineComplex.ViewModels;
+using CineComplex.ViewModels.AdminViewModels;
 using CineComplex.Views.AdminClient;
 using CineComplex.Views.FormViews;
 

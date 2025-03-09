@@ -29,12 +29,15 @@ namespace CineComplex.Models
                 SQLInteraction.Db.Users.Add(_newUser);
                 SQLInteraction.Db.SaveChanges();
 
-                SQLInteraction.Db.Auths.Add(new Auth()
-                {
-                    UserId = _newUser.Id,
-                    Password = _newUser.Password,
-                    PrivilegeLevel = 0
-                });
+                //TODO: Hashing service to be added
+                Auth auth = new Auth { 
+                                        UserId = _newUser.Id,
+                                        Password = _newUser.Password,
+                                        PrivilegeLevel = 0
+                                     };
+                
+                SQLInteraction.Db.Auths.Add(auth);
+                SQLInteraction.Db.SaveChanges();
 
                 UserProfile userProfile = new UserProfile
                 {
@@ -45,9 +48,11 @@ namespace CineComplex.Models
                 SQLInteraction.Db.UserProfiles.Add(userProfile);
                 SQLInteraction.Db.SaveChanges();
 
+                SessionService.LogSession(auth);
+
             });
         }
-        private static Result<bool> AreAllFieldsForRegistartionAvailable(User _newUser)
+        private static Result<bool> AreAllFieldsForRegistrationAvailable(User _newUser)
         {
             if (string.IsNullOrWhiteSpace(_newUser.Username)
                 || string.IsNullOrWhiteSpace(_newUser.Password)
@@ -60,7 +65,7 @@ namespace CineComplex.Models
         }
         public static Result<bool> IsValidUserRegistration(User _newUser)
         {
-            Result<bool> isValidResult = AreAllFieldsForRegistartionAvailable(_newUser);
+            Result<bool> isValidResult = AreAllFieldsForRegistrationAvailable(_newUser);
            //:TODO please remove any view related code
            if (isValidResult.IsSuccessful)
             {

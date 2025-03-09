@@ -18,7 +18,7 @@ namespace CineComplex.Models
 
         //TODO: Please make it in ORM EFCore standard way
 
-        public static async Task<int> CreateSession(Auth auth)
+        public static async Task<int> CreateSessionAsync(Auth auth)
         {
             return await Task.Run(() =>
             {
@@ -33,7 +33,6 @@ namespace CineComplex.Models
                 SQLInteraction.Db.Sessions.Add(userSession);
                 SQLInteraction.Db.SaveChanges();
 
-                SessionService.AllSessionDictionary.Add(userSession.Token,userSession);
                 Credential.Instance.SessionTokenId = userSession.Token;
 
                 return userSession.Id;

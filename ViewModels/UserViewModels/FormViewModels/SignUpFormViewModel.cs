@@ -32,7 +32,7 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
             _newUser.Email = Email;
             _newUser.Contact = Contact;
 
-            Result<bool> isValidRegistration = IsValidRegistration(_newUser);
+            Result<bool> isValidRegistration = User.IsValidUserRegistration(_newUser);
             if (isValidRegistration.IsSuccessful)
             {
                 User.CreateNewUser(_newUser);
@@ -41,21 +41,6 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
                 return isValidRegistration;
             }
             return isValidRegistration;
-        }
-
-        private Result<bool> IsValidRegistration(User _newUser)
-        {
-            Result<bool> isValidRegistration = User.IsValidUserRegistration(_newUser);
-            
-            if (isValidRegistration.IsSuccessful)
-            {
-                isValidRegistration.Value = true;
-                isValidRegistration.IsSuccessful = true;
-                return isValidRegistration;
-            }
-
-            return isValidRegistration;
-
         }
 
         public void ResetFormCommand()

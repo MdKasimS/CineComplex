@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CineComplex.Services
 {
-    internal class ProfileService: IService
+    public class ProfileService: IService
     {
     }
 }

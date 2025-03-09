@@ -2,10 +2,8 @@ using CineComplex.Classes;
 using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
-using CineComplex.Services;
-using CineComplex.ViewModels;
-using CineComplex.Views.AdminClient;
-using CineComplex.Views.FormViews;
+using CineComplex.ViewModels.UserClient;
+using CineComplex.Views.UserClient.Forms;
 
 namespace CineComplex.Views.UserClient
 {
@@ -13,11 +11,18 @@ namespace CineComplex.Views.UserClient
     {
         private int _choice = 0;
         public int Choice { get => _choice; set => _choice = value; }
-
-        public List<string> MenuList
+        public List<string> MenuList{ get; set; }
+        public void LoadMenuList()
         {
-            get;
-            set;
+            Instance.MenuList = new List<string>() {
+                "1. Enter Login Id ",
+                "2. Enter Password ",
+                "3. Login ",
+                "4. Sign Up ",
+                "5. Forgot Password ",
+                "6. Reset Form ",
+                "7. Exit",
+            };
         }
         public void View()
         {
@@ -67,7 +72,7 @@ namespace CineComplex.Views.UserClient
                         Result<bool> authenticationResult = SignInViewModel.Instance.SignIn();
                         if (authenticationResult.IsSuccessful)
                         {
-                            AdminHomeView.Instance.View();
+                            HomeView.Instance.View();
                         }
                         else
                         {
@@ -96,17 +101,6 @@ namespace CineComplex.Views.UserClient
             } while (Choice != Instance.MenuList.Count);
         }
 
-        public void LoadMenuList()
-        {
-            Instance.MenuList = new List<string>() {
-                "1. Enter Login Id ",
-                "2. Enter Password ",
-                "3. Login ",
-                "4. Sign Up ",
-                "5. Forgot Password ",
-                "6. Reset Form ",
-                "7. Exit",
-            };
-        }
+        
     }
 }

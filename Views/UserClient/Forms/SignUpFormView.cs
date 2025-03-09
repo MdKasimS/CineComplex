@@ -1,12 +1,7 @@
 ﻿using CineComplex.Classes;
 using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
-using CineComplex.ViewModels.FormViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CineComplex.ViewModels.UserViewModels.FormViewModels;
 
 namespace CineComplex.Views.UserClient.Forms
 {

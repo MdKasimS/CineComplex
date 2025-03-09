@@ -50,8 +50,6 @@ namespace CineComplex.Services
             return new Result<bool>(false, false, "All Fields Are Needed... Press Any Key To Continue.");
         }
 
-
-
         /// <summary>
         /// Check at https://www.rhyous.com/2010/06/15/csharp-email-regular-expression/
         /// </summary>
@@ -94,5 +92,19 @@ namespace CineComplex.Services
             }
         }
 
+        public static Result<bool> AreAllCredentialsAvailable()
+        {
+            if (string.IsNullOrWhiteSpace(Credential.Instance.LoginId)
+               || string.IsNullOrWhiteSpace(Credential.Instance.Password))
+            {
+                return new Result<bool>(false, false, "All fields are required. Press any key to continue...\n");
+            }
+
+            if (!AuthenticationService.IsValidEmail(Credential.Instance.LoginId).IsSuccessful)
+            {
+                return new Result<bool>(false, false, "Invalid user Id format. Press any key to continue...");
+            }
+            return new Result<bool>(true, true, "");
+        }
     }
 }

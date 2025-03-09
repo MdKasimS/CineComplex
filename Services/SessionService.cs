@@ -11,7 +11,6 @@ namespace CineComplex.Services
 {
     public class SessionService : AServiceBase<SessionService>, IService
     {
-        public static Dictionary<string, Session> AllSessionDictionary = new Dictionary<string, Session>();
         public static void TerminateSession(string tokenId)
         {
             Session.DeleteSession(tokenId);
@@ -19,7 +18,7 @@ namespace CineComplex.Services
 
         public static async Task LogSession(Auth auth)
         {
-            await Session.CreateSession(auth);
+            await Session.CreateSessionAsync(auth);
 
         }
       

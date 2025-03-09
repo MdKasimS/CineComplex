@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CineComplex.Views.UserClient
 {
-    public class UserHomeView : AViewBase<UserHomeView>, IView
+    public class HomeView : AViewBase<HomeView>, IView
     {
         private int _choice = 0;
         public int Choice { get => _choice; set => _choice = value; }
