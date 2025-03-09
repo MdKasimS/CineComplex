@@ -34,7 +34,7 @@ namespace CineComplex.Views.UserClient
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine("\nSignIn View - CineComplex");
+                Console.WriteLine("\nSignIn View - User");
                 Console.WriteLine("-------------------------------------------------");
 
                 Console.WriteLine($"Entered Login Id : {Credential.Instance.LoginId}");
@@ -69,10 +69,10 @@ namespace CineComplex.Views.UserClient
                         break;
 
                     case 3:
-                        Result<bool> authenticationResult = SignInViewModel.Instance.SignIn();
+                        Result<bool> authenticationResult = SignInViewModel.Instance.SignInCommand();
                         if (authenticationResult.IsSuccessful)
                         {
-                            HomeView.Instance.View();
+                            UserHomeView.Instance.View();
                         }
                         else
                         {
