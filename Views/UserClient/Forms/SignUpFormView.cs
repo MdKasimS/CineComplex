@@ -25,7 +25,7 @@ namespace CineComplex.Views.UserClient.Forms
             };
         }
 
-        public void View()
+        public async void View()
         {
             Instance.LoadMenuList();
 
@@ -35,7 +35,7 @@ namespace CineComplex.Views.UserClient.Forms
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine("\nSign Up Form - CineComplex");
+                Console.WriteLine("\nSign Up Form - User");
                 Console.WriteLine("-------------------------------------------------");
 
                 SignUpFormView.Instance.ShowFormData();
@@ -73,13 +73,14 @@ namespace CineComplex.Views.UserClient.Forms
 
                     case 5:
 
-                        Result<bool> result = SignUpFormViewModel.Instance.CreateUserCommand();
+                        Result<bool> result = await SignUpFormViewModel.Instance.CreateUserCommand();
                         Console.Write(result.Message);
                         Console.ReadKey();
 
                         if (result.IsSuccessful)
                         {
-                            //SignUpFormViewModel.Instance.ResetFormCommand();
+                            SignUpFormViewModel.Instance.ResetFormCommand();
+                            return;
                         }
 
                         break;
