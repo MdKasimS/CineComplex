@@ -43,7 +43,7 @@ namespace CineComplex.Views.AdminClient.FormViews
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine("\nAdd Adress - Form");
+                Console.WriteLine("\nAdd Adress Form - Admin");
                 Console.WriteLine("-------------------------------------------------");
 
                 AddressFormView.Instance.ShowFormData();
