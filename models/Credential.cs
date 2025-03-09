@@ -1,15 +1,27 @@
+using CineComplex.Classes.Base;
+
 namespace CineComplex.Models
 {
     public class Credential
     {
+        #region Private
+
         private string? _loginId;
         private string? _password;
         //private string? _type;
         private string? _sessionTokenId;
         private static Credential? _instance;
-
         
+        #endregion
 
+        #region Poperties
+
+        #region Bools
+        public bool IsSignedIn { get; set; }
+
+        #endregion
+
+        #endregion
 
         private Credential()
         {
