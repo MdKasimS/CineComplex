@@ -14,12 +14,7 @@ namespace CineComplex.Views.AdminClient
     {
         private int _choice = 0;
         public int Choice { get => _choice; set => _choice = value; }
-        public List<string> MenuList
-        {
-            get;
-            set;
-        }
-
+        public List<string> MenuList { get; set; }
         public void LoadMenuList()
         {
             Instance.MenuList = new List<string>() {
@@ -44,7 +39,7 @@ namespace CineComplex.Views.AdminClient
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine("\nHome - CineComplex");
+                Console.WriteLine("\nHome - Admin");
                 Console.WriteLine("-------------------------------------------------");
 
                 Console.WriteLine();
@@ -84,6 +79,7 @@ namespace CineComplex.Views.AdminClient
                         SignInViewModel.Instance.ResetFormCommand();
                         HomeView.Instance.View();
                         break;
+
                     default:
                         Console.WriteLine("Please enter the valid Choice .....");
                         break;
