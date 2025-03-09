@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CineComplex.ViewModels.FormViewModels;
+using CineComplex.Views.CineplexClient.Forms;
 
 namespace CineComplex.Views.AdminClient.Forms
 {
