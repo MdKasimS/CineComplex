@@ -37,7 +37,7 @@ namespace CineComplex.Views
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine("\nHome - CineComplex");
+                Console.WriteLine("\nHome - CineComplex Monlithic Application");
                 Console.WriteLine("-------------------------------------------------");
 
                 Console.WriteLine();
