@@ -3,6 +3,7 @@ using CineComplex.Classes.Base;
 using CineComplex.Services;
 using CineComplex.ViewModels.FormViewModels;
 using CineComplex.Classes;
+using Microsoft.Identity.Client;
 
 
 namespace CineComplex.ViewModels.CineplexClient
@@ -12,6 +13,10 @@ namespace CineComplex.ViewModels.CineplexClient
        
         public SignInViewModel() { }
 
+        #region Properties
+
+        public Result<bool> AuthenticationResult { get; set; }
+        #endregion
         public void GetSignInId()
         {
             Credential.Instance.LoginId = Console.ReadLine();
@@ -31,9 +36,9 @@ namespace CineComplex.ViewModels.CineplexClient
 
         }
 
-        public Result<bool> SignIn()
+        public async Task SignIn()
         {
-            return AuthenticationService.AuthenticateUserForGivenCredential();
+            AuthenticationResult = await AuthenticationService.AuthenticateUserForGivenCredential();
         }
 
         public void ResetFormCommand()
