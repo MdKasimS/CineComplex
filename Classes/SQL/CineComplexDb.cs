@@ -88,7 +88,7 @@ namespace CineComplex.Classes.SQL
                       .HasForeignKey(ba => ba.UserProfileId);
 
                 //one-to-many with Address
-                entity.HasMany(up => up.BankDetails)
+                entity.HasMany(up => up.AddressDetails)
                       .WithOne(ba => ba.UserProfile)
                       .HasForeignKey(ba => ba.UserProfileId);
             });
@@ -171,7 +171,15 @@ namespace CineComplex.Classes.SQL
                 entity.Property(e => e.PinCode)
                       .IsRequired()
                       .HasMaxLength(10); // Example configuration
-                
+
+                entity.Property(e => e.BuildingDetails)
+                      .IsRequired()
+                      .HasMaxLength(50);
+
+                entity.Property(e => e.OtherDetails)
+                      .IsRequired()
+                      .HasMaxLength(50);
+
                 //one-to-many with UserProfile
                 entity.HasOne(up => up.UserProfile)
                       .WithMany(ba => ba.AddressDetails)
