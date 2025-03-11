@@ -8,7 +8,7 @@ namespace CineComplex.Interfaces
 {
     public interface IView
     {
-        public void View();
+        public Task View();
         public int Choice { get; set; }
         public List<string> MenuList { get; set; }
         public void LoadMenuList();
