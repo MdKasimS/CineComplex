@@ -30,7 +30,7 @@ namespace CineComplex.Views.AdminClient.Forms
             };
         }
 
-        public void View()
+        public async Task View()
         {
             Instance.LoadMenuList();
 

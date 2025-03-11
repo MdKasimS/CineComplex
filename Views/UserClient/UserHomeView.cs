@@ -26,7 +26,7 @@ namespace CineComplex.Views.UserClient
                 "7. Exit ",
             };
         }
-        public async void View()
+        public async Task View()
         {
             Instance.LoadMenuList();
 

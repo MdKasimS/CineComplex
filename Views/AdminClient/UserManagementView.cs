@@ -26,7 +26,7 @@ namespace CineComplex.Views.AdminClient
             };
         }
 
-        public void View()
+        public async Task View()
         {
             Instance.LoadMenuList();
 

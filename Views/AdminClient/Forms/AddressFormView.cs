@@ -33,7 +33,7 @@ namespace CineComplex.Views.AdminClient.FormViews
             };
         }
 
-        public void View()
+        public async Task View()
         {
             Instance.LoadMenuList();
 
@@ -116,5 +116,6 @@ namespace CineComplex.Views.AdminClient.FormViews
             Console.WriteLine($"Entered Contact : {SignUpFormViewModel.Instance.Contact}");
             Console.WriteLine($"Entered Password : {SignUpFormViewModel.Instance.Password}");
         }
+
     }
 }

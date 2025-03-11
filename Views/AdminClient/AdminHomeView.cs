@@ -29,7 +29,7 @@ namespace CineComplex.Views.AdminClient
             };
         }
 
-        public void View()
+        public async Task View()
         {
             Instance.LoadMenuList();
 
@@ -67,17 +67,17 @@ namespace CineComplex.Views.AdminClient
 
                     case 3:
                         //Manage User view
-                        UserManagementView.Instance.View();
+                        await UserManagementView.Instance.View();
                         break;
 
                     case 7:
-                        ManageCineplexView.Instance.View();
+                        await ManageCineplexView.Instance.View();
                         break;
 
                     case 8:
                         AdminHomeViewModel.Instance.SignOut();
                         SignInViewModel.Instance.ResetFormCommand();
-                        HomeView.Instance.View();
+                        await HomeView.Instance.View();
                         break;
 
                     default:

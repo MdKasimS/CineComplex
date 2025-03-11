@@ -27,7 +27,7 @@ namespace CineComplex.Views
             };
         }
 
-        public void View()
+        public async Task View()
         {
             HomeView.Instance.LoadMenuList();
 
@@ -57,17 +57,17 @@ namespace CineComplex.Views
                 {
                     case 1:
                         //User SignIn View
-                        UserClient.SignInView.Instance.View();
+                        await UserClient.SignInView.Instance.View();
                         break;
 
                     case 2:
                         //Admin SignIn View
-                        AdminClient.SignInView.Instance.View();
+                        await AdminClient.SignInView.Instance.View();
                         break;
 
                     case 3:
                         //Theatre Owner SignIn View
-                        CineplexClient.SignInView.Instance.View();
+                        await CineplexClient.SignInView.Instance.View();
                         break;
 
 

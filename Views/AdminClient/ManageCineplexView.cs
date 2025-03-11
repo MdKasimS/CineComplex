@@ -38,7 +38,7 @@ namespace CineComplex.Views.AdminClient
             };
         }
 
-        public void View()
+        public async Task View()
         {
             ManageCineplexView.Instance.LoadMenuList();
 
@@ -68,7 +68,7 @@ namespace CineComplex.Views.AdminClient
                 switch (Choice)
                 {
                     case 1:
-                        RegisterCineplexFormView.Instance.View();
+                        await RegisterCineplexFormView.Instance.View();
                         Console.Clear();
                         break;
 

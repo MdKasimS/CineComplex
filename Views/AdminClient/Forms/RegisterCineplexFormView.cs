@@ -33,7 +33,7 @@ namespace CineComplex.Views.AdminClient.Forms
             };
         }
 
-        public void View()
+        public async Task View()
         {
 
             Instance.LoadMenuList();
@@ -75,7 +75,7 @@ namespace CineComplex.Views.AdminClient.Forms
 
                     case 3:
                         //Manage User view
-                        UserManagementView.Instance.View();
+                        await UserManagementView.Instance.View();
                         break;
 
                     case 7:

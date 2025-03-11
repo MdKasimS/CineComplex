@@ -24,7 +24,7 @@ namespace CineComplex.Views.UserClient
                 "7. Exit",
             };
         }
-        public void View()
+        public async Task View()
         {
             SignInView.Instance.LoadMenuList();
 
@@ -69,14 +69,15 @@ namespace CineComplex.Views.UserClient
                         break;
 
                     case 3:
-                        Result<bool> authenticationResult = SignInViewModel.Instance.SignInCommand();
-                        if (authenticationResult.IsSuccessful)
+                        await SignInViewModel.Instance.SignInCommand();
+
+                        if (SignInViewModel.Instance.AuthenticationResult.IsSuccessful && Credential.Instance.SessionTokenId!=null)
                         {
                             UserHomeView.Instance.View();
                         }
                         else
                         {
-                            Console.Write($"{authenticationResult.Message}");
+                            Console.Write($"{SignInViewModel.Instance.AuthenticationResult.Message}");
                             Console.ReadLine();
                         }
                         break;

@@ -17,7 +17,7 @@ namespace CineComplex.Views.AdminClient
             get;
             set;
         }
-        public void View()
+        public async Task View()
         {
             SignInView.Instance.LoadMenuList();
 
@@ -62,14 +62,14 @@ namespace CineComplex.Views.AdminClient
                         break;
 
                     case 3:
-                        Result<bool> authenticationResult = SignInViewModel.Instance.SignIn();
-                        if (authenticationResult.IsSuccessful)
+                        await SignInViewModel.Instance.SignIn();
+                        if (SignInViewModel.Instance.AuthenticationResult.IsSuccessful)
                         {
                             AdminHomeView.Instance.View();
                         }
                         else
                         {
-                            Console.Write($"{authenticationResult.Message}");
+                            Console.Write($"{SignInViewModel.Instance.AuthenticationResult.Message}");
                             Console.ReadLine();
                         }
                         break;
