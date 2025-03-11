@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CineComplex.Views.UserClient
 {
-    public class ProfileView : AViewBase<ProfileView>, IView
+    public class ProfileFormView : AViewBase<ProfileFormView>, IView
     {
         private int _choice = 0;
         public int Choice { get => _choice; set => _choice = value; }
@@ -38,7 +38,7 @@ namespace CineComplex.Views.UserClient
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine($"Your Account : UID {Credential.Instance.LoginId}");
+                Console.WriteLine($"User Profile : UID {Credential.Instance.LoginId}");
                 Console.WriteLine("-------------------------------------------------");
 
 
