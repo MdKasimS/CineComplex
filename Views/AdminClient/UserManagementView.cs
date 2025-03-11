@@ -1,7 +1,7 @@
 ﻿using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
-using CineComplex.Views.AdminClient.FormViews;
+using CineComplex.Views.AdminClient.Forms;
 using ConsoleTables;
 
 

@@ -4,7 +4,7 @@ using CineComplex.Interfaces;
 using CineComplex.ViewModels.FormViewModels;
 
 
-namespace CineComplex.Views.AdminClient.FormViews
+namespace CineComplex.Views.AdminClient.Forms
 {
     public class SignUpFormView : AViewBase<SignUpFormView>, IView
     {

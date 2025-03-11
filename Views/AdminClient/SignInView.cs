@@ -2,6 +2,7 @@ using CineComplex.Classes;
 using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
+using CineComplex.Views.AdminClient.Forms;
 using CineComplex.ViewModels.AdminViewModels;
 
 namespace CineComplex.Views.AdminClient
