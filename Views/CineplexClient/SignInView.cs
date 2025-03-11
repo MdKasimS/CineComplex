@@ -2,11 +2,9 @@ using CineComplex.Classes;
 using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
-using CineComplex.Services;
-using CineComplex.ViewModels;
 using CineComplex.ViewModels.CineplexClient;
 using CineComplex.Views.AdminClient;
-using CineComplex.Views.FormViews;
+using CineComplex.Views.AdminClient.Forms;
 
 namespace CineComplex.Views.CineplexClient
 {

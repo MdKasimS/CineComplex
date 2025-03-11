@@ -1,14 +1,7 @@
-﻿using MongoDB.Driver;
-using MongoDB.Bson;
-using CineComplex.Views;
+﻿using CineComplex.Views;
 using System.Runtime.InteropServices;
-using System.Xml.Serialization;
-using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
-using CineComplex.Views.FormViews;
-using CineComplex.Views.AdminClient;
-using CineComplex.Views.UserClient;
 
 
 namespace CineComplex

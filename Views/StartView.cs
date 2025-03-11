@@ -1,11 +1,5 @@
 ﻿using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
-using CineComplex.Views.FormViews;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CineComplex.Views
 {
@@ -63,7 +57,7 @@ namespace CineComplex.Views
                         break;
 
                     case 2:
-                        ForgotPasswordFormView.Instance.View();
+                        //ForgotPasswordFormView.Instance.View();
                         break;
 
                     case 3:
