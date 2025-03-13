@@ -71,9 +71,9 @@ namespace CineComplex.Views.UserClient
                     case 3:
                         await SignInViewModel.Instance.SignInCommand();
 
-                        if (SignInViewModel.Instance.AuthenticationResult.IsSuccessful && Credential.Instance.SessionTokenId!=null)
+                        if (SignInViewModel.Instance.AuthenticationResult.IsSuccessful && Credential.Instance.UserSession.Token!=null)
                         {
-                            UserHomeView.Instance.View();
+                            await UserHomeView.Instance.View();
                         }
                         else
                         {
@@ -83,11 +83,11 @@ namespace CineComplex.Views.UserClient
                         break;
 
                     case 4:
-                        SignUpFormView.Instance.View();
+                        await SignUpFormView.Instance.View();
                         break;
 
                     case 5:
-                        ForgotPasswordFormView.Instance.View();
+                        await ForgotPasswordFormView.Instance.View();
                         Console.Clear();
                         break;
 
