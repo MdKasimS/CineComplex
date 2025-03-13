@@ -51,6 +51,7 @@ namespace CineComplex.Models
         public void Init()
         {
             Console.WriteLine("Application Started...");
+            Session.CleanSessions();
         }
 
         public void LoadMovies()
