@@ -11,11 +11,14 @@ namespace CineComplex.Models
         //private string? _type;
         private string? _sessionTokenId;
         private static Credential? _instance;
-        
+
         #endregion
 
         #region Poperties
 
+        public User LoggedInUser { get; set; }
+        public Session UserSession { get; set; }
+        
         #region Bools
         public bool IsSignedIn { get; set; }
 
