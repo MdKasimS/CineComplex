@@ -3,11 +3,12 @@ using CineComplex.Classes.Base;
 using CineComplex.Services;
 using CineComplex.ViewModels.FormViewModels;
 using CineComplex.Classes;
+using CineComplex.Interfaces;
 
 
 namespace CineComplex.ViewModels.UserClient
 {
-    public class SignInViewModel : AViewModelBase<SignInViewModel>
+    public class SignInViewModel : AViewModelBase<SignInViewModel>, IViewModel
     {
         public SignInViewModel() { }
 
