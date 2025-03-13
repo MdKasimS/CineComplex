@@ -150,7 +150,6 @@ namespace CineComplex.Views.AdminClient
             {
                 Console.WriteLine("No users found.");
             }
-            //Console.ReadKey();
         }
     }
 }
