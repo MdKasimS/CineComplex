@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using CineComplex.Classes;
 using CineComplex.Classes.Base;
-using CineComplex.Classes.SQL;
 using CineComplex.Interfaces;
 using CineComplex.Models;
 using Microsoft.IdentityModel.Tokens;
