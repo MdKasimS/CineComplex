@@ -16,6 +16,7 @@ namespace CineComplex.Views.CineplexClient
         public List<string> MenuList { get; set; }
         public void LoadMenuList()
         {
+            //TODO: Please added check for loading list again and again like in UserClient
             Instance.MenuList = new List<string>() {
                 "1. Show Scheduled Shows",
                 "2. Manage Shows",
