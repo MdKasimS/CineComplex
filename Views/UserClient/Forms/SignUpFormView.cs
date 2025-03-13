@@ -1,5 +1,4 @@
-﻿using CineComplex.Classes;
-using CineComplex.Classes.Base;
+﻿using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.ViewModels.UserViewModels.FormViewModels;
 using Microsoft.IdentityModel.Tokens;

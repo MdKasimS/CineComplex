@@ -1,13 +1,10 @@
 ﻿using CineComplex.Classes.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CineComplex.Interfaces;
+
 
 namespace CineComplex.ViewModels
 {
-    public class ManageTicketsViewModel : ABaseSingleton<ManageTicketsViewModel>
+    public class ManageTicketsViewModel : ABaseSingleton<ManageTicketsViewModel>, IViewModel
     {
 
         public ManageTicketsViewModel() { }

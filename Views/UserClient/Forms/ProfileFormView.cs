@@ -2,13 +2,8 @@
 using CineComplex.Interfaces;
 using CineComplex.Models;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CineComplex.Views.UserClient
+namespace CineComplex.Views.UserClient.Forms
 {
     public class ProfileFormView : AViewBase<ProfileFormView>, IView
     {
@@ -25,8 +20,9 @@ namespace CineComplex.Views.UserClient
                     "2. Email",
                     "3. Contact",
                     "4. Pasword",
-                    "5. Show Bookings",
-                    "6. Update Details",
+                    "5. Add Address",
+                    "6. Add Bank Account",
+                    "7. Update Details",
                     "7. Exit"
                 };
             }
