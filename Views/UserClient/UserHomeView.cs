@@ -1,5 +1,7 @@
 ﻿using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
+using CineComplex.Models;
+using CineComplex.ViewModels.UserClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,7 @@ namespace CineComplex.Views.UserClient
     {
         private int _choice = 0;
         public int Choice { get => _choice; set => _choice = value; }
-        public List<string> MenuList{ get; set; }
+        public List<string> MenuList { get; set; }
         public void LoadMenuList()
         {
             Instance.MenuList = new List<string>()
@@ -53,17 +55,25 @@ namespace CineComplex.Views.UserClient
                 Console.Write("Enter Your Choice : ");
 
                 int.TryParse(Console.ReadLine(), out _choice);
+
                 switch (Choice)
                 {
                     case 1:
+                        // Your logic for case 1
                         break;
                     case 5:
-                        ProfileFormView.Instance.View();
+                        await ProfileFormView.Instance.View();
                         break;
                     default:
-                        Console.WriteLine("Please enter the valid Choice .....");
+                        Console.WriteLine("Please enter the valid choice .....");
                         break;
                 }
+
+                if(Choice== Instance.MenuList.Count)
+                {
+                    SignInViewModel.Instance.SignOutCommand();
+                }
+
             } while (Choice != Instance.MenuList.Count);
         }
         
