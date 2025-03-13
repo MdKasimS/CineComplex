@@ -20,34 +20,42 @@ namespace CineComplex.Services
             Console.WriteLine("Authenticaition Service Is On...");
         }
 
-        public static Result<bool> AuthenticateUserForGivenCredential()
+        public static async Task<Result<bool>> AuthenticateUserForGivenCredential()
         {
-            if (!Credential.Instance.LoginId.IsNullOrEmpty() && !Credential.Instance.Password.IsNullOrEmpty())
+            return await Task.Run(() =>
             {
-                Result<bool> emailValidationResult = AuthenticationService.IsValidEmail(Credential.Instance.LoginId);
 
-                if (emailValidationResult.IsSuccessful)
+                if (!Credential.Instance.LoginId.IsNullOrEmpty() && !Credential.Instance.Password.IsNullOrEmpty())
                 {
-                    
-                    User userToAuthenticate = SQLInteraction.Db.Users.FirstOrDefault(u => u.Email == Credential.Instance.LoginId);
+                    Result<bool> emailValidationResult = AuthenticationService.IsValidEmail(Credential.Instance.LoginId);
 
-                    if (userToAuthenticate != null)
+                    if (emailValidationResult.IsSuccessful)
                     {
-                        Auth auth = SQLInteraction.Db.Auths.FirstOrDefault(a => a.UserId == userToAuthenticate.Id);
-                        if (auth != null && auth.Password == Credential.Instance.Password)
-                        {
-                            SessionService.LogSession(auth);
-                            return new Result<bool>(true, true, $"User {Credential.Instance.LoginId} Logged In..."); //false;
-                        }
-                        return new Result<bool>(false, false, $"Authentication Failed... Press Any Key To Continue.");
-                    }
-                   
-                    return new Result<bool>(false, false, $"User {Credential.Instance.LoginId} Doesn't Exists... Press Any Key To Continue.");
-                }
-                return emailValidationResult;
-            }
 
-            return new Result<bool>(false, false, "All Fields Are Needed... Press Any Key To Continue.");
+                        User userToAuthenticate = User.GetUserByEmailId(Credential.Instance.LoginId);
+
+                        if (userToAuthenticate != null)
+                        {
+                            Auth auth = SQLInteraction.Db.Auths.FirstOrDefault(a => a.UserId == userToAuthenticate.Id);
+                            if (auth != null && auth.Password == Credential.Instance.Password)
+                            {
+
+                                SessionService.LogSession(auth);
+
+                                Credential.Instance.LoggedInUser = User.GetUserByEmailId(Credential.Instance.LoginId);
+
+                                return new Result<bool>(true, true, $"User {Credential.Instance.LoginId} Logged In..."); //false;
+                            }
+                            return new Result<bool>(false, false, $"Authentication Failed... Press Any Key To Continue.");
+                        }
+
+                        return new Result<bool>(false, false, $"User {Credential.Instance.LoginId} Doesn't Exists... Press Any Key To Continue.");
+                    }
+                    return emailValidationResult;
+                }
+
+                return new Result<bool>(false, false, "All Fields Are Needed... Press Any Key To Continue.");
+            });
         }
 
         /// <summary>
@@ -71,8 +79,6 @@ namespace CineComplex.Services
         {
             try
             {
-                //:Todo Create proper error handling and message displaying for creds. Currently control doesn't reaches inside if block
-                //Added Result mechanism to handle custom error messages
                 if (SQLInteraction.Db.Users.Any(u => u.Contact == _newUser.Contact))
                 {
                     return new Result<bool>(false, false, "Contact already exists. Press any key to continue..."); //false;
@@ -105,6 +111,12 @@ namespace CineComplex.Services
                 return new Result<bool>(false, false, "Invalid user Id format. Press any key to continue...");
             }
             return new Result<bool>(true, true, "");
+        }
+    
+        public static Result<bool> TerminateUserSession(string authToken)
+        {
+            Session.DeleteSession(authToken);
+            return new Result<bool>(true, true, $"User {Credential.Instance.LoginId} Logged Out...");
         }
     }
 }
