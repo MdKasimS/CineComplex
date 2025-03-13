@@ -14,7 +14,6 @@ namespace CineComplex.Models
     {
         public int Id { get; set; }
         public string Username { get; set; }
-        
         [NotMapped]
         //TODO: Make password inivisible
         public string Password { get; set; }
@@ -79,6 +78,14 @@ namespace CineComplex.Models
             }
 
             return isValidResult; //false; 
+        }
+        public static User GetUserByEmailId(string loginId)
+        {
+            return SQLInteraction.Db.Users.FirstOrDefault(u => u.Email == loginId);
+        }
+        public static User GetById(int id)
+        {
+            return SQLInteraction.Db.Users.FirstOrDefault(u => u.Id == id);
         }
 
     }
