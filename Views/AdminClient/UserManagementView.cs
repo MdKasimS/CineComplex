@@ -142,11 +142,6 @@ namespace CineComplex.Views.AdminClient
                             break; 
                         }
 
-                        //else
-                        //{
-                            //Code to handle selected record
-                        //}
-                        
                     }
                 } while (hasMorePages);
 
