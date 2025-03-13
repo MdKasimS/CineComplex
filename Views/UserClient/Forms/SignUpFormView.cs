@@ -73,11 +73,11 @@ namespace CineComplex.Views.UserClient.Forms
 
                     case 5:
 
-                        Result<bool> result = await SignUpFormViewModel.Instance.CreateUserCommand();
-                        Console.Write(result.Message);
+                        await SignUpFormViewModel.Instance.CreateUserCommand();
+                        Console.Write(SignUpFormViewModel.Instance.SignUpResult.Message);
                         Console.ReadKey();
 
-                        if (result.IsSuccessful)
+                        if (SignUpFormViewModel.Instance.SignUpResult.IsSuccessful)
                         {
                             SignUpFormViewModel.Instance.ResetFormCommand();
                             return;
