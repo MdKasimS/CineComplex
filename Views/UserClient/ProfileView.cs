@@ -17,7 +17,7 @@ namespace CineComplex.Views.UserClient
         public async Task View()
         {
             ConsoleTable table;
-            int pageSize = 10;
+            int pageSize = 1;
             int currentPage = 0;
             bool hasMorePages = true;
 
@@ -27,7 +27,7 @@ namespace CineComplex.Views.UserClient
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine($"User Profile : UID {Credential.Instance.LoginId}");
+                Console.WriteLine($"User Profile : {Credential.Instance.LoginId}");
                 Console.WriteLine("-------------------------------------------------");
 
                 Console.WriteLine();
@@ -43,7 +43,7 @@ namespace CineComplex.Views.UserClient
 
                 if (pagedUsers.Count() != 0 && pagedUsers.Count() < 10)
                 {
-                    for (int i = 0; i < 10 - pagedUsers.Count(); ++i)
+                    for (int i = 0; i < pageSize - pagedUsers.Count(); ++i)
                     {
                         table.AddRow("", "", "", "");
                     }
@@ -59,13 +59,13 @@ namespace CineComplex.Views.UserClient
 
                     Console.WriteLine("\nMenu : ");
                     Console.WriteLine("---------------");
-                    Console.WriteLine("1. Press Enter to view the next page");
-                    Console.WriteLine("2. Enter Id For Record Selection");
-                    Console.WriteLine("3. Type 3 to exit");
+                    Console.WriteLine("1. Press Enter to Update the profile");
+                    Console.WriteLine("2. Type 2 to exit");
                     Console.Write("Your Choice: ");
 
                     var input = Console.ReadLine();
-                    if (input?.ToLower() == "3")
+                    
+                    if (input?.ToLower() == "2")
                     {
                         break;
                     }
