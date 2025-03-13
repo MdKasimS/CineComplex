@@ -2,6 +2,7 @@
 using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.ViewModels.FormViewModels;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,19 +19,22 @@ namespace CineComplex.Views.UserClient.Forms
 
         public void LoadMenuList()
         {
-            Instance.MenuList = new List<string>()
+            if (Instance.MenuList.IsNullOrEmpty())
             {
-                " 1. Enter Floor/Building",
-                " 2. Enter Street",
-                " 3. Enter Area",
-                " 4. Enter City",
-                " 5. Enter State",
-                " 6. Enter Country",
-                " 7. Other Details/ Nearby places",
-                " 8. Add Address",
-                " 9. Reset",
-                "10. Exit"
-            };
+                    Instance.MenuList = new List<string>()
+                {
+                    " 1. Enter Floor/Building",
+                    " 2. Enter Street",
+                    " 3. Enter Area",
+                    " 4. Enter City",
+                    " 5. Enter State",
+                    " 6. Enter Country",
+                    " 7. Other Details/ Nearby places",
+                    " 8. Add Address",
+                    " 9. Reset",
+                    "10. Exit"
+                };
+            }
         }
 
         public async Task View()

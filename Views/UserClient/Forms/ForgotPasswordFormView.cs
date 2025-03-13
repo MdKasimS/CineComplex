@@ -2,6 +2,7 @@
 using CineComplex.Interfaces;
 using CineComplex.Models;
 using CineComplex.ViewModels.FormViewModels;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,13 +22,17 @@ namespace CineComplex.Views.UserClient.Forms
         }
         public void LoadMenuList()
         {
-            ForgotPasswordFormView.Instance.MenuList = new List<string>() {
-                "1. Enter User Id ",
-                "2. Enter Email  ",
-                "3. Enter Contact ",
-                "4. Set New Password ",
-                "5. Exit",
-            };
+            if (Instance.MenuList.IsNullOrEmpty())
+            {
+                Instance.MenuList = new List<string>() 
+                {
+                    "1. Enter User Id ",
+                    "2. Enter Email  ",
+                    "3. Enter Contact ",
+                    "4. Set New Password ",
+                    "5. Exit",
+                };
+            }
         }
 
         public async Task View()

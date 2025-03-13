@@ -1,6 +1,7 @@
 ﻿using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,21 +17,26 @@ namespace CineComplex.Views.UserClient
         public List<string> MenuList { get; set; }
         public void LoadMenuList()
         {
-            Instance.MenuList = new List<string>()
+            if (Instance.MenuList.IsNullOrEmpty())
             {
-                "1. User Name",
-                "2. Email",
-                "3. Contact",
-                "4. Pasword",
-                "5. Show Bookings",
-                "6. Update Details",
-                "7. Exit"
-            };
+                Instance.MenuList = new List<string>()
+                {
+                    "1. User Name",
+                    "2. Email",
+                    "3. Contact",
+                    "4. Pasword",
+                    "5. Show Bookings",
+                    "6. Update Details",
+                    "7. Exit"
+                };
+            }
         }
 
         public async Task View()
         {
+
             Instance.LoadMenuList();
+
 
             do//main loop
             {
@@ -38,7 +44,7 @@ namespace CineComplex.Views.UserClient
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine($"User Profile : UID {Credential.Instance.LoginId}");
+                Console.WriteLine($"User Profile : {Credential.Instance.LoggedInUser.Username,-35}");
                 Console.WriteLine("-------------------------------------------------");
 
 

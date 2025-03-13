@@ -1,6 +1,7 @@
 ﻿using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.ViewModels;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CineComplex.Views.UserClient
 {
@@ -73,15 +74,18 @@ namespace CineComplex.Views.UserClient
 
         public void LoadMenuList()
         {
-            Instance.MenuList = new List<string>() 
-            { 
-                "1. Book Ticket", 
-                "2. Show Shows", 
-                "3. Cancel Tickets", 
-                "4. Previous Bookings", 
-                "5. Account", 
-                "6. Exit ", 
-            };
+            if (Instance.MenuList.IsNullOrEmpty())
+            {
+                Instance.MenuList = new List<string>()
+                {
+                    "1. Book Ticket",
+                    "2. Show Shows",
+                    "3. Cancel Tickets",
+                    "4. Previous Bookings",
+                    "5. Account",
+                    "6. Exit ",
+                };
+            }
         }
     }
 }

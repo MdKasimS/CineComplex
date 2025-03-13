@@ -2,6 +2,7 @@
 using CineComplex.Interfaces;
 using CineComplex.Models;
 using CineComplex.ViewModels.UserClient;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,16 +18,19 @@ namespace CineComplex.Views.UserClient
         public List<string> MenuList { get; set; }
         public void LoadMenuList()
         {
-            Instance.MenuList = new List<string>()
+            if (Instance.MenuList.IsNullOrEmpty())
             {
-                "1. Book Ticket",
-                "2. Show Shows",
-                "3. Cancel Tickets",
-                "4. Previous Bookings",
-                "5. Show Profile",
-                "6. Show Balance",
-                "7. Exit ",
-            };
+                Instance.MenuList = new List<string>()
+                {
+                    "1. Book Ticket",
+                    "2. Show Shows",
+                    "3. Cancel Tickets",
+                    "4. Previous Bookings",
+                    "5. Show Profile",
+                    "6. Show Balance",
+                    "7. Exit ",
+                };
+            }
         }
         public async Task View()
         {
@@ -36,10 +40,10 @@ namespace CineComplex.Views.UserClient
             {
                 Console.Clear();
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
-                Console.WriteLine("================================================");
+                Console.WriteLine("=================================================");
 
-                Console.WriteLine("Home - User");
-                Console.WriteLine("-------------------------------------------------");
+                Console.WriteLine($"Home - User {Credential.Instance.LoggedInUser.Username,-35}");
+                Console.WriteLine("--------------------------------------------------");
 
 
                 Console.WriteLine();
@@ -59,23 +63,22 @@ namespace CineComplex.Views.UserClient
                 switch (Choice)
                 {
                     case 1:
-                        // Your logic for case 1
                         break;
                     case 5:
-                        await ProfileFormView.Instance.View();
+                        await ProfileView.Instance.View();
                         break;
                     default:
                         Console.WriteLine("Please enter the valid choice .....");
                         break;
                 }
 
-                if(Choice== Instance.MenuList.Count)
+                if (Choice == Instance.MenuList.Count)
                 {
                     SignInViewModel.Instance.SignOutCommand();
                 }
 
             } while (Choice != Instance.MenuList.Count);
         }
-        
+
     }
 }

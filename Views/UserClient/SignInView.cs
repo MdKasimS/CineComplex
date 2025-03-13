@@ -4,6 +4,7 @@ using CineComplex.Interfaces;
 using CineComplex.Models;
 using CineComplex.ViewModels.UserClient;
 using CineComplex.Views.UserClient.Forms;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CineComplex.Views.UserClient
 {
@@ -14,15 +15,19 @@ namespace CineComplex.Views.UserClient
         public List<string> MenuList{ get; set; }
         public void LoadMenuList()
         {
-            Instance.MenuList = new List<string>() {
-                "1. Enter Login Id ",
-                "2. Enter Password ",
-                "3. Login ",
-                "4. Sign Up ",
-                "5. Forgot Password ",
-                "6. Reset Form ",
-                "7. Exit",
-            };
+            if (Instance.MenuList.IsNullOrEmpty())
+            {
+                Instance.MenuList = new List<string>()
+                {
+                    "1. Enter Login Id ",
+                    "2. Enter Password ",
+                    "3. Login ",
+                    "4. Sign Up ",
+                    "5. Forgot Password ",
+                    "6. Reset Form ",
+                    "7. Exit",
+                };
+            }
         }
         public async Task View()
         {
