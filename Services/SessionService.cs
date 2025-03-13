@@ -1,4 +1,5 @@
-﻿using CineComplex.Classes.Base;
+﻿using CineComplex.Classes;
+using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
 using System;
@@ -11,16 +12,15 @@ namespace CineComplex.Services
 {
     public class SessionService : AServiceBase<SessionService>, IService
     {
-        public static async void TerminateSession(string tokenId)
+        public static void TerminateSession(string tokenId)
         {
-            await Session.DeleteSession(tokenId);
+            Session.DeleteSession(tokenId);
         }
 
         public static async Task LogSession(Auth auth)
         {
-            await Session.CreateSessionAsync(auth);
-
+            Credential.Instance.UserSession = Session.CreateSession(auth);
         }
-      
+
     }
 }
