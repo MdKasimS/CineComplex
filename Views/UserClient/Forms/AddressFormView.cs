@@ -21,7 +21,7 @@ namespace CineComplex.Views.UserClient.Forms
         {
             if (Instance.MenuList.IsNullOrEmpty())
             {
-                    Instance.MenuList = new List<string>()
+                Instance.MenuList = new List<string>()
                 {
                     " 1. Enter Floor/Building",
                     " 2. Enter Street",
