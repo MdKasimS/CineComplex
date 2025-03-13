@@ -9,8 +9,6 @@ namespace CineComplex.ViewModels.UserClient
 {
     public class SignInViewModel : AViewModelBase<SignInViewModel>
     {
-
-
         public SignInViewModel() { }
 
         #region Properties
@@ -22,12 +20,13 @@ namespace CineComplex.ViewModels.UserClient
         {
             Credential.Instance.LoginId = Console.ReadLine();
         }
+        
         public void GetSignIPassword()
         {
             Credential.Instance.Password = Console.ReadLine();
         }
 
-        public void ForgotPassword()
+        public async Task ForgotPasswordCommand()
         {
             //Now this method is in VM and we need View to be created when this method is called. Don't know how to handle it?
             if (AuthenticationService.AreAllCredentialsAvailable().IsSuccessful)
@@ -39,16 +38,23 @@ namespace CineComplex.ViewModels.UserClient
 
         public async Task SignInCommand()
         {
-            AuthenticationResult = await AuthenticationService.AuthenticateUserForGivenCredential();
+            AuthenticationResult = AuthenticationService.AuthenticateUserForGivenCredential().Result;
 
             if (AuthenticationResult.IsSuccessful)
             {
                 Credential.Instance.IsSignedIn = true;
             }
-
         }
 
-        public void ResetFormCommand()
+        public async Task SignOutCommand()
+        {
+            AuthenticationResult = AuthenticationService.TerminateUserSession(Credential.Instance.SessionTokenId);
+            ResetFormCommand();
+
+            //TODO: Use navigation state machine
+        }
+
+        public async Task ResetFormCommand()
         {
             Credential.Instance.LoginId = "";
             Credential.Instance.Password = "";
