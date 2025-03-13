@@ -20,31 +20,27 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
         public string Password { get; set; }
         public string Email { get; set; }
         public string Contact { get; set; }
+        public Result<bool> SignUpResult { get; set; }
 
         #endregion
 
         #region Commands
 
-        public async Task<Result<bool>> CreateUserCommand()
+        public async Task CreateUserCommand()
         {
-            return await Task.Run(() =>
+            User _newUser = new User();
+            _newUser.Username = UserName;
+            _newUser.Password = Password;
+            _newUser.Email = Email;
+            _newUser.Contact = Contact;
+
+            SignUpResult = User.IsValidUserRegistration(_newUser);
+            if (SignUpResult.IsSuccessful)
             {
-                User _newUser = new User();
-                _newUser.Username = UserName;
-                _newUser.Password = Password;
-                _newUser.Email = Email;
-                _newUser.Contact = Contact;
+                User.CreateNewUser(_newUser);
 
-                Result<bool> isValidRegistration = User.IsValidUserRegistration(_newUser);
-                if (isValidRegistration.IsSuccessful)
-                {
-                    User.CreateNewUser(_newUser);
-
-                    isValidRegistration.Message = "User Created Successful. Press Any Key To Continue...";
-                    return isValidRegistration;
-                }
-                return isValidRegistration;
-            });
+                SignUpResult.Message = "User Created Successful. Press Any Key To Continue...";
+            }
         }
 
         public async void ResetFormCommand()
