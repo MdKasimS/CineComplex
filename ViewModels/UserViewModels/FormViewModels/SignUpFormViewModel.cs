@@ -19,7 +19,7 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
 
         #region Commands
 
-        public async Task CreateUserCommand()
+        public async Task AddUserCommand()
         {
             User _newUser = new User();
             _newUser.Username = UserName;
