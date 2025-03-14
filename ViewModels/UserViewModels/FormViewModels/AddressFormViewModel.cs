@@ -40,6 +40,18 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
             Address.CreateNewAddress(_newAddress);
         }
 
+        public async Task ResetFormCommand()
+        {
+            BuildingDetails = null;
+            StreetName = null;
+            Area = null;
+            City = null;
+            State = null;
+            Country = null;
+            OtherDetails = null;
+            PinCode = null;
+
+        }
 
         #endregion
     }

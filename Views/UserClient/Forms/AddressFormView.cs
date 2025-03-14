@@ -110,6 +110,10 @@ namespace CineComplex.Views.UserClient.Forms
                         await AddressFormViewModel.Instance.AddAddressCommand();
                         break;
 
+                    case 10:
+                        await AddressFormViewModel.Instance.ResetFormCommand();
+                        break;
+
                     default:
                         Console.WriteLine("Please enter the valid Choice .....");
                         break;
