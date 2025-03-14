@@ -57,6 +57,17 @@ namespace CineComplex.Views.UserClient.Forms
                 Console.Write("Enter Your Choice : ");
 
                 int.TryParse(Console.ReadLine(), out _choice);
+                switch (Choice)
+                {
+                    case 5:
+                        await AddressFormView.Instance.View();
+                        break;
+
+                    default:
+                        Console.WriteLine("Please enter the valid Choice .....");
+                        break;
+                }
+
             } while (Choice != Instance.MenuList.Count);
         }
     }

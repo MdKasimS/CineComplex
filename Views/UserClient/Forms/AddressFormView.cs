@@ -2,6 +2,7 @@
 using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.ViewModels.FormViewModels;
+using CineComplex.ViewModels.UserViewModels.FormViewModels;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -30,9 +31,10 @@ namespace CineComplex.Views.UserClient.Forms
                     " 5. Enter State",
                     " 6. Enter Country",
                     " 7. Other Details/ Nearby places",
-                    " 8. Add Address",
-                    " 9. Reset",
-                    "10. Exit"
+                    " 8. Add Pincode",
+                    " 9. Add Address",
+                    "10. Reset",
+                    "11. Exit"
                 };
             }
         }
@@ -47,7 +49,7 @@ namespace CineComplex.Views.UserClient.Forms
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine("\nAdd Adress - Form");
+                Console.WriteLine("\nAdd Address - Form");
                 Console.WriteLine("-------------------------------------------------");
 
                 AddressFormView.Instance.ShowFormData();
@@ -67,41 +69,45 @@ namespace CineComplex.Views.UserClient.Forms
                 switch (Choice)
                 {
                     case 1:
-                        Console.Write("Enter User Name: ");
-                        SignUpFormViewModel.Instance.UserName = Console.ReadLine();
+                        Console.Write("Enter Building Details(Flat No /Floor/ Shop No/ etc.): ");
+                        AddressFormViewModel.Instance.BuildingDetails = Console.ReadLine();
                         break;
                     case 2:
-                        Console.Write("Enter Email: ");
-                        SignUpFormViewModel.Instance.Email = Console.ReadLine();
+
+                        Console.Write("Enter Street Name/No. : ");
+                        AddressFormViewModel.Instance.StreetName = Console.ReadLine();
                         break;
                     case 3:
-                        Console.Write("Enter Contact: ");
-                        SignUpFormViewModel.Instance.Contact = Console.ReadLine();
+                        Console.Write("Enter Area : ");
+                        AddressFormViewModel.Instance.Area = Console.ReadLine();
                         break;
                     case 4:
-                        Console.Write("Enter Password: ");
-                        SignUpFormViewModel.Instance.Password = Console.ReadLine();
+                        Console.Write("Enter City : ");
+                        AddressFormViewModel.Instance.City = Console.ReadLine();
                         break;
 
                     case 5:
-
-                        Result<bool> result = SignUpFormViewModel.Instance.CreateUserCommand();
-                        Console.Write(result.Message);
-                        Console.ReadKey();
-
-                        if (result.IsSuccessful)
-                        {
-                            //SignUpFormViewModel.Instance.ResetFormCommand();
-                        }
-
+                        Console.Write("Enter State : ");
+                        AddressFormViewModel.Instance.State = Console.ReadLine();
                         break;
 
                     case 6:
-                        SignUpFormViewModel.Instance.ResetFormCommand();
+                        Console.Write("Enter Country : ");
+                        AddressFormViewModel.Instance.Country = Console.ReadLine();
                         break;
 
                     case 7:
-                        SignUpFormViewModel.Instance.ResetFormCommand();
+                        Console.Write("Enter Near By Spots : ");
+                        AddressFormViewModel.Instance.OtherDetails = Console.ReadLine();
+                        break;
+
+                    case 8:
+                        Console.Write("Enter PinCode : ");
+                        AddressFormViewModel.Instance.PinCode = Console.ReadLine();
+                        break;
+
+                    case 9:
+                        await AddressFormViewModel.Instance.AddAddressCommand();
                         break;
 
                     default:
@@ -109,16 +115,19 @@ namespace CineComplex.Views.UserClient.Forms
                         break;
                 }
 
-
             } while (Choice != Instance.MenuList.Count);
         }
 
         public void ShowFormData()
         {
-            Console.WriteLine($"Entered Name : {SignUpFormViewModel.Instance.UserName}");
-            Console.WriteLine($"Entered Email : {SignUpFormViewModel.Instance.Email}");
-            Console.WriteLine($"Entered Contact : {SignUpFormViewModel.Instance.Contact}");
-            Console.WriteLine($"Entered Password : {SignUpFormViewModel.Instance.Password}");
+            Console.WriteLine($"Entered BuildingDetails : {AddressFormViewModel.Instance.BuildingDetails}");
+            Console.WriteLine($"Entered StreetName : {AddressFormViewModel.Instance.StreetName}");
+            Console.WriteLine($"Entered Area : {AddressFormViewModel.Instance.Area}");
+            Console.WriteLine($"Entered State : {AddressFormViewModel.Instance.State}");
+            Console.WriteLine($"Entered Country : {AddressFormViewModel.Instance.Country}");
+            Console.WriteLine($"Entered OtherDetails : {AddressFormViewModel.Instance.OtherDetails}");
+            Console.WriteLine($"Entered PinCode : {AddressFormViewModel.Instance.PinCode}");
         }
+
     }
 }

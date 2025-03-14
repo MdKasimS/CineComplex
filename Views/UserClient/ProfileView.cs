@@ -2,6 +2,7 @@
 using CineComplex.Interfaces;
 using CineComplex.Models;
 using CineComplex.ViewModels.UserViewModels;
+using CineComplex.Views.UserClient.Forms;
 using ConsoleTables;
 
 
@@ -59,12 +60,18 @@ namespace CineComplex.Views.UserClient
 
                     Console.WriteLine("\nMenu : ");
                     Console.WriteLine("---------------");
-                    Console.WriteLine("1. Press Enter to Update the profile");
-                    Console.WriteLine("2. Type 2 to exit");
+                    Console.WriteLine("1. Update the profile");
+                    Console.WriteLine("2. Exit");
                     Console.Write("Your Choice: ");
 
                     var input = Console.ReadLine();
-                    
+
+                    if (input?.ToLower() == "1")
+                    {
+                        await ProfileFormView.Instance.View();
+                        break;
+                    }
+
                     if (input?.ToLower() == "2")
                     {
                         break;
