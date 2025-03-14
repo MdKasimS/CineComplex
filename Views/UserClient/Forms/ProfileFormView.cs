@@ -16,10 +16,10 @@ namespace CineComplex.Views.UserClient.Forms
             {
                 Instance.MenuList = new List<string>()
                 {
-                    " 1. User Name",
-                    " 2. Email",
-                    " 3. Contact",
-                    " 4. Pasword",
+                    " 1. Update User Name",
+                    " 2. Update Email",
+                    " 3. Update Contact",
+                    " 4. Update Pasword",
                     " 5. Add Address",
                     " 6. Add Bank Account",
                     " 7. Update Details",

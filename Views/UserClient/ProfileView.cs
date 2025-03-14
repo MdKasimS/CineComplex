@@ -17,7 +17,11 @@ namespace CineComplex.Views.UserClient
 
         public async Task View()
         {
-            ConsoleTable table;
+            
+                ProfileViewModel.Instance.Init();
+
+
+                ConsoleTable tableUserAccount;
             int pageSize = 1;
             int currentPage = 0;
             bool hasMorePages = true;
@@ -33,28 +37,50 @@ namespace CineComplex.Views.UserClient
 
                 Console.WriteLine();
 
-                table = new ConsoleTable(new List<string>() { "Id", "UserName", "Contact", "Email" }.ToArray());
+                tableUserAccount = new ConsoleTable(new List<string>() { "Id", "UserName", "Contact", "Email" }.ToArray());
                 var pagedUsers = new List<User>(){
                                         ProfileViewModel.Instance.LoggedInUser, };
 
                 foreach (User u in pagedUsers)
                 {
-                    table.AddRow($"{u.Id}", $"{u.Username,-20}", $"{u.Contact,-5}", $"{u.Email,-25}");
+                    tableUserAccount.AddRow($"{u.Id}", $"{u.Username,-20}", $"{u.Contact,-5}", $"{u.Email,-25}");
                 }
 
                 if (pagedUsers.Count() != 0 && pagedUsers.Count() < 10)
                 {
                     for (int i = 0; i < pageSize - pagedUsers.Count(); ++i)
                     {
-                        table.AddRow("", "", "", "");
+                        tableUserAccount.AddRow("", "", "", "");
                     }
                 }
 
-                hasMorePages = pagedUsers.Count() == 0 ? false : true;
+                ConsoleTable tableAddresses = new ConsoleTable(new List<string>() { "Id", "Address" }.ToArray());
+                var pagedAddresses = ProfileViewModel.Instance.AddressesOfUser;
+
+
+                foreach (Address address in pagedAddresses)
+                {
+                    tableAddresses.AddRow($"{address.Id}", $"{address.BuildingDetails},{address.StreetName},{address.Area},{address.City},{address.State},{address.Country},{address.OtherDetails},{address.PinCode}");
+                }
+
+                if (pagedAddresses.Count() != 0 && pagedAddresses.Count() < 10)
+                {
+                    for (int i = 0; i < pageSize - pagedAddresses.Count(); ++i)
+                    {
+                        tableAddresses.AddRow("", "");
+                    }
+                }
+
+                //TODO: select out of pagedAddresses, pagedUsers and pagedBankAccounts
+                hasMorePages = pagedAddresses.Count() == 0 ? false : true;
                 if (hasMorePages)
                 {
-                    table.Write(Format.MarkDown);
-                    Console.WriteLine($"Count {table.Rows.Count}");
+                    tableUserAccount.Write(Format.MarkDown);
+
+                    Console.WriteLine("\nAddress");
+                    Console.WriteLine("-------------------------------------------------");
+                    tableAddresses.Write(Format.MarkDown);
+                    //Console.WriteLine($"Count {tableAddresses.Rows.Count}");
 
                     currentPage++;
 
@@ -79,6 +105,8 @@ namespace CineComplex.Views.UserClient
 
                 }
             } while (hasMorePages);
+
+            ProfileViewModel.Instance.AddressesOfUser = null;
         }
     }
 }
