@@ -67,7 +67,7 @@ namespace CineComplex.Classes.SQL
 
                 entity.HasOne(e => e.UserProfile)
                   .WithOne(up => up.UserAccount)
-                  .HasForeignKey<UserProfile>(up => up.UserId)
+                  .HasForeignKey<User>(up => up.UserProfileId)
                   .OnDelete(DeleteBehavior.Cascade);
 
             });
