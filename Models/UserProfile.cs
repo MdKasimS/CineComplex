@@ -15,5 +15,9 @@ namespace CineComplex.Models
         public ObservableCollection<Address> AddressDetails { get; set; } = new ObservableCollection<Address>();
         public ObservableCollection<BankAccount> BankDetails { get; set; } = new ObservableCollection<BankAccount>();
         
+        public static UserProfile GetUserProfileByUserId(int userId)
+        {
+            return SQLInteraction.Db.UserProfiles.FirstOrDefault(up => up.UserId == userId);
+        }
     }
 }
