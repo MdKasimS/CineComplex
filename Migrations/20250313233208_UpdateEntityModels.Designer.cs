@@ -3,6 +3,7 @@ using System;
 using CineComplex.Classes.SQL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CineComplex.Migrations
 {
     [DbContext(typeof(CineComplexDb))]
-    partial class CineComplexDbModelSnapshot : ModelSnapshot
+    [Migration("20250313233208_UpdateEntityModels")]
+    partial class UpdateEntityModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
@@ -179,7 +182,8 @@ namespace CineComplex.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Sessions");
                 });
@@ -199,9 +203,6 @@ namespace CineComplex.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("UserProfileId")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Username")
                         .IsRequired()
@@ -272,8 +273,8 @@ namespace CineComplex.Migrations
             modelBuilder.Entity("CineComplex.Models.Session", b =>
                 {
                     b.HasOne("CineComplex.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
+                        .WithOne("UserSession")
+                        .HasForeignKey("CineComplex.Models.Session", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -294,6 +295,9 @@ namespace CineComplex.Migrations
             modelBuilder.Entity("CineComplex.Models.User", b =>
                 {
                     b.Navigation("UserProfile")
+                        .IsRequired();
+
+                    b.Navigation("UserSession")
                         .IsRequired();
                 });
 

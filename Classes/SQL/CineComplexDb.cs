@@ -109,10 +109,6 @@ namespace CineComplex.Classes.SQL
                 entity.Property(e => e.ExpirationTimestamp).IsRequired();
 
                  //one-to-one with User
-                entity.HasOne(e => e.User)
-                 .WithOne(up => up.UserSession)
-                 .HasForeignKey<Session>(up => up.UserId)
-                 .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<BankAccount>(entity =>
