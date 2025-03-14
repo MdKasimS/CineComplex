@@ -19,5 +19,18 @@ namespace CineComplex.Models
         public string OtherDetails { get; set; }
         public int UserProfileId { get; set; }
         public UserProfile UserProfile { get; set; }
+
+        public static async Task CreateNewAddress(Address _newAddress)
+        {
+            await Task.Run(() =>
+            {
+                SQLInteraction.Db.Attach(_newAddress.UserProfile);
+                SQLInteraction.Db.Addresses.Add(_newAddress);
+                SQLInteraction.Db.SaveChanges();
+
+            });
+        }
+
+        //TODO: Create method to check all data fields available for saving address
     }
 }

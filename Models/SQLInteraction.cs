@@ -2,6 +2,8 @@ using CineComplex.Classes;
 using CineComplex.Classes.Base;
 using CineComplex.Classes.SQL;
 using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace CineComplex.Models
 {
@@ -52,6 +54,11 @@ namespace CineComplex.Models
         {
             Console.WriteLine("Application Started...");
             Session.CleanSessions();
+        }
+
+        public async Task ResetDatabaseAsync()
+        {
+            
         }
 
         public void LoadMovies()

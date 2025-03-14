@@ -20,7 +20,8 @@ namespace CineComplex.Models
         public string Email { get; set; }
         public string Contact { get; set; }
         public UserProfile UserProfile { get; set; }
-        public Session UserSession { get; set; }
+        public int UserProfileId { get; set; }
+       
         public static async Task CreateNewUser(User _newUser)
         {
             await Task.Run(() =>
@@ -40,11 +41,17 @@ namespace CineComplex.Models
 
                 UserProfile userProfile = new UserProfile
                 {
+                    UserId = _newUser.Id,
                     UserAccount = _newUser
                 };
 
                 // Add the new UserProfile to the context
                 SQLInteraction.Db.UserProfiles.Add(userProfile);
+                SQLInteraction.Db.SaveChanges();
+
+                _newUser.UserProfile = userProfile;
+                _newUser.UserProfileId = userProfile.Id;
+                SQLInteraction.Db.Users.Update(_newUser);
                 SQLInteraction.Db.SaveChanges();
 
                 //SessionService.LogSession(auth);
