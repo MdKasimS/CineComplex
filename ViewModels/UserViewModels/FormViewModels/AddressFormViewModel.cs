@@ -36,7 +36,7 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
             _newAddress.OtherDetails = OtherDetails;
             _newAddress.PinCode = PinCode;
             _newAddress.UserProfile = Credential.Instance.LoggedInUser.UserProfile;
-
+            _newAddress.UserProfile.Id = Credential.Instance.LoggedInUser.UserProfile.Id;
             Address.CreateNewAddress(_newAddress);
         }
 

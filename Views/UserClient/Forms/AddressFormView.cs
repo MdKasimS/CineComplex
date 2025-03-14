@@ -123,6 +123,7 @@ namespace CineComplex.Views.UserClient.Forms
             Console.WriteLine($"Entered BuildingDetails : {AddressFormViewModel.Instance.BuildingDetails}");
             Console.WriteLine($"Entered StreetName : {AddressFormViewModel.Instance.StreetName}");
             Console.WriteLine($"Entered Area : {AddressFormViewModel.Instance.Area}");
+            Console.WriteLine($"Entered City : {AddressFormViewModel.Instance.City}");
             Console.WriteLine($"Entered State : {AddressFormViewModel.Instance.State}");
             Console.WriteLine($"Entered Country : {AddressFormViewModel.Instance.Country}");
             Console.WriteLine($"Entered OtherDetails : {AddressFormViewModel.Instance.OtherDetails}");

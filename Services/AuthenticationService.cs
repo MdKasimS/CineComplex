@@ -38,7 +38,7 @@ namespace CineComplex.Services
                                 SessionService.LogSession(auth);
 
                                 Credential.Instance.LoggedInUser = User.GetUserByEmailId(Credential.Instance.LoginId);
-
+                                Credential.Instance.LoggedInUser.UserProfile = SQLInteraction.Db.UserProfiles.FirstOrDefault(up => up.UserId == Credential.Instance.LoggedInUser.Id);
                                 return new Result<bool>(true, true, $"User {Credential.Instance.LoginId} Logged In..."); //false;
                             }
                             return new Result<bool>(false, false, $"Authentication Failed... Press Any Key To Continue.");
