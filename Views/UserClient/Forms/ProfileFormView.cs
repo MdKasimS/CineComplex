@@ -1,6 +1,7 @@
 ﻿using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
 using CineComplex.Models;
+using CineComplex.ViewModels.UserViewModels.FormViewModels;
 using Microsoft.IdentityModel.Tokens;
 
 namespace CineComplex.Views.UserClient.Forms
@@ -22,7 +23,7 @@ namespace CineComplex.Views.UserClient.Forms
                     " 4. Update Pasword",
                     " 5. Add Address",
                     " 6. Add Bank Account",
-                    " 7. Update Details",
+                    " 7. Update And Save",
                     " 8. Exit"
                 };
             }
@@ -43,6 +44,7 @@ namespace CineComplex.Views.UserClient.Forms
                 Console.WriteLine($"User Profile : {Credential.Instance.LoggedInUser.Username,-35}");
                 Console.WriteLine("-------------------------------------------------");
 
+                ShowFormData();
 
                 Console.WriteLine();
 
@@ -59,8 +61,32 @@ namespace CineComplex.Views.UserClient.Forms
                 int.TryParse(Console.ReadLine(), out _choice);
                 switch (Choice)
                 {
+                    case 1:
+                        ProfileFormViewModel.Instance.UserName = Console.ReadLine();
+                        break;
+
+                    case 2:
+                        ProfileFormViewModel.Instance.Email = Console.ReadLine();
+                        break;
+
+                    case 3:
+                        ProfileFormViewModel.Instance.Contact = Console.ReadLine();
+                        break;
+
+                    case 4:
+                        ProfileFormViewModel.Instance.Password = Console.ReadLine();
+                        break;
+
                     case 5:
                         await AddressFormView.Instance.View();
+                        break;
+
+                    case 6:
+                        await BankAccountFormView.Instance.View();
+                        break;
+
+                    case 7:
+                        await ProfileFormViewModel.Instance.UpdateAndSaveCommand();
                         break;
 
                     default:
@@ -69,6 +95,14 @@ namespace CineComplex.Views.UserClient.Forms
                 }
 
             } while (Choice != Instance.MenuList.Count);
+        }
+
+        public void ShowFormData()
+        {
+            Console.WriteLine($"Entered Name : {Credential.Instance.LoggedInUser.Username}");
+            Console.WriteLine($"Entered Email : {Credential.Instance.LoggedInUser.Email}");
+            Console.WriteLine($"Entered Contact : {Credential.Instance.LoggedInUser.Contact}");
+            Console.WriteLine($"Entered Password : {Credential.Instance.LoggedInUser.Password}");
         }
     }
 }

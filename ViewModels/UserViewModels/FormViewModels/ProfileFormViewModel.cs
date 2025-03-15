@@ -11,8 +11,21 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
         public string Email { get; set; }
         public string Contact { get; set; }
         public string Password { get; set; }
-        public Address NewAddress { get; set; }
-        public BankAccount NewBankAccount { get; set; }
+
+        #endregion
+
+        #region Command
+
+        public async Task UpdateAndSaveCommand()
+        {
+            Credential.Instance.LoggedInUser.Username = UserName;
+            Credential.Instance.LoggedInUser.Contact = Contact;
+            Credential.Instance.LoggedInUser.Email = Email;
+            Credential.Instance.LoggedInUser.Password = Password;
+
+            User.UpdateUser(Credential.Instance.LoggedInUser);
+        }
+
         #endregion
     }
 }
