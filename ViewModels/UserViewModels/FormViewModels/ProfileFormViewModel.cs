@@ -23,7 +23,7 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
             Credential.Instance.LoggedInUser.Contact = Contact;
             Credential.Instance.LoggedInUser.Email = Email;
             //Credential.Instance.LoggedInUser.Password = Password;
-
+            
             User.UpdateUser(Credential.Instance.LoggedInUser);
         }
 
