@@ -24,15 +24,15 @@ namespace CineComplex.Models
 
         #endregion
 
+        public string? LoginId { get => _loginId; set => _loginId = value; }
+        public string? Password { get => _password; set => _password = value; }
+        public string? SessionTokenId { get => _sessionTokenId; set => _sessionTokenId = value; }
+
         #endregion
 
         private Credential()
         {
         }
-
-        public string? LoginId { get => _loginId; set => _loginId = value; }
-        public string? Password { get => _password; set => _password = value; }
-        public string? SessionTokenId { get => _sessionTokenId; set => _sessionTokenId = value; }
         public static Credential Instance
         {
             get
@@ -45,6 +45,7 @@ namespace CineComplex.Models
 
             }
         }
+
 
     }
 }
