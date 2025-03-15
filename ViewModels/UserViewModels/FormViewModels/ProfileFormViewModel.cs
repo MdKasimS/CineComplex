@@ -18,14 +18,26 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
 
         public async Task UpdateAndSaveCommand()
         {
+            
             Credential.Instance.LoggedInUser.Username = UserName;
             Credential.Instance.LoggedInUser.Contact = Contact;
             Credential.Instance.LoggedInUser.Email = Email;
-            Credential.Instance.LoggedInUser.Password = Password;
+            //Credential.Instance.LoggedInUser.Password = Password;
 
             User.UpdateUser(Credential.Instance.LoggedInUser);
         }
 
+        #endregion
+
+        #region Methods
+
+        public void Init()
+        {
+            UserName = Credential.Instance.LoggedInUser.Username;
+            Email = Credential.Instance.LoggedInUser.Email;
+            Contact = Credential.Instance.LoggedInUser.Contact;
+            Password = Credential.Instance.Password;
+        }
         #endregion
     }
 }

@@ -31,9 +31,9 @@ namespace CineComplex.Views.UserClient.Forms
 
         public async Task View()
         {
+            ProfileFormViewModel.Instance.Init();
 
             Instance.LoadMenuList();
-
 
             do//main loop
             {
@@ -41,7 +41,7 @@ namespace CineComplex.Views.UserClient.Forms
                 Console.WriteLine("\t----- !!! Salam Hindusthan !!! -----");
                 Console.WriteLine("================================================");
 
-                Console.WriteLine($"User Profile : {Credential.Instance.LoggedInUser.Username,-35}");
+                Console.WriteLine($"User Profile Form : {Credential.Instance.LoggedInUser.Username,-35}");
                 Console.WriteLine("-------------------------------------------------");
 
                 ShowFormData();
@@ -99,10 +99,11 @@ namespace CineComplex.Views.UserClient.Forms
 
         public void ShowFormData()
         {
-            Console.WriteLine($"Entered Name : {Credential.Instance.LoggedInUser.Username}");
-            Console.WriteLine($"Entered Email : {Credential.Instance.LoggedInUser.Email}");
-            Console.WriteLine($"Entered Contact : {Credential.Instance.LoggedInUser.Contact}");
-            Console.WriteLine($"Entered Password : {Credential.Instance.LoggedInUser.Password}");
+            Console.WriteLine($"Entered Name : {ProfileFormViewModel.Instance.UserName}");
+            Console.WriteLine($"Entered Email : {ProfileFormViewModel.Instance.Email}");
+            Console.WriteLine($"Entered Contact : {ProfileFormViewModel.Instance.Contact}");
+            Console.WriteLine($"Entered Password : {ProfileFormViewModel.Instance.Password}");
         }
+
     }
 }
