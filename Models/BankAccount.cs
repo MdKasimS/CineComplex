@@ -17,5 +17,16 @@ namespace CineComplex.Models
         public int UserProfileId { get; set; }
         public UserProfile UserProfile { get; set; }
 
+        public static async Task CreateNewBankAccount(BankAccount _newAccount)
+        {
+            await Task.Run(() =>
+            {
+                SQLInteraction.Db.Attach(_newAccount.UserProfile);
+                SQLInteraction.Db.BankAccounts.Add(_newAccount);
+                SQLInteraction.Db.SaveChanges();
+
+            });
+        }
+
     }
 }

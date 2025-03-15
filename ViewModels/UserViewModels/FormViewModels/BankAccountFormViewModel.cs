@@ -33,6 +33,7 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
             _newAccount.BankName = BankName;
             _newAccount.UserProfile = Credential.Instance.LoggedInUser.UserProfile;
             _newAccount.UserProfileId = Credential.Instance.LoggedInUser.UserProfile.Id;
+            BankAccount.CreateNewBankAccount(_newAccount);
         }
 
         public void ResetFormCommand()

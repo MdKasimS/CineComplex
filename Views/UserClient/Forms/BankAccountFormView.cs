@@ -23,11 +23,11 @@ namespace CineComplex.Views.UserClient.Forms
             {
                 Instance.MenuList = new List<string>()
                 {
-                    "1. Enter AccountNumber",
-                    "2. Enter GSTNumber",
-                    "3. Enter Bank Name",
-                    "4. Enter IFSCNumber",
-                    "5. Enter Account Holder Name",
+                    "1. Enter Account Holder Name",
+                    "2. Enter AccountNumber",
+                    "3. Enter GSTNumber",
+                    "4. Enter Bank Name",
+                    "5. Enter IFSCNumber",
                     "6. Add Bank Account",
                     "7. Exit ",
                 };
@@ -67,23 +67,31 @@ namespace CineComplex.Views.UserClient.Forms
                 switch (Choice)
                 {
                     case 1:
-                        BankAccountFormViewModel.Instance.AccountNumber = Console.ReadLine();
+                        Console.Write("Enter Account Holder Name : ");
+                        BankAccountFormViewModel.Instance.AccountHolderName = Console.ReadLine();
                         break;
                     
                     case 2:
-                        BankAccountFormViewModel.Instance.GSTNumber = Console.ReadLine();
+                        Console.Write("Enter Account Number : ");
+                        BankAccountFormViewModel.Instance.AccountNumber = Console.ReadLine(); 
+                        
                         break;
                     
                     case 3:
-                        BankAccountFormViewModel.Instance.BankName = Console.ReadLine();
+                        Console.Write("Enter GST Number : ");
+                        BankAccountFormViewModel.Instance.GSTNumber = Console.ReadLine();
+
                         break;
                     
                     case 4:
-                        BankAccountFormViewModel.Instance.IFSCNumber = Console.ReadLine();
+                        Console.Write("Enter Bank Name : ");
+                        BankAccountFormViewModel.Instance.BankName = Console.ReadLine();
+
                         break;
                     
                     case 5:
-                        BankAccountFormViewModel.Instance.AccountHolderName = Console.ReadLine();
+                        Console.Write("Enter IFSC Number : ");
+                        BankAccountFormViewModel.Instance.IFSCNumber = Console.ReadLine();
                         break;
                     
                     case 6:
@@ -100,6 +108,7 @@ namespace CineComplex.Views.UserClient.Forms
 
         public void ShowFormData()
         {
+            Console.WriteLine($"Entered Account Name : {BankAccountFormViewModel.Instance.AccountHolderName}");
             Console.WriteLine($"Entered AccountNumber : {BankAccountFormViewModel.Instance.AccountNumber}");
             Console.WriteLine($"Entered GSTNumber : {BankAccountFormViewModel.Instance.GSTNumber}");
             Console.WriteLine($"Entered BankName : {BankAccountFormViewModel.Instance.BankName}");
