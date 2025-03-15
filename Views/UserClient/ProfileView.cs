@@ -18,10 +18,9 @@ namespace CineComplex.Views.UserClient
         public async Task View()
         {
             
-                ProfileViewModel.Instance.Init();
+            ProfileViewModel.Instance.Init();
 
-
-                ConsoleTable tableUserAccount;
+            ConsoleTable tableUserAccount;
             int pageSize = 1;
             int currentPage = 0;
             bool hasMorePages = true;
