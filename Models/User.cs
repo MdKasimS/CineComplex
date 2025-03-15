@@ -95,5 +95,10 @@ namespace CineComplex.Models
             return SQLInteraction.Db.Users.FirstOrDefault(u => u.Id == id);
         }
 
+        public static void UpdateUser(User _updatedUser)
+        {
+            SQLInteraction.Db.Users.Update(_updatedUser);
+            SQLInteraction.Db.SaveChanges();
+        }
     }
 }
