@@ -40,9 +40,9 @@ namespace CineComplex.ViewModels.UserViewModels
                 }
             }
 
-            if (AddressesOfUser.IsNullOrEmpty())
+            if (BankAccountsOfUser.IsNullOrEmpty())
             {
-                AddressesOfUser = new ObservableCollection<Address>();
+                BankAccountsOfUser = new ObservableCollection<BankAccount>();
 
                 foreach (BankAccount account in SQLInteraction.Db.BankAccounts.Where(ad => ad.UserProfileId == Credential.Instance.LoggedInUser.UserProfileId).ToList())
                 {
