@@ -16,6 +16,7 @@ namespace CineComplex.ViewModels.UserViewModels
         #region Collections
 
         public ObservableCollection<Address> AddressesOfUser { get; set; }
+        public ObservableCollection<BankAccount> BankAccountsOfUser { get; set; }
 
         #endregion
 
@@ -33,9 +34,19 @@ namespace CineComplex.ViewModels.UserViewModels
             {
                 AddressesOfUser = new ObservableCollection<Address>();
 
-                foreach (Address address in SQLInteraction.Db.Addresses.Where(ad => ad.UserProfileId == Credential.Instance.LoggedInUser.UserProfileId).ToList())
+                foreach (Address address in SQLInteraction.Db.Addresses.Where(ad => ad.UserProfileId == Credential.Instance.LoggedInUser.UserProfileId))
                 {
                     AddressesOfUser.Add(address);
+                }
+            }
+
+            if (AddressesOfUser.IsNullOrEmpty())
+            {
+                AddressesOfUser = new ObservableCollection<Address>();
+
+                foreach (BankAccount account in SQLInteraction.Db.BankAccounts.Where(ad => ad.UserProfileId == Credential.Instance.LoggedInUser.UserProfileId).ToList())
+                {
+                    BankAccountsOfUser.Add(account);
                 }
             }
         }
