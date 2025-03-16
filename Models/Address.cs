@@ -17,14 +17,14 @@ namespace CineComplex.Models
         public string Country { get; set; }
         public string PinCode { get; set; }
         public string OtherDetails { get; set; }
-        public int UserProfileId { get; set; }
-        public UserProfile UserProfile { get; set; }
+        public int AccountProfileId { get; set; }
+        public UserProfile AccountProfile { get; set; }
 
         public static async Task CreateNewAddress(Address _newAddress)
         {
             await Task.Run(() =>
             {
-                SQLInteraction.Db.Attach(_newAddress.UserProfile);
+                SQLInteraction.Db.Attach(_newAddress.AccountProfile);
                 SQLInteraction.Db.Addresses.Add(_newAddress);
                 SQLInteraction.Db.SaveChanges();
 

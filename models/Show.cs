@@ -1,48 +1,43 @@
+using System.Collections.ObjectModel;
+
 namespace CineComplex.Models
 {
+    enum ShowStatus
+    {
+        //Its upcoming and booking is available
+        BookingAvailable,
+        //Its upcoming and only counter booking is available
+        BookingStopped,
+        //Show is next and no booking allowed
+        Upcoming,
+        //Show is going on
+        InRunning,
+        //Show completed and no booking further
+        Completed,
+        //Show cancelled
+        Cancelled,
+        //Show cancelled but tickets updated for rescheduled slot
+        Rescheduled
+    }
+
     public class Show
     {
-        private int _showId;//Must be done internally from database
-        private int _movieId;
-        private int _theatreId;
-        private decimal _platinumSeatRate;
-        private decimal _goldSeatRate;
-        private decimal _silverSeatRate;
-        private DateTime _startDate;
-        private DateTime _endDate;
-        private static Dictionary<int, Show>? _shows;
+        public int Id { get; set; }
+        public decimal PlatinumSeatRate { get ; set; }
+        public decimal GoldSeatRate { get ; set; }
+        public decimal SilverSeatRate { get ; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get ; set; }
+        public Movie MovieOfTheShow { get; set; }
+        public int MovieId { get ; set; }// Foreign Key
+        public Theatre HostingTheatre { get; set; }
+        public int TheatreId { get ; set; }// Foreign Key
+        public ObservableCollection<Ticket> TicketsOfTheShow { get; set; }
 
-        #region Dictionaries
-
-        public static Dictionary<int, Show>? Shows { get => _shows; set => _shows = value; }
-
-
-        #endregion
-
-        public int ShowId { get => _showId; set => _showId = value; }
-        public int MovieId { get => _movieId; set => _movieId = value; }
-        public int TheatreId { get => _theatreId; set => _theatreId = value; }
-        public decimal PlatinumSeatRate { get => _platinumSeatRate; set => _platinumSeatRate = value; }
-        public decimal GoldSeatRate { get => _goldSeatRate; set => _goldSeatRate = value; }
-        public decimal SilverSeatRate { get => _silverSeatRate; set => _silverSeatRate = value; }
-        public DateTime StartDate { get => _startDate; set => _startDate = value; }
-        public DateTime EndDate { get => _endDate; set => _endDate = value; }
-
-        public Show(int movieId, int theatreId, DateTime startDate, DateTime endDate, decimal platinumRate, decimal goldRate, decimal silverRate)
-        {
-            MovieId = movieId;
-            TheatreId = theatreId;
-            StartDate = startDate;
-            EndDate = endDate;
-            PlatinumSeatRate = platinumRate;
-            GoldSeatRate = goldRate;
-            SilverSeatRate = silverRate;
-            ShowId = 10101;// Constructor must generate from database
-        }
-
+        //TODO: Move this method to respective places
         public void DisplayShowDetails()
         {
-            Console.WriteLine($"Show ID : {ShowId}");
+            Console.WriteLine($"Show ID : {Id}");
             Console.WriteLine($"Movie ID : {MovieId}");
             Console.WriteLine($"Theatre ID : {TheatreId}");
             Console.WriteLine($"Platinum Seat Rate : {PlatinumSeatRate}");

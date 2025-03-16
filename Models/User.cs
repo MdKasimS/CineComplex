@@ -1,13 +1,6 @@
 ﻿using CineComplex.Classes;
-using CineComplex.Classes.SQL;
 using CineComplex.Services;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace CineComplex.Models
 {
     public class User
@@ -19,8 +12,8 @@ namespace CineComplex.Models
         public string Password { get; set; }
         public string Email { get; set; }
         public string Contact { get; set; }
-        public UserProfile UserProfile { get; set; }
-        public int UserProfileId { get; set; }
+        public UserProfile AccountProfile { get; set; }
+        public int AccountProfileId { get; set; }
        
         public static async Task CreateNewUser(User _newUser)
         {
@@ -49,8 +42,8 @@ namespace CineComplex.Models
                 SQLInteraction.Db.UserProfiles.Add(userProfile);
                 SQLInteraction.Db.SaveChanges();
 
-                _newUser.UserProfile = userProfile;
-                _newUser.UserProfileId = userProfile.Id;
+                _newUser.AccountProfile = userProfile;
+                _newUser.AccountProfileId = userProfile.Id;
                 SQLInteraction.Db.Users.Update(_newUser);
                 SQLInteraction.Db.SaveChanges();
 

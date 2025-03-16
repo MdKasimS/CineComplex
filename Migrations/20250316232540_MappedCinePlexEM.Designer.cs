@@ -3,6 +3,7 @@ using System;
 using CineComplex.Classes.SQL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CineComplex.Migrations
 {
     [DbContext(typeof(CineComplexDb))]
-    partial class CineComplexDbModelSnapshot : ModelSnapshot
+    [Migration("20250316232540_MappedCinePlexEM")]
+    partial class MappedCinePlexEM
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.6");

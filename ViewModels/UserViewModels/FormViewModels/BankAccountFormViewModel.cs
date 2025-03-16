@@ -31,8 +31,8 @@ namespace CineComplex.ViewModels.UserViewModels.FormViewModels
             _newAccount.IFSCNumber = IFSCNumber;
             _newAccount.AccountHolderName = AccountHolderName;
             _newAccount.BankName = BankName;
-            _newAccount.UserProfile = Credential.Instance.LoggedInUser.UserProfile;
-            _newAccount.UserProfileId = Credential.Instance.LoggedInUser.UserProfile.Id;
+            _newAccount.AccountProfile = Credential.Instance.LoggedInUser.AccountProfile;
+            _newAccount.UserProfileId = Credential.Instance.LoggedInUser.AccountProfile.Id;
             BankAccount.CreateNewBankAccount(_newAccount);
         }
 

@@ -15,13 +15,13 @@ namespace CineComplex.Models
         public string IFSCNumber { get; set; }
         public string AccountHolderName { get; set; }
         public int UserProfileId { get; set; }
-        public UserProfile UserProfile { get; set; }
+        public UserProfile AccountProfile { get; set; }
 
         public static async Task CreateNewBankAccount(BankAccount _newAccount)
         {
             await Task.Run(() =>
             {
-                SQLInteraction.Db.Attach(_newAccount.UserProfile);
+                SQLInteraction.Db.Attach(_newAccount.AccountProfile);
                 SQLInteraction.Db.BankAccounts.Add(_newAccount);
                 SQLInteraction.Db.SaveChanges();
 

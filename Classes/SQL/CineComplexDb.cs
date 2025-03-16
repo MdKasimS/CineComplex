@@ -65,9 +65,9 @@ namespace CineComplex.Classes.SQL
                 entity.HasIndex(e => e.Email).IsUnique();
                 entity.HasIndex(e => e.Contact).IsUnique();
 
-                entity.HasOne(e => e.UserProfile)
+                entity.HasOne(e => e.AccountProfile)
                   .WithOne(up => up.UserAccount)
-                  .HasForeignKey<User>(up => up.UserProfileId)
+                  .HasForeignKey<User>(up => up.Username)
                   .OnDelete(DeleteBehavior.Cascade);
 
             });
@@ -78,24 +78,24 @@ namespace CineComplex.Classes.SQL
 
                 //one-to-one with User
                 entity.HasOne(up => up.UserAccount)
-                      .WithOne(u => u.UserProfile)
+                      .WithOne(u => u.AccountProfile)
                       .HasForeignKey<UserProfile>(up => up.UserId)
                       .OnDelete(DeleteBehavior.Restrict);
 
                 //one-to-many with BankAccount
                 entity.HasMany(up => up.BankDetails)
-                      .WithOne(ba => ba.UserProfile)
+                      .WithOne(ba => ba.AccountProfile)
                       .HasForeignKey(ba => ba.UserProfileId);
 
                 //one-to-many with Address
                 entity.HasMany(up => up.AddressDetails)
-                      .WithOne(ba => ba.UserProfile)
-                      .HasForeignKey(ba => ba.UserProfileId);
+                      .WithOne(ba => ba.AccountProfile)
+                      .HasForeignKey(ba => ba.AccountProfileId);
             });
 
-            modelBuilder.Entity<Auth>(entity => 
-            { 
-                entity.HasKey(e => e.UserId); 
+            modelBuilder.Entity<Auth>(entity =>
+            {
+                entity.HasKey(e => e.UserId);
                 entity.Property(e => e.Password).IsRequired();
                 entity.Property(e => e.PrivilegeLevel).IsRequired();
 
@@ -108,7 +108,7 @@ namespace CineComplex.Classes.SQL
                 entity.Property(e => e.LoginTimestamp).IsRequired();
                 entity.Property(e => e.ExpirationTimestamp).IsRequired();
 
-                 //one-to-one with User
+                //one-to-one with User
             });
 
             modelBuilder.Entity<BankAccount>(entity =>
@@ -117,25 +117,25 @@ namespace CineComplex.Classes.SQL
 
                 entity.Property(e => e.AccountNumber)
                       .IsRequired()
-                      .HasMaxLength(50); 
+                      .HasMaxLength(50);
 
                 entity.Property(e => e.GSTNumber)
-                      .HasMaxLength(15); 
+                      .HasMaxLength(15);
 
                 entity.Property(e => e.BankName)
                       .IsRequired()
-                      .HasMaxLength(100); 
+                      .HasMaxLength(100);
 
                 entity.Property(e => e.IFSCNumber)
                       .IsRequired()
-                      .HasMaxLength(11); 
+                      .HasMaxLength(11);
 
                 entity.Property(e => e.AccountHolderName)
                       .IsRequired()
                       .HasMaxLength(100);
 
                 //one-to-many with UserProfile
-                entity.HasOne(up => up.UserProfile)
+                entity.HasOne(up => up.AccountProfile)
                       .WithMany(ba => ba.BankDetails)
                       .HasForeignKey(ba => ba.UserProfileId);
             });
@@ -177,29 +177,74 @@ namespace CineComplex.Classes.SQL
                       .HasMaxLength(50);
 
                 //one-to-many with UserProfile
-                entity.HasOne(up => up.UserProfile)
+                entity.HasOne(up => up.AccountProfile)
                       .WithMany(ba => ba.AddressDetails)
-                      .HasForeignKey(ba => ba.UserProfileId);
+                      .HasForeignKey(ba => ba.AccountProfileId);
 
             });
 
+            // Configuring CinePlex entity
             modelBuilder.Entity<CinePlex>(entity =>
             {
+                // Primary Key
                 entity.HasKey(e => e.Id);
 
-                entity.Property(e => e.FranchiseOperator)
-                      .IsRequired().HasMaxLength(100);
-
+                // Properties
+                entity.Property(e => e.OperatorName).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.CineplexName).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.Password).IsRequired(); // Security: Store hashed passwords
+                entity.Property(e => e.Email).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.Contact).HasMaxLength(15);
                 entity.Property(e => e.NumberOfTheatres).IsRequired();
 
-                // Configure relationships
-                entity.HasOne(e => e.Profile)
-                      .WithOne()
-                      .HasForeignKey<CinePlex>(e => e.UserProfileId)
-                      .OnDelete(DeleteBehavior.Cascade);
-
+                // One-to-one relationship with UserProfile
+                entity.HasOne(e => e.AccountProfile) 
+                      .WithMany(up => up.CinePlexes)
+                      .HasForeignKey(e => e.AccountProfileId);
+                      
             });
-        
+            
+            // Cineplex -> Theatre (1-to-Many)
+            modelBuilder.Entity<CinePlex>()
+                        .HasMany(c => c.Theatres)
+                        .WithOne(t => t.CineComplexOfTheatre)
+                        .HasForeignKey(t => t.Id)
+                        .OnDelete(DeleteBehavior.Cascade);
+
+            // Theatre -> Seat (1-to-Many)
+            modelBuilder.Entity<Theatre>()
+                        .HasMany(t => t.SeatsInTheatre)
+                        .WithOne(s => s.CineComplexTheatre)
+                        .HasForeignKey(s => s.TheatreId)
+                        .OnDelete(DeleteBehavior.Cascade);
+
+            // Theatre -> Show (1-to-Many)
+            modelBuilder.Entity<Theatre>()
+                        .HasMany(t => t.AllShowsOfThisTheatre)
+                        .WithOne(s => s.HostingTheatre)
+                        .HasForeignKey(s => s.TheatreId)
+                        .OnDelete(DeleteBehavior.Cascade);
+
+            // Movie -> Show (1-to-Many)
+            modelBuilder.Entity<Movie>()
+                        .HasMany(m => m.AllShows)
+                        .WithOne(s => s.MovieOfTheShow)
+                        .HasForeignKey(s => s.MovieId)
+                        .OnDelete(DeleteBehavior.Cascade);
+
+            // Show -> Ticket (1-to-Many)
+            modelBuilder.Entity<Show>()
+                        .HasMany(s => s.TicketsOfTheShow)
+                        .WithOne(t => t.ShowBooked)
+                        .HasForeignKey(t => t.ShowId)
+                        .OnDelete(DeleteBehavior.Cascade);
+
+            // Seat -> Ticket (1-to-1)
+            modelBuilder.Entity<Seat>()
+                        .HasOne(s => s.TicketForThisSeat)
+                        .WithOne(t => t.SeatBooked)
+                        .HasForeignKey<Ticket>(t => t.SeatId)
+                        .OnDelete(DeleteBehavior.Cascade);
         }
 
     }

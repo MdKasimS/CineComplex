@@ -84,16 +84,17 @@ namespace CineComplex.Views.UserClient
                     tableBankAccounts.AddRow($"{account.Id}", $"{account.AccountNumber}");
                 }
 
-                if (pagedAddresses.Count() != 0 && pagedAddresses.Count() < 10)
+                if (pagedBankAccounts.Count() != 0 && pagedBankAccounts.Count() < 10)
                 {
-                    for (int i = 0; i < pageSize - pagedAddresses.Count(); ++i)
+                    for (int i = 0; i < pageSize - pagedBankAccounts.Count(); ++i)
                     {
                         tableBankAccounts.AddRow("", "");
                     }
                 }
 
+                int max = Math.Max(pagedUsers.Count(), Math.Max(pagedBankAccounts.Count(), pagedAddresses.Count()));
                 //TODO: select out of pagedAddresses, pagedUsers and pagedBankAccounts
-                hasMorePages = pagedBankAccounts.Count() == 0 ? false : true;
+                hasMorePages = max == 0 ? false : true;
                 if (hasMorePages)
                 {
                     tableUserAccount.Write(Format.MarkDown);
