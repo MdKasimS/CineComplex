@@ -5,6 +5,7 @@ namespace CineComplex.Models
 {
     public class User
     {
+        //TODO: Add account status control flag - Active, Disabled, Deleted
         public int Id { get; set; }
         public string Username { get; set; }
         [NotMapped]
