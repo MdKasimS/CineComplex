@@ -29,43 +29,36 @@ namespace CineComplex.ViewModels.CineplexClient
         public void ForgotPassword()
         {
             //Now this method is in VM and we need View to be created when this method is called. Don't know how to handle it?
-            if(Instance.AreAllCredentialsAvailable())
+            if(AuthenticationService.AreAllCredentialsAvailable().IsSuccessful)
             {
                
             }
 
         }
 
-        public async Task SignIn()
+        public async Task SignInCommand()
         {
-            AuthenticationResult = await AuthenticationService.AuthenticateUserForGivenCredential();
+            AuthenticationResult = AuthenticationService.AuthenticateUserForGivenCredential().Result;
+
+            if (AuthenticationResult.IsSuccessful)
+            {
+                Credential.Instance.IsSignedIn = true;
+            }
         }
 
-        public void ResetFormCommand()
+        public async Task SignOutCommand()
+        {
+            AuthenticationResult = AuthenticationService.TerminateUserSession(Credential.Instance.SessionTokenId);
+            ResetFormCommand();
+
+            //TODO: Use navigation state machine
+        }
+
+        public async Task ResetFormCommand()
         {
             Credential.Instance.LoginId = "";
             Credential.Instance.Password = "";
         }
 
-        private bool AreAllCredentialsAvailable()
-        {
-            if (string.IsNullOrWhiteSpace(Credential.Instance.LoginId)
-               || string.IsNullOrWhiteSpace(Credential.Instance.Password))
-            {
-                Console.Clear();
-                Console.WriteLine("All fields are required. Press any key to continue...");
-                Console.ReadKey();
-                return false;
-            }
-
-            if (!AuthenticationService.IsValidEmail(Credential.Instance.LoginId).IsSuccessful)
-            {
-                Console.Clear();
-                Console.WriteLine("Invalid user Id format. Press any key to continue...");
-                Console.ReadKey();
-                return false;
-            }
-            return true;
-        }
     }
 }
