@@ -63,10 +63,10 @@ namespace CineComplex.Views.CineplexClient
                         break;
 
                     case 3:
-                        await SignInViewModel.Instance.SignIn();
+                        await SignInViewModel.Instance.SignInCommand();
                         if (SignInViewModel.Instance.AuthenticationResult.IsSuccessful)
                         {
-                            AdminHomeView.Instance.View();
+                            CineplexHomeView.Instance.View();
                         }
                         else
                         {

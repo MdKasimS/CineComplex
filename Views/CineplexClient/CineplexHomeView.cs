@@ -1,11 +1,6 @@
 ﻿using CineComplex.Classes.Base;
 using CineComplex.Interfaces;
-using CineComplex.Views.UserClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CineComplex.Views.CineplexClient.Manager;
 
 namespace CineComplex.Views.CineplexClient
 {
@@ -25,7 +20,8 @@ namespace CineComplex.Views.CineplexClient
                 "5. Manage Movies",
                 "6. Manage Updates & Ads",
                 "7. Manage Licenses",
-                "8. Exit",
+                "8. Show Profile",
+                "9. Exit",
             };
         }
 
@@ -59,30 +55,42 @@ namespace CineComplex.Views.CineplexClient
                 {
                     case 1:
                         //Show scheduled shows
+                        await ShowsView.Instance.View();
                         break;
 
                     case 2:
                         //Manage shows
+                        await ManageShowsView.Instance.View();  
                         break;
 
                     case 3:
                         //Manage tickets
+                        await ManageTicketsView.Instance.View();
                         break;
 
                     case 4:
                         //Manage theatre
+                        await ManageTheatresView.Instance.View();
                         break;
 
                     case 5:
                         //Manage movies
+                        await ManageMoviesView.Instance.View();
                         break;
 
                     case 6:
                         //Manage updates & ads
+                        await ManageUpdatesAdsView.Instance.View();
                         break;
 
                     case 7:
                         //Manage Licenses
+                        await ManageLicensesView.Instance.View();
+                        break;
+
+                    case 8:
+                        //Manage Licenses
+                        await ProfileView.Instance.View();
                         break;
 
                     default:
