@@ -13,6 +13,7 @@ namespace CineComplex.Models
 {
     public class CinePlex // Almost similar to User enity
     {
+        //TODO: Create issue to update Cineplex by removing User specific Properties
         public int Id { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
