@@ -1,0 +1,15 @@
+E:\Projects\Products\VS2022\WPF\CineComplex\MLProjectsForCineComplex\bin\Debug\net9.0\MLProjectsForCineComplex.exe
+E:\Projects\Products\VS2022\WPF\CineComplex\MLProjectsForCineComplex\bin\Debug\net9.0\MLProjectsForCineComplex.deps.json
+E:\Projects\Products\VS2022\WPF\CineComplex\MLProjectsForCineComplex\bin\Debug\net9.0\MLProjectsForCineComplex.runtimeconfig.json
+E:\Projects\Products\VS2022\WPF\CineComplex\MLProjectsForCineComplex\bin\Debug\net9.0\MLProjectsForCineComplex.dll
+E:\Projects\Products\VS2022\WPF\CineComplex\MLProjectsForCineComplex\bin\Debug\net9.0\MLProjectsForCineComplex.pdb
+E:\Projects\Products\VS2022\WPF\CineComplex\MLProjectsForCineComplex\obj\Debug\net9.0\MLProjectsForCineComplex.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\Products\VS2022\WPF\CineComplex\MLProjectsForCineComplex\obj\Debug\net9.0\MLProjectsForCineComplex.AssemblyInfoInputs.cache
+E:\Projects\Products\VS2022\WPF\CineComplex\MLProjectsForCineComplex\obj\Debug\net9.0\MLProjectsForCineComplex.AssemblyInfo.cs
+E:\Projects\Products\VS2022\WPF\CineComplex\MLProjectsForCineComplex\obj\Debug\net9.0\MLProjectsForCineComplex.csproj.CoreCompileInputs.cache
+E:\Projects\Products\VS2022\WPF\CineComplex\MLProjectsForCineComplex\obj\Debug\net9.0\MLProjectsForCineComplex.sourcelink.json
+E:\Projects\Products\VS2022\WPF\CineComplex\MLProjectsForCineComplex\obj\Debug\net9.0\MLProjectsForCineComplex.dll
+E:\Projects\Products\VS2022\WPF\CineComplex\MLProjectsForCineComplex\obj\Debug\net9.0\refint\MLProjectsForCineComplex.dll
+E:\Projects\Products\VS2022\WPF\CineComplex\MLProjectsForCineComplex\obj\Debug\net9.0\MLProjectsForCineComplex.pdb
+E:\Projects\Products\VS2022\WPF\CineComplex\MLProjectsForCineComplex\obj\Debug\net9.0\MLProjectsForCineComplex.genruntimeconfig.cache
+E:\Projects\Products\VS2022\WPF\CineComplex\MLProjectsForCineComplex\obj\Debug\net9.0\ref\MLProjectsForCineComplex.dll
