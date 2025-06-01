@@ -50,3 +50,4 @@ obj/Debug/net8.0/CineComplex.GeneratedMSBuildEditorConfig.editorconfig
 /.vs/CineComplex/v17/DocumentLayout.backup.json
 /.vs/VSWorkspaceState.json
 *.dll
+/.vs
