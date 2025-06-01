@@ -51,3 +51,9 @@ obj/Debug/net8.0/CineComplex.GeneratedMSBuildEditorConfig.editorconfig
 /.vs/VSWorkspaceState.json
 *.dll
 /.vs
+.vs/CineComplex/CopilotIndices/17.14.670.39694/CodeChunks.db
+.vs/CineComplex/CopilotIndices/17.14.670.39694/CodeChunks.db-shm
+.vs/CineComplex/CopilotIndices/17.14.670.39694/CodeChunks.db-wal
+.vs/CineComplex/CopilotIndices/17.14.670.39694/SemanticSymbols.db
+.vs/CineComplex/CopilotIndices/17.14.670.39694/SemanticSymbols.db-shm
+.vs/CineComplex/CopilotIndices/17.14.670.39694/SemanticSymbols.db-wal
