@@ -1,6 +1,8 @@
 ﻿using CineComplex.Classes;
 using CineComplex.Services;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 namespace CineComplex.Models
 {
     public class User
@@ -8,6 +10,9 @@ namespace CineComplex.Models
         //TODO: Add account status control flag - Active, Disabled, Deleted
         public int Id { get; set; }
         public string Username { get; set; }
+
+        [JsonIgnore] // Optional: hides from JSON serialization
+        [Browsable(false)]
         [NotMapped]
         //TODO: Make password inivisible
         public string Password { get; set; }
